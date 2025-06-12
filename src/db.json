@@ -1,0 +1,251 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Laura",
+      "lastname": "González",
+      "email": "laura.gonzalez@example.com",
+      "password": "L@ura2025"
+    },
+    {
+      "id": "2",
+      "name": "Carlos",
+      "lastname": "Ramírez",
+      "email": "carlos.ramirez@example.com",
+      "password": "C4rl0s#Secure"
+    },
+    {
+      "id": "3",
+      "name": "Sofía",
+      "lastname": "Martínez",
+      "email": "sofia.martinez@example.com",
+      "password": "Sofi@321!"
+    },
+    {
+      "id": "4",
+      "name": "Diego",
+      "lastname": "Fernández",
+      "email": "diego.fernandez@example.com",
+      "password": "D13g0_F3rn"
+    }
+  ],
+  "gas_station_data": [
+    {
+      "id": "1",
+      "user_id": "1",
+      "gas_station_name": "Estación Uno",
+      "address": "Av. Siempre Viva 123",
+      "license": "LIC-98432MX",
+      "attention_schedule": [
+        {"day": "Monday", "open": "08:00", "close": "23:00"},
+        {"day": "Tuesday", "open": "08:00", "close": "23:00"},
+        {"day": "Wednesday", "open": "08:00", "close": "23:00"},
+        {"day": "Thursday", "open": "08:00", "close": "23:00"},
+        {"day": "Friday", "open": "08:00", "close": "23:00"},
+        {"day": "Saturday", "open": "08:00", "close": "23:00"},
+        {"day": "Sunday", "open": "08:00", "close": "23:00"}
+      ]
+    },
+    {
+      "id": "2",
+      "user_id": "3",
+      "gas_station_name": "Estación Dos",
+      "license": "LIC-67219MX",
+      "address": "Calle Carpenter 456",
+      "attention_schedule": [
+        {"day": "Monday", "open": "08:00", "close": "23:00"},
+        {"day": "Tuesday", "open": "08:00", "close": "23:00"},
+        {"day": "Wednesday", "open": "08:00", "close": "23:00"},
+        {"day": "Thursday", "open": "08:00", "close": "23:00"},
+        {"day": "Friday", "open": "08:00", "close": "23:00"},
+        {"day": "Saturday", "open": "08:00", "close": "23:00"},
+        {"day": "Sunday", "open": "08:00", "close": "23:00"}
+      ]
+    }
+  ],
+  "zone": [
+    {
+      "id": "1",
+      "name": "Zona Centro"
+    },
+    {
+      "id": "2",
+      "name": "Zona Sur"
+    },
+    {
+      "id": "3",
+      "name": "El Alto"
+    }
+  ],
+  "customer_data": [
+    {
+      "id": "1",
+      "user_id": "2",
+      "license": "DLX-2938475-MX",
+      "car_plate": "ABC-1234"
+    },
+    {
+      "id": "2",
+      "user_id": "4",
+      "license": "DLX-8473629-MX",
+      "car_plate": "XYZ-5678"
+    }
+  ],
+  "prices": [
+    {
+      "id": "1",
+      "gas_station_id": 1,
+      "gas_type_id": 1,
+      "lt_price": 20
+    },
+    {
+      "id": "2",
+      "gas_station_id": 1,
+      "gas_type_id": 2,
+      "lt_price": 22
+    },
+    {
+      "id": "3",
+      "gas_station_id": 2,
+      "gas_type_id": 1,
+      "lt_price": 21
+    },
+    {
+      "id": "4",
+      "gas_station_id": 2,
+      "gas_type_id": 3,
+      "lt_price": 24
+    },
+    {
+      "id": "5",
+      "gas_station_id": 2,
+      "gas_type_id": 4,
+      "lt_price": 18
+    }
+  ],
+  "tickets": [
+    {
+      "id": "1",
+      "gas_station_id": 1,
+      "customer_data_id": 1,
+      "load_id": 1,
+      "ticket_number": 1,
+      "date": "2025-06-05T09:30:00",
+      "details": {
+        "gas_type_id": 1,
+        "ticket_state_id": 1,
+        "quantity_lt": 20,
+        "amount": 400
+      }
+    },
+    {
+      "id": "2",
+      "gas_station_id": 1,
+      "customer_data_id": 2,
+      "load_id": 1,
+      "ticket_number": 2,
+      "date": "2025-06-05T10:10:00",
+      "details": {
+        "gas_type_id": 2,
+        "ticket_state_id": 2,
+        "quantity_lt": 15,
+        "amount": 330
+      }
+    },
+    {
+      "id": "3",
+      "gas_station_id": 2,
+      "customer_data_id": 1,
+      "load_id": 2,
+      "ticket_number": 3,
+      "date": "2025-06-06T11:45:00",
+      "details": {
+        "gas_type_id": 3,
+        "ticket_state_id": 2,
+        "quantity_lt": 10,
+        "amount": 240
+      }
+    },
+    {
+      "id": "4",
+      "gas_station_id": 2,
+      "customer_data_id": 2,
+      "load_id": 2,
+      "ticket_number": 4,
+      "date": "2025-06-06T12:30:00",
+      "details": {
+        "gas_type_id": 1,
+        "ticket_state_id": 3,
+        "quantity_lt": 5,
+        "amount": 105
+      }
+    }
+  ],
+  "ticket_state": [
+    {
+      "id": "1",
+      "name": "Pendiente"
+    },
+    {
+      "id": "2",
+      "name": "Realizado"
+    },
+    {
+      "id": "3",
+      "name": "Cancelado"
+    }
+  ],
+  "load": [
+    {
+      "id": "1",
+      "gas_station_id": 1,
+      "quantity_lt": 1000,
+      "date": "2025-06-05T09:00:00",
+      "cancel": false,
+      "gas_types": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": "2",
+      "gas_station_id": 2,
+      "quantity_lt": 1200,
+      "date": "2025-06-06T11:15:00",
+      "cancel": false,
+      "gas_types": [
+        1,
+        3
+      ]
+    },
+    {
+      "id": "3",
+      "gas_station_id": 2,
+      "quantity_lt": 800,
+      "date": "2025-06-07T15:45:00",
+      "cancel": false,
+      "gas_types": [
+        2,
+        4
+      ]
+    }
+  ],
+  "gas_type": [
+    {
+      "id": "1",
+      "name": "diecel"
+    },
+    {
+      "id": "2",
+      "name": "regular"
+    },
+    {
+      "id": "3",
+      "name": "especial"
+    },
+    {
+      "id": "4",
+      "name": "premium"
+    }
+  ]
+}
