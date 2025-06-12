@@ -1,0 +1,61 @@
+name: Pull Request Notification
+
+on:
+  pull_request:
+    branches:
+      - develop
+      - main
+
+jobs:
+  Build-Verification:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies and build
+        run: |
+          npm ci
+          npm run build
+
+  PR-Notification:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set PR context
+        run: |
+          echo "BRANCH_NAME=${{ github.head_ref }}" >> $GITHUB_ENV
+          echo "BRANCH_NAME_DEST=${{ github.base_ref }}" >> $GITHUB_ENV
+
+      - name: Notify Discord
+        uses: tsickert/discord-webhook@v5.3.0
+        with:
+          webhook-url: ${{ secrets.DISCORD_WEBHOOK }}
+          content: |
+            🔔 ¡Hey equipo! Tenemos un nuevo PR en camino 🚧
+            Dale un vistazo y deja tu feedback. ¡Tu opinión hace la diferencia!
+
+            👉 [Revisar PR](${{ github.event.pull_request.html_url }})
+          embed-title: "🚀 Nuevo Pull Request para revisión"
+          embed-color: "3447003"
+          embed-description: |
+            **Repositorio:** [${{ github.event.repository.name }}](${{ github.event.repository.html_url }})
+
+            **Título:** _${{ github.event.pull_request.title }}_
+
+            **Enlace:** [Ver PR](${{ github.event.pull_request.html_url }})
+
+            **Ramas:** `${{ env.BRANCH_NAME }}` → `${{ env.BRANCH_NAME_DEST }}`
+
+            **Autor:** [${{ github.event.pull_request.user.login }}](${{ github.event.pull_request.user.html_url }})
+
+            ¡Revisa, comenta y colabora!
+          embed-author-name: ${{ github.event.pull_request.user.login }}
+          embed-author-url: ${{ github.event.pull_request.user.html_url }}
+          embed-author-icon-url: ${{ github.event.pull_request.user.avatar_url }}
