@@ -28,8 +28,8 @@ export const AppRoutes = () => {
           <Route path="admin" element={<AdminDashboard/>}/>
 
         </Route>
+        {/* <Route path="/" element={<Navigate to={!user?'/login':(user.role==='user'?"/user":"/admin")} replace />} /> */}
         <Route path="/" element={<Navigate to={user.role==='user'?"/user":"/admin"} replace />} />
-        {/* <Route path="/" element={<Navigate to= replace />} /> */}
         <Route path="/" element={<Navigate to="/login" replace />} />
       </Routes>
     </BrowserRouter>
