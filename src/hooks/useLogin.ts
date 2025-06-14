@@ -61,7 +61,7 @@ export const useLogin=()=>{
 
         const rol = responseLogin.role;
         
-        const route = (rol==='admin'?"/app/AdminDashboard":"/app/Dashboard");
+        const route = (rol==='admin'?"/admin":"/user");
         
         navigate(route, {
           replace: true,

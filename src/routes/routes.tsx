@@ -7,26 +7,30 @@ import LoginPage from "../pages/Login";
 import DashboardPage from "../pages/Dashboard";
 import { Layout } from "../layout/layout";
 import AdminDashboard from "../pages/AdminDashdoard";
+import { useAuthStore } from "../store/authStore";
 // import ProjectPage from "../pages/projects/ProjectPage";
 
 export const AppRoutes = () => {
+  const {user}=useAuthStore()
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/login" element={<LoginPage />} />
+        
         <Route
-        path="/app"
+        path="/"
         element={
           <ProtectedRoutes>
           <Layout />
         </ProtectedRoutes>
         }>
-          <Route path="Dashboard" element={<DashboardPage/>}/>
-          <Route path="AdminDashboard" element={<AdminDashboard/>}/>
+          <Route path="user" element={<DashboardPage/>}/>
+          <Route path="admin" element={<AdminDashboard/>}/>
 
         </Route>
-        <Route path="/" element={<Navigate to="/app/Dashboard" replace />} />
-        <Route path="/" element={<Navigate to="/app/AdminDashboard" replace />} />
+        <Route path="/" element={<Navigate to={user.role==='user'?"/user":"/admin"} replace />} />
+        {/* <Route path="/" element={<Navigate to= replace />} /> */}
+        <Route path="/" element={<Navigate to="/login" replace />} />
       </Routes>
     </BrowserRouter>
   )
