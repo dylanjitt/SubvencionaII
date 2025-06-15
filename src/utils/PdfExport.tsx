@@ -7,9 +7,12 @@ import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 interface PdfExportButtonProps {
   chartRef: RefObject<HTMLDivElement | null>; // Allow null
   data: number[];
+  labels:string[];
+  detail:string;
   title: string;
   filters: {
-    fuelFilter: string;
+    fuelFilter?: string;
+    stationFilter?:string;
     dateFilter: string;
   };
 }
@@ -17,6 +20,8 @@ interface PdfExportButtonProps {
 export const PdfExportButton = ({
   chartRef,
   data,
+  labels,
+  detail,
   title,
   filters
 }: PdfExportButtonProps) => {
@@ -24,7 +29,7 @@ export const PdfExportButton = ({
     if (!chartRef.current) return;
 
     const pdf = new jsPDF("p", "mm", "a4");
-    const margin = 10;
+    const margin = 20;
     const pageWidth = pdf.internal.pageSize.getWidth() - 2 * margin;
 
     // Add chart image
@@ -35,27 +40,57 @@ export const PdfExportButton = ({
     
     pdf.addImage(imgData, "PNG", margin, margin, imgWidth, imgHeight);
     
-    // Add data table
-    const tableTop = margin + imgHeight + 10;
+    const tableTop = margin + imgHeight + 1;
     
     pdf.setFontSize(12);
     pdf.setTextColor(40);
     pdf.setFont("helvetica", "bold");
-    pdf.text("Estación", margin, tableTop);
-    pdf.text("Cantidad", margin + 50, tableTop);
-    
-    pdf.setFont("helvetica", "normal");
-    data.forEach((count, index) => {
-      const yPos = tableTop + 8 + (index * 8);
-      pdf.text(`Station ${index + 1}`, margin, yPos);
-      pdf.text(count.toString(), margin + 50, yPos);
-    });
 
-    // Add filters info
-    const filtersTop = tableTop + data.length * 10 + 15;
+    
+    // Si hay mas de 6 items mostramos en 2 columnas
+    if (data.length > 6) {
+      const half = Math.ceil(data.length / 2);
+      const column2X = margin + 80; 
+      
+      // Columna 1
+      pdf.text(detail,margin, tableTop);
+      pdf.text("Cantidad", margin + 50, tableTop);
+      for (let i = 0; i < half; i++) {
+        const yPos = tableTop + 8 + (i * 8);
+        pdf.setFont("helvetica", "normal");
+        pdf.text(labels[i], margin, yPos);
+        pdf.text(data[i].toString(), margin + 50, yPos);
+      }
+      
+      // Columna 2
+      pdf.setFont("helvetica", "bold");
+      pdf.text(detail,column2X, tableTop);
+      pdf.text("Cantidad", column2X + 50, tableTop);
+      for (let i = half; i < data.length; i++) {
+        const yPos = tableTop + 8 + ((i - half) * 8);
+        pdf.setFont("helvetica", "normal");
+        pdf.text(labels[i], column2X, yPos);
+        pdf.text(data[i].toString(), column2X + 50, yPos);
+      }
+    } else {
+      // 1 sola columna
+      pdf.text(detail,margin, tableTop);
+      pdf.text("Cantidad", margin + 50, tableTop);
+      data.forEach((count, index) => {
+        const yPos = tableTop + 8 + (index * 8);
+        pdf.setFont("helvetica", "normal");
+        pdf.text(labels[index], margin, yPos);
+        pdf.text(count.toString(), margin + 50, yPos);
+      });
+    }
+
+    //Mostrar los filtros usados
+    const filtersY = tableTop + (data.length > 6 ? 
+      (Math.ceil(data.length / 2) * 8 + 10) : data.length * 8 + 10);
+      
     pdf.setFontSize(10);
     pdf.setTextColor(100);
-    pdf.text(`Filters: ${filters.fuelFilter}, ${filters.dateFilter}`, margin, filtersTop);
+    pdf.text(`Filtros: ${filters.fuelFilter}, ${filters.dateFilter}, ${filters.stationFilter}`, margin, filtersY);
 
     pdf.save(`${title.replace(/\s+/g, '_')}_report.pdf`);
   };
@@ -65,9 +100,9 @@ export const PdfExportButton = ({
       variant="contained" 
       color="error" 
       onClick={exportToPDF}
-      sx={{ ml: 2, justifyContent:'space-between' }}
+      sx={{ ml: 2, justifyContent: 'space-between' }}
     >
-      <PictureAsPdfIcon sx={{marginRight:1}}/>
+      <PictureAsPdfIcon sx={{ marginRight: 1 }} />
       Exportar a PDF
     </Button>
   );

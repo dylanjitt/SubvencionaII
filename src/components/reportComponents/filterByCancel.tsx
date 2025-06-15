@@ -34,7 +34,7 @@ export const FilterByCancel = ({ tickets, title }: TicketDataProps) => {
   const [filteredticketsExport, setFilteredticketsExport] = useState<ticketData[] | null>(tickets)
 
   useEffect(() => {
-    const fetchStationNames = async () => {
+    const fetchStationNames = async () => {  
       try {
         const stations = await getGasStations();
 
@@ -116,7 +116,8 @@ export const FilterByCancel = ({ tickets, title }: TicketDataProps) => {
 
     return {
       fuelFilter: fuelFilter === "all" ? "All fuels" : `Fuel: ${fuelFilter}`,
-      dateFilter
+      dateFilter,
+      stationFilter: stationFilter === "all" ? "All Gas Stations" : `Station: ${fuelFilter}`,
     };
   };
 
@@ -180,6 +181,8 @@ export const FilterByCancel = ({ tickets, title }: TicketDataProps) => {
           chartRef={chartRef}
           data={filteredData}
           title={title}
+          detail="Estado Ticket"
+          labels={ticketState}
           filters={getCurrentFilters()}
         />
         <CsvExportButton

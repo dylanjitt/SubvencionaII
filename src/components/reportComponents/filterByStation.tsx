@@ -153,6 +153,8 @@ export const FilterByStation = ({ tickets, title }: TicketDataProps) => {
           chartRef={chartRef}
           data={filteredData}
           title={title}
+          detail="Estaciones de Servicio"
+          labels={gasStationNames}
           filters={getCurrentFilters()}
         />
         <CsvExportButton
