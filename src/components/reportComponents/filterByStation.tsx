@@ -12,6 +12,7 @@ import type { ticketData } from "../../interface/ticketDataInterface";
 import CircleChart from "./circle";
 import { DatePickerCustom } from "./datePicker";
 import { PdfExportButton } from "../../utils/PdfExport";
+import { CsvExportButton } from "../../utils/CsvExport";
 
 interface TicketDataProps {
   tickets: ticketData[];
@@ -28,6 +29,7 @@ export const FilterByStation = ({ tickets, title }: TicketDataProps) => {
   const chartRef = useRef<HTMLDivElement>(null);
 
   const [filteredData, setFilteredData] = useState<number[]>([]);
+  const [filteredticketsExport, setFilteredticketsExport] = useState<ticketData[] | null>(tickets)
 
 
   const countByStation = (list: ticketData[]) =>
@@ -60,6 +62,7 @@ export const FilterByStation = ({ tickets, title }: TicketDataProps) => {
     }
 
     setFilteredData(countByStation(temp));
+    setFilteredticketsExport(temp)
     // console.log('filtered:',filteredData)
   }, [tickets, fuelFilter, singleDate, rangeStart, rangeEnd]);
 
@@ -126,13 +129,17 @@ export const FilterByStation = ({ tickets, title }: TicketDataProps) => {
           Reiniciar
         </Button>
       </Box>
-      
+
       <Box mt={3} textAlign="center">
-      <PdfExportButton
+        <PdfExportButton
           chartRef={chartRef}
           data={filteredData}
           title={title}
           filters={getCurrentFilters()}
+        />
+        <CsvExportButton
+          data={filteredticketsExport || []}
+          filename={`tickets_export_${new Date().toISOString().slice(0, 10)}`}
         />
       </Box>
 

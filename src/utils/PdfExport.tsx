@@ -41,8 +41,8 @@ export const PdfExportButton = ({
     pdf.setFontSize(12);
     pdf.setTextColor(40);
     pdf.setFont("helvetica", "bold");
-    pdf.text("Station", margin, tableTop);
-    pdf.text("Count", margin + 50, tableTop);
+    pdf.text("Estación", margin, tableTop);
+    pdf.text("Cantidad", margin + 50, tableTop);
     
     pdf.setFont("helvetica", "normal");
     data.forEach((count, index) => {
@@ -65,9 +65,9 @@ export const PdfExportButton = ({
       variant="contained" 
       color="error" 
       onClick={exportToPDF}
-      sx={{ ml: 2 }}
+      sx={{ ml: 2, justifyContent:'space-between' }}
     >
-      <PictureAsPdfIcon/>
+      <PictureAsPdfIcon sx={{marginRight:1}}/>
       Exportar a PDF
     </Button>
   );
