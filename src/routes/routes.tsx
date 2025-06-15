@@ -5,6 +5,7 @@ import LoginPage from "../pages/Login";
 import DashboardPage from "../pages/Dashboard";
 import { Layout } from "../layout/Layout";
 import AdminDashboard from "../pages/AdminDashdoard";
+import RoleGuard from "../guards/RoleGuard";
 
 export const AppRoutes = () => {
   return (
@@ -23,14 +24,14 @@ export const AppRoutes = () => {
             <Route path="profile" element={<></>/* TODO: add profile page */} />
 
             {/* TODO: add RoleGuard */}
-            <Route path="admin">
+            <Route path="/admin" element={<RoleGuard allowedRoles={["admin"]} />}>
               <Route index element={<AdminDashboard/>} />
               <Route path="gasStation/:id" element={<></>} />
               <Route path="reports" element={<></>} />
               <Route path="*" element={<Navigate to="/admin" replace />} />
             </Route>
 
-            {/* TODO: add RoleGuard */}
+            <Route path="/user" element={<RoleGuard allowedRoles={["client"]} />}>
             <Route path="user">
               <Route index element={<DashboardPage/>} />
               <Route path="history" element={<></>} />
