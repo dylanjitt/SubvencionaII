@@ -58,12 +58,8 @@ export const useLogin=()=>{
         console.log(responseLogin)
         
         loginUser(responseLogin);
-
-        const rol = responseLogin.role;
-        
-        const route = (rol==='admin'?"/admin":"/user");
-        
-        navigate(route, {
+       
+        navigate('/dashboard', {
           replace: true,
         });
         
