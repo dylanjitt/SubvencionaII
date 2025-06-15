@@ -77,7 +77,7 @@ export const FilterByStation = ({ tickets, title }: TicketDataProps) => {
     console.log('temp',temp)
 
     if (fuelFilter !== "all") {
-      temp = temp.filter((t) => t.gasType.toLowerCase() === fuelFilter);
+      temp = temp.filter((t) => t.gasType === fuelFilter);
     }
 
     if (singleDate) {
@@ -127,8 +127,6 @@ export const FilterByStation = ({ tickets, title }: TicketDataProps) => {
       <div ref={chartRef} style={{ position: 'relative' }}>
         <CircleChart tickets={filteredData} title={title} />
       </div>
-      {/* <CircleChart tickets={filteredData} title={title} /> */}
-
 
       <DatePickerCustom
         singleDate={singleDate}
@@ -141,7 +139,6 @@ export const FilterByStation = ({ tickets, title }: TicketDataProps) => {
         maxDate={new Date()}
       />
 
-
       <Box mt={3} textAlign="center">
         <FormControl size="small" sx={{ minWidth: 160, mr: 2 }}>
           <InputLabel id="fuel-filter-label">Tipo de Combustible</InputLabel>
@@ -152,8 +149,8 @@ export const FilterByStation = ({ tickets, title }: TicketDataProps) => {
             onChange={(e) => setFuelFilter(e.target.value as any)}
           >
             <MenuItem value="all">Todos</MenuItem>
-            <MenuItem value="gasolina">Gasolina</MenuItem>
-            <MenuItem value="diesel">Diesel</MenuItem>
+            <MenuItem value="Especial">Gasolina</MenuItem>
+            <MenuItem value="Diesel">Diesel</MenuItem>
             <MenuItem value="GNV">GNV</MenuItem>
           </Select>
         </FormControl>
