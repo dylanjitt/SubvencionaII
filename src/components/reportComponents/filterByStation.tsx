@@ -13,7 +13,7 @@ import CircleChart from "./circle";
 import { DatePickerCustom } from "./datePicker";
 import { PdfExportButton } from "../../utils/PdfExport";
 import { CsvExportButton } from "../../utils/CsvExport";
-
+import { getGasStations } from "../../services/gasStationsService";
 interface TicketDataProps {
   tickets: ticketData[];
   title: string;
@@ -25,26 +25,59 @@ export const FilterByStation = ({ tickets, title }: TicketDataProps) => {
   const [singleDate, setSingleDate] = useState<Date | null>(null);
   const [rangeStart, setRangeStart] = useState<Date | null>(null);
   const [rangeEnd, setRangeEnd] = useState<Date | null>(null);
+  
+  const [gasStationNames,setGasStationNames]=useState<string[]|null>(null)
 
   const chartRef = useRef<HTMLDivElement>(null);
 
   const [filteredData, setFilteredData] = useState<number[]>([]);
   const [filteredticketsExport, setFilteredticketsExport] = useState<ticketData[] | null>(tickets)
 
+  useEffect(() => {
+    const fetchStationNames = async () => {
+      try {
+        const stations = await retrieveStationnames();
+        
+        const names = stations.map((station:any) => station.name);
+        setGasStationNames(names);
+        console.log('names',names)
+      } catch (error) {
+        console.error('Error fetching station names:', error);
+        setGasStationNames([]);
+      }
+    };
 
-  const countByStation = (list: ticketData[]) =>
-    Array.from({ length: 10 }, (_, i) => {
-      const id = (i + 1).toString();
-      return list.filter((t) => t.gas_station_id === id).length;
-    });
+    fetchStationNames();
+  }, []);
 
+  const retrieveStationnames = async () => {
+    try {
+      const response = await getGasStations();
+      return response; // This should be your array of objects
+    } catch (error) {
+      console.error('Error in retrieveStationnames:', error);
+      return [];
+    }
+  };
+
+  const countByStation = (list: ticketData[]) =>{
+    if (!gasStationNames || gasStationNames.length === 0) {
+      return []; // Return empty array if no station names are loaded
+    }
+    return gasStationNames?.map(stationName=>{
+      return list.filter(ticket=>
+        ticket.gasStationName===stationName 
+      ).length
+    })
+    };
 
   useEffect(() => {
 
     let temp = tickets;
+    console.log('temp',temp)
 
     if (fuelFilter !== "all") {
-      temp = temp.filter((t) => t.gas_type.toLowerCase() === fuelFilter);
+      temp = temp.filter((t) => t.gasType.toLowerCase() === fuelFilter);
     }
 
     if (singleDate) {
@@ -63,7 +96,7 @@ export const FilterByStation = ({ tickets, title }: TicketDataProps) => {
 
     setFilteredData(countByStation(temp));
     setFilteredticketsExport(temp)
-    // console.log('filtered:',filteredData)
+    console.log('filtered:',filteredData)
   }, [tickets, fuelFilter, singleDate, rangeStart, rangeEnd]);
 
   const restoreAll = () => {

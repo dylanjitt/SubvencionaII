@@ -29,6 +29,7 @@ export function ReportsPage() {
   const loadTicks = async () => {
     try {
       const data = await getTicketsData(user.id);
+      console.log('data:',data)
       if (data) saveTickets(data);
     } catch (err) {
       console.error(err);

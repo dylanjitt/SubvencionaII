@@ -31,7 +31,7 @@ export const FilterByType = ({ tickets, title }: TicketDataProps) => {
   const countByType = (list: ticketData[]) =>
     Array.from({ length: 10 }, (_, i) => {
       const id = (i + 1).toString();
-      return list.filter((t) => t.gas_type === id).length;
+      return list.filter((t) => t.gasType === id).length;
     });
 
   
@@ -40,7 +40,7 @@ export const FilterByType = ({ tickets, title }: TicketDataProps) => {
     let temp = tickets;
     
     if (stationFilter !== "all") {
-      temp = temp.filter((t) => t.gas_type.toLowerCase() === stationFilter);
+      temp = temp.filter((t) => t.gasType.toLowerCase() === stationFilter);
     }
 
     if (singleDate) {
