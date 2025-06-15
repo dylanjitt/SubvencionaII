@@ -2,6 +2,8 @@ import { useFormik } from "formik";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import * as yup from "yup";
+import { login } from "../services/authService";
+import { useAuthStore } from "../store/authStore";
 
 const loginSchema = yup.object({
   email: yup
@@ -21,6 +23,7 @@ export const useLogin=()=>{
 
   const [showPassword, setShowPassword] = useState(false);
   const [errorMessage,seterrorMessage]=useState("");
+  const loginUser = useAuthStore((state) => state.loginUser);
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
@@ -42,36 +45,34 @@ export const useLogin=()=>{
       setIsLoading(true);
       setLoginError(false); // Reset error state before making request
       
-      
-      // try {
-      //   const responseLogin = await login(values.email, values.password);
+
+      try {
+        const responseLogin = await login(values.email, values.password);
         
-      //   if (!responseLogin) {
-      //     console.log("Login failed - no response"); // Debug log
-      //     setLoginError(true);
-      //     formik.resetForm();
-      //     return;
-      //   }
+        if (!responseLogin) {
+          console.log("Login failed - no response"); // Debug log
+          setLoginError(true);
+          formik.resetForm();
+          return;
+        }
+        console.log(responseLogin)
         
-      //   // Successful login
-      //   //setStorage("token", responseLogin.token);
-      //   //setStorage("user", responseLogin);
-      //   const rol = responseLogin.rol
-      //   const route = (rol==='admin'?"/app/AdminDashboard":"/app/dashboard")
-      //   navigate(route, {
-      //     replace: true,
-      //   });
+        loginUser(responseLogin);
+       
+        navigate('/dashboard', {
+          replace: true,
+        });
         
-      // } catch (error) {
-      //   console.error("Login error:", error); // Debug log
-      //   setLoginError(true);
-      //   if(error instanceof Error){
-      //     seterrorMessage(error.message)
-      //   }
-      //   formik.resetForm();
-      // } finally {
-      //   setIsLoading(false);
-      // }
+      } catch (error) {
+        console.error("Login error:", error); // Debug log
+        setLoginError(true);
+        if(error instanceof Error){
+          seterrorMessage(error.message)
+        }
+        formik.resetForm();
+      } finally {
+        setIsLoading(false);
+      }
     },
   });
 
