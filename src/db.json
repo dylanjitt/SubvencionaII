@@ -99,64 +99,7 @@
       "car_plate": "XYZ-5678"
     }
   ],
-  "tickets": [
-    {
-      "id": "1",
-      "gas_station_id": "1",
-      "customer_data_id": "1",
-      "load_id": 1,
-      "ticket_number": 1,
-      "date": "2025-06-05T09:30:00",
-      "details": {
-        "gas_type_id": 1,
-        "ticket_state_id": 1,
-        "quantity_lt": 20,
-        "amount": 400
-      }
-    },
-    {
-      "id": "2",
-      "gas_station_id": "1",
-      "customer_data_id": "2",
-      "load_id": 1,
-      "ticket_number": 2,
-      "date": "2025-06-05T10:10:00",
-      "details": {
-        "gas_type_id": 2,
-        "ticket_state_id": 2,
-        "quantity_lt": 15,
-        "amount": 330
-      }
-    },
-    {
-      "id": "3",
-      "gas_station_id": "2",
-      "customer_data_id": "1",
-      "load_id": 2,
-      "ticket_number": 3,
-      "date": "2025-06-06T11:45:00",
-      "details": {
-        "gas_type_id": 3,
-        "ticket_state_id": 2,
-        "quantity_lt": 10,
-        "amount": 240
-      }
-    },
-    {
-      "id": "4",
-      "gas_station_id": "2",
-      "customer_data_id": "2",
-      "load_id": 2,
-      "ticket_number": 4,
-      "date": "2025-06-06T12:30:00",
-      "details": {
-        "gas_type_id": 1,
-        "ticket_state_id": 3,
-        "quantity_lt": 5,
-        "amount": 105
-      }
-    }
-  ],
+  
   "ticket_state": [
     {
       "id": "1",
@@ -218,5 +161,7510 @@
       "name": "GNV",
       "price":35
     }
+  ],
+
+
+  "tickets": [
+    {
+      "id": "1",
+      "admin_id": "2",
+      "gas_station_id": "5",
+      "customer_data_id": "7",
+      "auto": {
+        "placa": "EVQWD2",
+        "b-sisa": "HAJH-B9F7IJFD"
+      },
+      "date": "2025-04-17T19:15:00",
+      "gas_type": "diesel",
+      "quantity_lt": 24,
+      "amount": 240,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "2",
+      "admin_id": "3",
+      "gas_station_id": "8",
+      "customer_data_id": "176",
+      "auto": {
+        "placa": "CAW3QC",
+        "b-sisa": "GQWN-KBF5KSQP"
+      },
+      "date": "2025-05-11T19:45:00",
+      "gas_type": "GNV",
+      "quantity_lt": 175,
+      "amount": 1750,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "3",
+      "admin_id": "2",
+      "gas_station_id": "9",
+      "customer_data_id": "188",
+      "auto": {
+        "placa": "44T62H",
+        "b-sisa": "16GI-N84DC83X"
+      },
+      "date": "2025-04-12T21:00:00",
+      "gas_type": "diesel",
+      "quantity_lt": 290,
+      "amount": 2900,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "4",
+      "admin_id": "2",
+      "gas_station_id": "7",
+      "customer_data_id": "61",
+      "auto": {
+        "placa": "SU6YHA",
+        "b-sisa": "0R85-QUNJ75CW"
+      },
+      "date": "2025-05-10T03:00:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 380,
+      "amount": 3800,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "5",
+      "admin_id": "3",
+      "gas_station_id": "8",
+      "customer_data_id": "89",
+      "auto": {
+        "placa": "LU16DZ",
+        "b-sisa": "6EFC-W60A09OM"
+      },
+      "date": "2025-06-14T20:15:00",
+      "gas_type": "GNV",
+      "quantity_lt": 145,
+      "amount": 1450,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "6",
+      "admin_id": "1",
+      "gas_station_id": "3",
+      "customer_data_id": "109",
+      "auto": {
+        "placa": "C795FY",
+        "b-sisa": "S7QA-S5Z15HHX"
+      },
+      "date": "2025-04-01T08:30:00",
+      "gas_type": "GNV",
+      "quantity_lt": 339,
+      "amount": 3390,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "7",
+      "admin_id": "3",
+      "gas_station_id": "1",
+      "customer_data_id": "174",
+      "auto": {
+        "placa": "R3H1NF",
+        "b-sisa": "BAE7-ON1405X1"
+      },
+      "date": "2025-05-18T09:45:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 364,
+      "amount": 3640,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "8",
+      "admin_id": "2",
+      "gas_station_id": "1",
+      "customer_data_id": "80",
+      "auto": {
+        "placa": "6BBMKE",
+        "b-sisa": "IC1O-P4J5DK4Q"
+      },
+      "date": "2025-05-26T21:00:00",
+      "gas_type": "GNV",
+      "quantity_lt": 60,
+      "amount": 600,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "9",
+      "admin_id": "3",
+      "gas_station_id": "6",
+      "customer_data_id": "172",
+      "auto": {
+        "placa": "0RMOWI",
+        "b-sisa": "KZ39-P0OA3BMF"
+      },
+      "date": "2025-04-06T15:45:00",
+      "gas_type": "GNV",
+      "quantity_lt": 275,
+      "amount": 2750,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "10",
+      "admin_id": "2",
+      "gas_station_id": "10",
+      "customer_data_id": "8",
+      "auto": {
+        "placa": "UZ2KFF",
+        "b-sisa": "K9KI-WSX4YBD5"
+      },
+      "date": "2025-06-01T17:30:00",
+      "gas_type": "diesel",
+      "quantity_lt": 256,
+      "amount": 2560,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "11",
+      "admin_id": "3",
+      "gas_station_id": "6",
+      "customer_data_id": "176",
+      "auto": {
+        "placa": "8A37CX",
+        "b-sisa": "2F2O-EB681MLT"
+      },
+      "date": "2025-05-22T05:45:00",
+      "gas_type": "GNV",
+      "quantity_lt": 94,
+      "amount": 940,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "12",
+      "admin_id": "3",
+      "gas_station_id": "7",
+      "customer_data_id": "151",
+      "auto": {
+        "placa": "BIQLKG",
+        "b-sisa": "D9IQ-E1KPW0QE"
+      },
+      "date": "2025-04-11T20:45:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 224,
+      "amount": 2240,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "13",
+      "admin_id": "3",
+      "gas_station_id": "9",
+      "customer_data_id": "131",
+      "auto": {
+        "placa": "GL2K4R",
+        "b-sisa": "6XZ8-JJERUCW3"
+      },
+      "date": "2025-04-25T15:00:00",
+      "gas_type": "GNV",
+      "quantity_lt": 45,
+      "amount": 450,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "14",
+      "admin_id": "1",
+      "gas_station_id": "9",
+      "customer_data_id": "58",
+      "auto": {
+        "placa": "ZT69P9",
+        "b-sisa": "VEIH-O60O1ON0"
+      },
+      "date": "2025-04-22T01:30:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 225,
+      "amount": 2250,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "15",
+      "admin_id": "3",
+      "gas_station_id": "3",
+      "customer_data_id": "146",
+      "auto": {
+        "placa": "NJMOZN",
+        "b-sisa": "16RT-T5DV5GAK"
+      },
+      "date": "2025-06-13T10:45:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 231,
+      "amount": 2310,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "16",
+      "admin_id": "3",
+      "gas_station_id": "7",
+      "customer_data_id": "157",
+      "auto": {
+        "placa": "8NYD0L",
+        "b-sisa": "QZ8L-IH5HHZ16"
+      },
+      "date": "2025-06-11T14:00:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 328,
+      "amount": 3280,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "17",
+      "admin_id": "2",
+      "gas_station_id": "3",
+      "customer_data_id": "159",
+      "auto": {
+        "placa": "GBX1FY",
+        "b-sisa": "OAKI-FFCLX32R"
+      },
+      "date": "2025-04-23T11:15:00",
+      "gas_type": "GNV",
+      "quantity_lt": 123,
+      "amount": 1230,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "18",
+      "admin_id": "3",
+      "gas_station_id": "7",
+      "customer_data_id": "170",
+      "auto": {
+        "placa": "BJIDJG",
+        "b-sisa": "3K9N-SYZI1Y4Y"
+      },
+      "date": "2025-04-01T20:30:00",
+      "gas_type": "diesel",
+      "quantity_lt": 137,
+      "amount": 1370,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "19",
+      "admin_id": "2",
+      "gas_station_id": "2",
+      "customer_data_id": "18",
+      "auto": {
+        "placa": "DP6R2W",
+        "b-sisa": "FZFY-8VC4E2YI"
+      },
+      "date": "2025-05-23T08:00:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 253,
+      "amount": 2530,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "20",
+      "admin_id": "1",
+      "gas_station_id": "9",
+      "customer_data_id": "60",
+      "auto": {
+        "placa": "7OCU5B",
+        "b-sisa": "M9OE-W0ABGFVG"
+      },
+      "date": "2025-06-08T11:15:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 183,
+      "amount": 1830,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "21",
+      "admin_id": "2",
+      "gas_station_id": "4",
+      "customer_data_id": "199",
+      "auto": {
+        "placa": "E1VJS4",
+        "b-sisa": "3HW6-FV3IVTOO"
+      },
+      "date": "2025-06-08T20:15:00",
+      "gas_type": "GNV",
+      "quantity_lt": 231,
+      "amount": 2310,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "22",
+      "admin_id": "1",
+      "gas_station_id": "10",
+      "customer_data_id": "10",
+      "auto": {
+        "placa": "SY79IG",
+        "b-sisa": "NZLZ-U4GP49K0"
+      },
+      "date": "2025-05-14T01:30:00",
+      "gas_type": "GNV",
+      "quantity_lt": 249,
+      "amount": 2490,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "23",
+      "admin_id": "3",
+      "gas_station_id": "3",
+      "customer_data_id": "62",
+      "auto": {
+        "placa": "G9EM80",
+        "b-sisa": "U0Z7-BAKUQFVD"
+      },
+      "date": "2025-06-14T00:00:00",
+      "gas_type": "GNV",
+      "quantity_lt": 121,
+      "amount": 1210,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "24",
+      "admin_id": "1",
+      "gas_station_id": "5",
+      "customer_data_id": "82",
+      "auto": {
+        "placa": "Q8QFWZ",
+        "b-sisa": "LABU-27FYRGW4"
+      },
+      "date": "2025-05-11T15:15:00",
+      "gas_type": "diesel",
+      "quantity_lt": 135,
+      "amount": 1350,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "25",
+      "admin_id": "3",
+      "gas_station_id": "6",
+      "customer_data_id": "128",
+      "auto": {
+        "placa": "IM90ZI",
+        "b-sisa": "DK72-XECA8R01"
+      },
+      "date": "2025-06-08T14:15:00",
+      "gas_type": "GNV",
+      "quantity_lt": 183,
+      "amount": 1830,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "26",
+      "admin_id": "2",
+      "gas_station_id": "9",
+      "customer_data_id": "67",
+      "auto": {
+        "placa": "BM5LNC",
+        "b-sisa": "R1U6-435BJI0M"
+      },
+      "date": "2025-05-04T13:15:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 37,
+      "amount": 370,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "27",
+      "admin_id": "2",
+      "gas_station_id": "3",
+      "customer_data_id": "162",
+      "auto": {
+        "placa": "V1SDAS",
+        "b-sisa": "73CK-ZOI3422S"
+      },
+      "date": "2025-05-29T21:15:00",
+      "gas_type": "GNV",
+      "quantity_lt": 300,
+      "amount": 3000,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "28",
+      "admin_id": "2",
+      "gas_station_id": "7",
+      "customer_data_id": "145",
+      "auto": {
+        "placa": "OMZEHS",
+        "b-sisa": "L8WH-HNR4QN1N"
+      },
+      "date": "2025-05-24T22:00:00",
+      "gas_type": "GNV",
+      "quantity_lt": 231,
+      "amount": 2310,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "29",
+      "admin_id": "3",
+      "gas_station_id": "10",
+      "customer_data_id": "192",
+      "auto": {
+        "placa": "57280W",
+        "b-sisa": "TDEU-BCV27XDM"
+      },
+      "date": "2025-06-09T03:45:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 81,
+      "amount": 810,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "30",
+      "admin_id": "1",
+      "gas_station_id": "8",
+      "customer_data_id": "20",
+      "auto": {
+        "placa": "KMB20C",
+        "b-sisa": "D1AH-2PK18F0G"
+      },
+      "date": "2025-06-06T22:45:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 190,
+      "amount": 1900,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "31",
+      "admin_id": "3",
+      "gas_station_id": "8",
+      "customer_data_id": "126",
+      "auto": {
+        "placa": "QLJNCO",
+        "b-sisa": "Q4NP-IPKLMI55"
+      },
+      "date": "2025-06-14T15:30:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 295,
+      "amount": 2950,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "32",
+      "admin_id": "2",
+      "gas_station_id": "6",
+      "customer_data_id": "195",
+      "auto": {
+        "placa": "RW2DYW",
+        "b-sisa": "QKUW-GC5E5GRA"
+      },
+      "date": "2025-04-04T17:45:00",
+      "gas_type": "GNV",
+      "quantity_lt": 88,
+      "amount": 880,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "33",
+      "admin_id": "1",
+      "gas_station_id": "3",
+      "customer_data_id": "68",
+      "auto": {
+        "placa": "H73GFK",
+        "b-sisa": "5GY4-0GNOQV5U"
+      },
+      "date": "2025-04-22T03:30:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 162,
+      "amount": 1620,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "34",
+      "admin_id": "1",
+      "gas_station_id": "7",
+      "customer_data_id": "50",
+      "auto": {
+        "placa": "Q6LV35",
+        "b-sisa": "FEVR-RZUBOIGW"
+      },
+      "date": "2025-05-12T08:45:00",
+      "gas_type": "GNV",
+      "quantity_lt": 139,
+      "amount": 1390,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "35",
+      "admin_id": "2",
+      "gas_station_id": "4",
+      "customer_data_id": "53",
+      "auto": {
+        "placa": "2EVJYN",
+        "b-sisa": "657C-6XUDB6U5"
+      },
+      "date": "2025-06-10T08:15:00",
+      "gas_type": "GNV",
+      "quantity_lt": 121,
+      "amount": 1210,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "36",
+      "admin_id": "3",
+      "gas_station_id": "7",
+      "customer_data_id": "81",
+      "auto": {
+        "placa": "QCM12G",
+        "b-sisa": "9VPG-92KL3R6R"
+      },
+      "date": "2025-04-04T14:00:00",
+      "gas_type": "GNV",
+      "quantity_lt": 342,
+      "amount": 3420,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "37",
+      "admin_id": "1",
+      "gas_station_id": "5",
+      "customer_data_id": "65",
+      "auto": {
+        "placa": "CT7FB3",
+        "b-sisa": "SXI9-8D6F5XPR"
+      },
+      "date": "2025-04-07T10:15:00",
+      "gas_type": "GNV",
+      "quantity_lt": 44,
+      "amount": 440,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "38",
+      "admin_id": "2",
+      "gas_station_id": "1",
+      "customer_data_id": "146",
+      "auto": {
+        "placa": "SZYQIX",
+        "b-sisa": "A4G2-RDNCV5KN"
+      },
+      "date": "2025-05-04T11:30:00",
+      "gas_type": "GNV",
+      "quantity_lt": 321,
+      "amount": 3210,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "39",
+      "admin_id": "1",
+      "gas_station_id": "9",
+      "customer_data_id": "158",
+      "auto": {
+        "placa": "BO7PFW",
+        "b-sisa": "UX3F-47OJARV3"
+      },
+      "date": "2025-04-19T05:00:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 322,
+      "amount": 3220,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "40",
+      "admin_id": "2",
+      "gas_station_id": "3",
+      "customer_data_id": "127",
+      "auto": {
+        "placa": "KWLTYD",
+        "b-sisa": "WRS0-8EH40RPC"
+      },
+      "date": "2025-04-06T11:45:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 156,
+      "amount": 1560,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "41",
+      "admin_id": "2",
+      "gas_station_id": "5",
+      "customer_data_id": "22",
+      "auto": {
+        "placa": "2KOBAC",
+        "b-sisa": "6447-L1XAN21C"
+      },
+      "date": "2025-06-14T21:30:00",
+      "gas_type": "GNV",
+      "quantity_lt": 135,
+      "amount": 1350,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "42",
+      "admin_id": "3",
+      "gas_station_id": "8",
+      "customer_data_id": "198",
+      "auto": {
+        "placa": "DTX8X0",
+        "b-sisa": "M2LI-Y9SL1VOJ"
+      },
+      "date": "2025-05-12T05:45:00",
+      "gas_type": "diesel",
+      "quantity_lt": 297,
+      "amount": 2970,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "43",
+      "admin_id": "3",
+      "gas_station_id": "7",
+      "customer_data_id": "102",
+      "auto": {
+        "placa": "1D1WWS",
+        "b-sisa": "B8QW-F111JIPD"
+      },
+      "date": "2025-05-03T15:45:00",
+      "gas_type": "GNV",
+      "quantity_lt": 389,
+      "amount": 3890,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "44",
+      "admin_id": "2",
+      "gas_station_id": "6",
+      "customer_data_id": "41",
+      "auto": {
+        "placa": "QSEAUK",
+        "b-sisa": "378H-RPSQRPTU"
+      },
+      "date": "2025-05-15T09:00:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 207,
+      "amount": 2070,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "45",
+      "admin_id": "1",
+      "gas_station_id": "5",
+      "customer_data_id": "158",
+      "auto": {
+        "placa": "RR59TZ",
+        "b-sisa": "WBAC-AF3Q9YXM"
+      },
+      "date": "2025-04-27T20:15:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 381,
+      "amount": 3810,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "46",
+      "admin_id": "3",
+      "gas_station_id": "5",
+      "customer_data_id": "62",
+      "auto": {
+        "placa": "VL5YS0",
+        "b-sisa": "N7EO-GRT87ODQ"
+      },
+      "date": "2025-05-03T11:30:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 112,
+      "amount": 1120,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "47",
+      "admin_id": "3",
+      "gas_station_id": "6",
+      "customer_data_id": "46",
+      "auto": {
+        "placa": "HI24ED",
+        "b-sisa": "TTU0-YCTT5X9V"
+      },
+      "date": "2025-04-26T01:15:00",
+      "gas_type": "GNV",
+      "quantity_lt": 235,
+      "amount": 2350,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "48",
+      "admin_id": "1",
+      "gas_station_id": "2",
+      "customer_data_id": "36",
+      "auto": {
+        "placa": "IODRYL",
+        "b-sisa": "71BV-TBLCJAEK"
+      },
+      "date": "2025-04-13T09:45:00",
+      "gas_type": "GNV",
+      "quantity_lt": 310,
+      "amount": 3100,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "49",
+      "admin_id": "3",
+      "gas_station_id": "6",
+      "customer_data_id": "7",
+      "auto": {
+        "placa": "YF9SPX",
+        "b-sisa": "FD7N-4WG0FFSS"
+      },
+      "date": "2025-05-01T13:00:00",
+      "gas_type": "GNV",
+      "quantity_lt": 276,
+      "amount": 2760,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "50",
+      "admin_id": "3",
+      "gas_station_id": "6",
+      "customer_data_id": "141",
+      "auto": {
+        "placa": "M39758",
+        "b-sisa": "V6H0-JILINPWX"
+      },
+      "date": "2025-04-23T23:15:00",
+      "gas_type": "GNV",
+      "quantity_lt": 165,
+      "amount": 1650,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "51",
+      "admin_id": "3",
+      "gas_station_id": "2",
+      "customer_data_id": "57",
+      "auto": {
+        "placa": "6S4NZ3",
+        "b-sisa": "U7YW-999TTF8I"
+      },
+      "date": "2025-04-22T09:00:00",
+      "gas_type": "GNV",
+      "quantity_lt": 352,
+      "amount": 3520,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "52",
+      "admin_id": "3",
+      "gas_station_id": "6",
+      "customer_data_id": "164",
+      "auto": {
+        "placa": "APDDJC",
+        "b-sisa": "4EV7-R6947HNL"
+      },
+      "date": "2025-04-29T11:45:00",
+      "gas_type": "diesel",
+      "quantity_lt": 75,
+      "amount": 750,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "53",
+      "admin_id": "2",
+      "gas_station_id": "8",
+      "customer_data_id": "147",
+      "auto": {
+        "placa": "CM7TWZ",
+        "b-sisa": "KPXE-DPNEKOPV"
+      },
+      "date": "2025-04-17T15:45:00",
+      "gas_type": "GNV",
+      "quantity_lt": 352,
+      "amount": 3520,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "54",
+      "admin_id": "3",
+      "gas_station_id": "8",
+      "customer_data_id": "52",
+      "auto": {
+        "placa": "DTDH4K",
+        "b-sisa": "P7EK-KJGITPP7"
+      },
+      "date": "2025-04-12T03:30:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 176,
+      "amount": 1760,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "55",
+      "admin_id": "2",
+      "gas_station_id": "7",
+      "customer_data_id": "17",
+      "auto": {
+        "placa": "S63TXO",
+        "b-sisa": "G7TJ-X7G71953"
+      },
+      "date": "2025-05-07T10:00:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 246,
+      "amount": 2460,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "56",
+      "admin_id": "1",
+      "gas_station_id": "8",
+      "customer_data_id": "124",
+      "auto": {
+        "placa": "ISI7ST",
+        "b-sisa": "1KKG-Y8V403QB"
+      },
+      "date": "2025-04-03T18:00:00",
+      "gas_type": "diesel",
+      "quantity_lt": 257,
+      "amount": 2570,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "57",
+      "admin_id": "2",
+      "gas_station_id": "3",
+      "customer_data_id": "120",
+      "auto": {
+        "placa": "CZJSP1",
+        "b-sisa": "55V2-K43VPP9C"
+      },
+      "date": "2025-04-07T06:15:00",
+      "gas_type": "GNV",
+      "quantity_lt": 62,
+      "amount": 620,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "58",
+      "admin_id": "2",
+      "gas_station_id": "9",
+      "customer_data_id": "61",
+      "auto": {
+        "placa": "OJOXSJ",
+        "b-sisa": "EB4E-P9MZ8XS1"
+      },
+      "date": "2025-06-02T14:00:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 171,
+      "amount": 1710,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "59",
+      "admin_id": "3",
+      "gas_station_id": "1",
+      "customer_data_id": "178",
+      "auto": {
+        "placa": "KUWYKH",
+        "b-sisa": "X29F-EMYJCWS3"
+      },
+      "date": "2025-04-14T19:45:00",
+      "gas_type": "diesel",
+      "quantity_lt": 311,
+      "amount": 3110,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "60",
+      "admin_id": "2",
+      "gas_station_id": "7",
+      "customer_data_id": "16",
+      "auto": {
+        "placa": "NO3YPF",
+        "b-sisa": "Z2XQ-4OYZV8LY"
+      },
+      "date": "2025-04-19T06:30:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 60,
+      "amount": 600,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "61",
+      "admin_id": "2",
+      "gas_station_id": "6",
+      "customer_data_id": "54",
+      "auto": {
+        "placa": "JL79FM",
+        "b-sisa": "QCWG-YT9FOG9Y"
+      },
+      "date": "2025-05-27T21:45:00",
+      "gas_type": "diesel",
+      "quantity_lt": 278,
+      "amount": 2780,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "62",
+      "admin_id": "1",
+      "gas_station_id": "1",
+      "customer_data_id": "44",
+      "auto": {
+        "placa": "KR911P",
+        "b-sisa": "QA9S-BMWVXN27"
+      },
+      "date": "2025-04-30T01:15:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 173,
+      "amount": 1730,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "63",
+      "admin_id": "3",
+      "gas_station_id": "1",
+      "customer_data_id": "167",
+      "auto": {
+        "placa": "06SPKO",
+        "b-sisa": "K6VK-OS759H3Q"
+      },
+      "date": "2025-04-23T08:15:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 66,
+      "amount": 660,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "64",
+      "admin_id": "1",
+      "gas_station_id": "4",
+      "customer_data_id": "200",
+      "auto": {
+        "placa": "2I0252",
+        "b-sisa": "TQ1W-FI6PNGM9"
+      },
+      "date": "2025-04-17T23:15:00",
+      "gas_type": "diesel",
+      "quantity_lt": 39,
+      "amount": 390,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "65",
+      "admin_id": "1",
+      "gas_station_id": "9",
+      "customer_data_id": "100",
+      "auto": {
+        "placa": "02IHT0",
+        "b-sisa": "QP1B-IFTUZN2K"
+      },
+      "date": "2025-06-08T17:00:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 176,
+      "amount": 1760,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "66",
+      "admin_id": "1",
+      "gas_station_id": "7",
+      "customer_data_id": "88",
+      "auto": {
+        "placa": "WP92CF",
+        "b-sisa": "KSL2-VZ782ENU"
+      },
+      "date": "2025-05-21T04:00:00",
+      "gas_type": "diesel",
+      "quantity_lt": 342,
+      "amount": 3420,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "67",
+      "admin_id": "2",
+      "gas_station_id": "10",
+      "customer_data_id": "82",
+      "auto": {
+        "placa": "2UKISJ",
+        "b-sisa": "WV7C-L161WNBM"
+      },
+      "date": "2025-04-18T23:00:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 90,
+      "amount": 900,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "68",
+      "admin_id": "3",
+      "gas_station_id": "6",
+      "customer_data_id": "153",
+      "auto": {
+        "placa": "AA95RA",
+        "b-sisa": "2M1O-URUO9EUT"
+      },
+      "date": "2025-05-30T20:45:00",
+      "gas_type": "GNV",
+      "quantity_lt": 66,
+      "amount": 660,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "69",
+      "admin_id": "2",
+      "gas_station_id": "3",
+      "customer_data_id": "176",
+      "auto": {
+        "placa": "U9QP4U",
+        "b-sisa": "528Y-8T5BCEYW"
+      },
+      "date": "2025-05-23T06:45:00",
+      "gas_type": "GNV",
+      "quantity_lt": 59,
+      "amount": 590,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "70",
+      "admin_id": "2",
+      "gas_station_id": "10",
+      "customer_data_id": "137",
+      "auto": {
+        "placa": "JSDYCY",
+        "b-sisa": "S80I-5ZQBUSCR"
+      },
+      "date": "2025-06-01T05:00:00",
+      "gas_type": "diesel",
+      "quantity_lt": 120,
+      "amount": 1200,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "71",
+      "admin_id": "3",
+      "gas_station_id": "8",
+      "customer_data_id": "32",
+      "auto": {
+        "placa": "GAZQ47",
+        "b-sisa": "KJXW-CMNUPXNU"
+      },
+      "date": "2025-05-08T04:00:00",
+      "gas_type": "GNV",
+      "quantity_lt": 316,
+      "amount": 3160,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "72",
+      "admin_id": "1",
+      "gas_station_id": "1",
+      "customer_data_id": "107",
+      "auto": {
+        "placa": "6WB2NO",
+        "b-sisa": "I0CX-3L1Y4YCU"
+      },
+      "date": "2025-05-27T05:30:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 101,
+      "amount": 1010,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "73",
+      "admin_id": "2",
+      "gas_station_id": "5",
+      "customer_data_id": "90",
+      "auto": {
+        "placa": "KP27FY",
+        "b-sisa": "FPJI-SY8JDH2Q"
+      },
+      "date": "2025-05-06T01:45:00",
+      "gas_type": "diesel",
+      "quantity_lt": 33,
+      "amount": 330,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "74",
+      "admin_id": "1",
+      "gas_station_id": "9",
+      "customer_data_id": "76",
+      "auto": {
+        "placa": "E7000L",
+        "b-sisa": "G3MY-WA70BVS1"
+      },
+      "date": "2025-04-12T01:15:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 322,
+      "amount": 3220,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "75",
+      "admin_id": "3",
+      "gas_station_id": "5",
+      "customer_data_id": "41",
+      "auto": {
+        "placa": "LZ1U6M",
+        "b-sisa": "V3R6-4DGMTEE2"
+      },
+      "date": "2025-04-18T16:45:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 64,
+      "amount": 640,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "76",
+      "admin_id": "2",
+      "gas_station_id": "3",
+      "customer_data_id": "62",
+      "auto": {
+        "placa": "5K1AE5",
+        "b-sisa": "KMGV-SRN27XID"
+      },
+      "date": "2025-05-06T15:00:00",
+      "gas_type": "GNV",
+      "quantity_lt": 290,
+      "amount": 2900,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "77",
+      "admin_id": "3",
+      "gas_station_id": "3",
+      "customer_data_id": "159",
+      "auto": {
+        "placa": "I1ESCW",
+        "b-sisa": "CUCU-6G5LHP3R"
+      },
+      "date": "2025-05-29T12:30:00",
+      "gas_type": "GNV",
+      "quantity_lt": 380,
+      "amount": 3800,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "78",
+      "admin_id": "1",
+      "gas_station_id": "3",
+      "customer_data_id": "127",
+      "auto": {
+        "placa": "NMPVAN",
+        "b-sisa": "N7RP-F6P1SK5C"
+      },
+      "date": "2025-05-06T19:30:00",
+      "gas_type": "diesel",
+      "quantity_lt": 255,
+      "amount": 2550,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "79",
+      "admin_id": "2",
+      "gas_station_id": "5",
+      "customer_data_id": "102",
+      "auto": {
+        "placa": "3ONK0Q",
+        "b-sisa": "64KH-RNSDCBBZ"
+      },
+      "date": "2025-04-13T00:00:00",
+      "gas_type": "diesel",
+      "quantity_lt": 157,
+      "amount": 1570,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "80",
+      "admin_id": "2",
+      "gas_station_id": "8",
+      "customer_data_id": "47",
+      "auto": {
+        "placa": "N67EG5",
+        "b-sisa": "G8P9-NZN2VCTI"
+      },
+      "date": "2025-04-14T15:15:00",
+      "gas_type": "diesel",
+      "quantity_lt": 61,
+      "amount": 610,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "81",
+      "admin_id": "1",
+      "gas_station_id": "1",
+      "customer_data_id": "145",
+      "auto": {
+        "placa": "KVLSU8",
+        "b-sisa": "RMYO-H1IDMAXQ"
+      },
+      "date": "2025-06-10T18:45:00",
+      "gas_type": "diesel",
+      "quantity_lt": 323,
+      "amount": 3230,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "82",
+      "admin_id": "3",
+      "gas_station_id": "1",
+      "customer_data_id": "77",
+      "auto": {
+        "placa": "CSVTSF",
+        "b-sisa": "MBBG-SESYIVCH"
+      },
+      "date": "2025-04-20T20:45:00",
+      "gas_type": "diesel",
+      "quantity_lt": 251,
+      "amount": 2510,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "83",
+      "admin_id": "1",
+      "gas_station_id": "6",
+      "customer_data_id": "194",
+      "auto": {
+        "placa": "NF052B",
+        "b-sisa": "0KVV-KIQPL1XX"
+      },
+      "date": "2025-05-31T06:30:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 274,
+      "amount": 2740,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "84",
+      "admin_id": "1",
+      "gas_station_id": "10",
+      "customer_data_id": "50",
+      "auto": {
+        "placa": "D3QW7U",
+        "b-sisa": "JASB-BE82JDMJ"
+      },
+      "date": "2025-04-01T09:30:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 33,
+      "amount": 330,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "85",
+      "admin_id": "2",
+      "gas_station_id": "8",
+      "customer_data_id": "181",
+      "auto": {
+        "placa": "XBZY57",
+        "b-sisa": "UVZV-FWM6NTLN"
+      },
+      "date": "2025-04-18T14:45:00",
+      "gas_type": "diesel",
+      "quantity_lt": 213,
+      "amount": 2130,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "86",
+      "admin_id": "3",
+      "gas_station_id": "4",
+      "customer_data_id": "116",
+      "auto": {
+        "placa": "DC593A",
+        "b-sisa": "9JIS-X1LT0VJT"
+      },
+      "date": "2025-04-29T09:45:00",
+      "gas_type": "GNV",
+      "quantity_lt": 285,
+      "amount": 2850,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "87",
+      "admin_id": "2",
+      "gas_station_id": "8",
+      "customer_data_id": "159",
+      "auto": {
+        "placa": "RNWTHT",
+        "b-sisa": "1RC0-VR4VRNF3"
+      },
+      "date": "2025-06-06T15:30:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 360,
+      "amount": 3600,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "88",
+      "admin_id": "1",
+      "gas_station_id": "6",
+      "customer_data_id": "141",
+      "auto": {
+        "placa": "FTH5WP",
+        "b-sisa": "N587-GG13Z6A8"
+      },
+      "date": "2025-05-09T21:15:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 63,
+      "amount": 630,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "89",
+      "admin_id": "3",
+      "gas_station_id": "1",
+      "customer_data_id": "69",
+      "auto": {
+        "placa": "XJV9CB",
+        "b-sisa": "SBEI-P385OPJA"
+      },
+      "date": "2025-05-06T10:30:00",
+      "gas_type": "diesel",
+      "quantity_lt": 184,
+      "amount": 1840,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "90",
+      "admin_id": "2",
+      "gas_station_id": "8",
+      "customer_data_id": "25",
+      "auto": {
+        "placa": "95UIQI",
+        "b-sisa": "LKQE-Q5TSWMIU"
+      },
+      "date": "2025-06-14T03:45:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 297,
+      "amount": 2970,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "91",
+      "admin_id": "3",
+      "gas_station_id": "1",
+      "customer_data_id": "1",
+      "auto": {
+        "placa": "MU2AHQ",
+        "b-sisa": "3YKF-1V7DVVYE"
+      },
+      "date": "2025-04-17T01:15:00",
+      "gas_type": "diesel",
+      "quantity_lt": 145,
+      "amount": 1450,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "92",
+      "admin_id": "1",
+      "gas_station_id": "1",
+      "customer_data_id": "95",
+      "auto": {
+        "placa": "7R0K2L",
+        "b-sisa": "RSTZ-ZRU0AUHP"
+      },
+      "date": "2025-04-02T18:45:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 362,
+      "amount": 3620,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "93",
+      "admin_id": "2",
+      "gas_station_id": "7",
+      "customer_data_id": "14",
+      "auto": {
+        "placa": "0DW9MJ",
+        "b-sisa": "B64I-RFYB45NL"
+      },
+      "date": "2025-06-10T06:00:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 54,
+      "amount": 540,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "94",
+      "admin_id": "2",
+      "gas_station_id": "9",
+      "customer_data_id": "120",
+      "auto": {
+        "placa": "89XSN0",
+        "b-sisa": "PUBT-0MZOFT5G"
+      },
+      "date": "2025-06-14T08:45:00",
+      "gas_type": "GNV",
+      "quantity_lt": 233,
+      "amount": 2330,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "95",
+      "admin_id": "2",
+      "gas_station_id": "2",
+      "customer_data_id": "39",
+      "auto": {
+        "placa": "H4XTBL",
+        "b-sisa": "8M4F-7SIOM6A6"
+      },
+      "date": "2025-04-16T02:15:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 107,
+      "amount": 1070,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "96",
+      "admin_id": "1",
+      "gas_station_id": "2",
+      "customer_data_id": "164",
+      "auto": {
+        "placa": "B1CY8A",
+        "b-sisa": "BYDW-P6PW7EBV"
+      },
+      "date": "2025-06-01T22:45:00",
+      "gas_type": "GNV",
+      "quantity_lt": 123,
+      "amount": 1230,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "97",
+      "admin_id": "2",
+      "gas_station_id": "1",
+      "customer_data_id": "117",
+      "auto": {
+        "placa": "KKAHGN",
+        "b-sisa": "UQ4Q-BO5IOXO1"
+      },
+      "date": "2025-05-03T12:15:00",
+      "gas_type": "GNV",
+      "quantity_lt": 88,
+      "amount": 880,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "98",
+      "admin_id": "2",
+      "gas_station_id": "4",
+      "customer_data_id": "159",
+      "auto": {
+        "placa": "GMADS6",
+        "b-sisa": "4WTT-RFGAP2KJ"
+      },
+      "date": "2025-04-27T06:45:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 301,
+      "amount": 3010,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "99",
+      "admin_id": "1",
+      "gas_station_id": "9",
+      "customer_data_id": "171",
+      "auto": {
+        "placa": "S2I4SA",
+        "b-sisa": "YS6R-9T82WD6H"
+      },
+      "date": "2025-05-12T09:30:00",
+      "gas_type": "diesel",
+      "quantity_lt": 173,
+      "amount": 1730,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "100",
+      "admin_id": "3",
+      "gas_station_id": "3",
+      "customer_data_id": "17",
+      "auto": {
+        "placa": "C7Y6KK",
+        "b-sisa": "ELE9-GDVO0RIZ"
+      },
+      "date": "2025-04-04T08:45:00",
+      "gas_type": "diesel",
+      "quantity_lt": 322,
+      "amount": 3220,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "101",
+      "admin_id": "3",
+      "gas_station_id": "8",
+      "customer_data_id": "68",
+      "auto": {
+        "placa": "BPE6CH",
+        "b-sisa": "7JJX-0Y9IYINK"
+      },
+      "date": "2025-04-21T18:45:00",
+      "gas_type": "diesel",
+      "quantity_lt": 131,
+      "amount": 1310,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "102",
+      "admin_id": "3",
+      "gas_station_id": "4",
+      "customer_data_id": "109",
+      "auto": {
+        "placa": "8MFP5K",
+        "b-sisa": "UTKQ-QYLMUJIP"
+      },
+      "date": "2025-05-13T15:00:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 131,
+      "amount": 1310,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "103",
+      "admin_id": "2",
+      "gas_station_id": "7",
+      "customer_data_id": "149",
+      "auto": {
+        "placa": "6PUFTU",
+        "b-sisa": "NIVF-R06U1U6J"
+      },
+      "date": "2025-05-28T11:15:00",
+      "gas_type": "GNV",
+      "quantity_lt": 299,
+      "amount": 2990,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "104",
+      "admin_id": "3",
+      "gas_station_id": "5",
+      "customer_data_id": "150",
+      "auto": {
+        "placa": "VG3WD6",
+        "b-sisa": "Q6WS-YMMR99JW"
+      },
+      "date": "2025-05-05T20:15:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 197,
+      "amount": 1970,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "105",
+      "admin_id": "2",
+      "gas_station_id": "4",
+      "customer_data_id": "122",
+      "auto": {
+        "placa": "O5IY98",
+        "b-sisa": "80MH-IX47LIPC"
+      },
+      "date": "2025-05-16T12:30:00",
+      "gas_type": "GNV",
+      "quantity_lt": 248,
+      "amount": 2480,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "106",
+      "admin_id": "2",
+      "gas_station_id": "3",
+      "customer_data_id": "42",
+      "auto": {
+        "placa": "LQYISP",
+        "b-sisa": "1Z12-7RJP9A8Y"
+      },
+      "date": "2025-06-10T13:30:00",
+      "gas_type": "diesel",
+      "quantity_lt": 241,
+      "amount": 2410,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "107",
+      "admin_id": "2",
+      "gas_station_id": "4",
+      "customer_data_id": "116",
+      "auto": {
+        "placa": "CJX9K0",
+        "b-sisa": "18N8-IGTZV7S1"
+      },
+      "date": "2025-05-30T05:30:00",
+      "gas_type": "diesel",
+      "quantity_lt": 94,
+      "amount": 940,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "108",
+      "admin_id": "2",
+      "gas_station_id": "7",
+      "customer_data_id": "134",
+      "auto": {
+        "placa": "ME3OBW",
+        "b-sisa": "5LQO-62T7FEB6"
+      },
+      "date": "2025-05-05T06:30:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 132,
+      "amount": 1320,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "109",
+      "admin_id": "3",
+      "gas_station_id": "1",
+      "customer_data_id": "94",
+      "auto": {
+        "placa": "P2L8MY",
+        "b-sisa": "MYC7-3H1G83L7"
+      },
+      "date": "2025-05-23T00:45:00",
+      "gas_type": "GNV",
+      "quantity_lt": 148,
+      "amount": 1480,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "110",
+      "admin_id": "3",
+      "gas_station_id": "4",
+      "customer_data_id": "15",
+      "auto": {
+        "placa": "N2IJS4",
+        "b-sisa": "D6BO-5NMWT5UD"
+      },
+      "date": "2025-06-12T09:15:00",
+      "gas_type": "GNV",
+      "quantity_lt": 270,
+      "amount": 2700,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "111",
+      "admin_id": "2",
+      "gas_station_id": "3",
+      "customer_data_id": "98",
+      "auto": {
+        "placa": "74ZI7T",
+        "b-sisa": "TPLX-INAWJWQN"
+      },
+      "date": "2025-05-04T22:15:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 37,
+      "amount": 370,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "112",
+      "admin_id": "2",
+      "gas_station_id": "9",
+      "customer_data_id": "135",
+      "auto": {
+        "placa": "LZI4W9",
+        "b-sisa": "QE4Y-K3FEU01X"
+      },
+      "date": "2025-04-03T07:00:00",
+      "gas_type": "GNV",
+      "quantity_lt": 348,
+      "amount": 3480,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "113",
+      "admin_id": "3",
+      "gas_station_id": "2",
+      "customer_data_id": "128",
+      "auto": {
+        "placa": "IAML3D",
+        "b-sisa": "6CEG-J8LIHMEO"
+      },
+      "date": "2025-06-12T06:30:00",
+      "gas_type": "diesel",
+      "quantity_lt": 377,
+      "amount": 3770,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "114",
+      "admin_id": "1",
+      "gas_station_id": "3",
+      "customer_data_id": "138",
+      "auto": {
+        "placa": "BR1OJS",
+        "b-sisa": "NTF6-BYNGI8Q2"
+      },
+      "date": "2025-04-17T07:15:00",
+      "gas_type": "GNV",
+      "quantity_lt": 228,
+      "amount": 2280,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "115",
+      "admin_id": "3",
+      "gas_station_id": "4",
+      "customer_data_id": "166",
+      "auto": {
+        "placa": "2W9OHU",
+        "b-sisa": "KZUQ-HNRPG1EE"
+      },
+      "date": "2025-04-21T11:00:00",
+      "gas_type": "GNV",
+      "quantity_lt": 219,
+      "amount": 2190,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "116",
+      "admin_id": "1",
+      "gas_station_id": "6",
+      "customer_data_id": "126",
+      "auto": {
+        "placa": "KVTCLS",
+        "b-sisa": "RM17-0D9RGY5H"
+      },
+      "date": "2025-06-08T18:30:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 156,
+      "amount": 1560,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "117",
+      "admin_id": "2",
+      "gas_station_id": "10",
+      "customer_data_id": "174",
+      "auto": {
+        "placa": "SHZZNM",
+        "b-sisa": "NW5D-KRPZIAND"
+      },
+      "date": "2025-05-25T17:00:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 222,
+      "amount": 2220,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "118",
+      "admin_id": "1",
+      "gas_station_id": "5",
+      "customer_data_id": "98",
+      "auto": {
+        "placa": "T3R1CV",
+        "b-sisa": "IHWK-Y54A0JKP"
+      },
+      "date": "2025-04-21T10:00:00",
+      "gas_type": "GNV",
+      "quantity_lt": 175,
+      "amount": 1750,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "119",
+      "admin_id": "2",
+      "gas_station_id": "9",
+      "customer_data_id": "109",
+      "auto": {
+        "placa": "91Q56V",
+        "b-sisa": "FJWZ-G50IXUCU"
+      },
+      "date": "2025-04-21T22:15:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 106,
+      "amount": 1060,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "120",
+      "admin_id": "1",
+      "gas_station_id": "1",
+      "customer_data_id": "116",
+      "auto": {
+        "placa": "2K140S",
+        "b-sisa": "IKKT-7TBSWAS3"
+      },
+      "date": "2025-05-02T19:00:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 170,
+      "amount": 1700,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "121",
+      "admin_id": "3",
+      "gas_station_id": "5",
+      "customer_data_id": "49",
+      "auto": {
+        "placa": "UEW8I9",
+        "b-sisa": "3LER-5GAT0N10"
+      },
+      "date": "2025-05-25T19:30:00",
+      "gas_type": "diesel",
+      "quantity_lt": 392,
+      "amount": 3920,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "122",
+      "admin_id": "2",
+      "gas_station_id": "4",
+      "customer_data_id": "60",
+      "auto": {
+        "placa": "0BGD63",
+        "b-sisa": "879T-LQ8XH3KJ"
+      },
+      "date": "2025-05-28T07:30:00",
+      "gas_type": "GNV",
+      "quantity_lt": 100,
+      "amount": 1000,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "123",
+      "admin_id": "1",
+      "gas_station_id": "2",
+      "customer_data_id": "44",
+      "auto": {
+        "placa": "34A4F4",
+        "b-sisa": "2XGI-4O1ENOK9"
+      },
+      "date": "2025-06-13T09:45:00",
+      "gas_type": "GNV",
+      "quantity_lt": 155,
+      "amount": 1550,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "124",
+      "admin_id": "3",
+      "gas_station_id": "1",
+      "customer_data_id": "107",
+      "auto": {
+        "placa": "2QDB3Z",
+        "b-sisa": "O0CV-2J7TN7UY"
+      },
+      "date": "2025-06-13T21:30:00",
+      "gas_type": "GNV",
+      "quantity_lt": 297,
+      "amount": 2970,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "125",
+      "admin_id": "2",
+      "gas_station_id": "2",
+      "customer_data_id": "89",
+      "auto": {
+        "placa": "146KVP",
+        "b-sisa": "C4NF-R0CFOEJZ"
+      },
+      "date": "2025-05-04T07:15:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 191,
+      "amount": 1910,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "126",
+      "admin_id": "3",
+      "gas_station_id": "6",
+      "customer_data_id": "146",
+      "auto": {
+        "placa": "JAUEBA",
+        "b-sisa": "1AG4-HSBWFTRE"
+      },
+      "date": "2025-04-12T17:00:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 157,
+      "amount": 1570,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "127",
+      "admin_id": "1",
+      "gas_station_id": "6",
+      "customer_data_id": "19",
+      "auto": {
+        "placa": "FYIM0R",
+        "b-sisa": "I8ME-366534KQ"
+      },
+      "date": "2025-04-04T06:00:00",
+      "gas_type": "diesel",
+      "quantity_lt": 93,
+      "amount": 930,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "128",
+      "admin_id": "1",
+      "gas_station_id": "10",
+      "customer_data_id": "43",
+      "auto": {
+        "placa": "2IKUC2",
+        "b-sisa": "NALG-TTORONM0"
+      },
+      "date": "2025-04-30T02:45:00",
+      "gas_type": "GNV",
+      "quantity_lt": 69,
+      "amount": 690,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "129",
+      "admin_id": "2",
+      "gas_station_id": "1",
+      "customer_data_id": "143",
+      "auto": {
+        "placa": "URA78J",
+        "b-sisa": "PAYG-4CBQUEH4"
+      },
+      "date": "2025-04-20T23:30:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 90,
+      "amount": 900,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "130",
+      "admin_id": "2",
+      "gas_station_id": "1",
+      "customer_data_id": "122",
+      "auto": {
+        "placa": "SRPIXI",
+        "b-sisa": "MVHM-ZRD9W5MH"
+      },
+      "date": "2025-04-01T13:00:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 269,
+      "amount": 2690,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "131",
+      "admin_id": "1",
+      "gas_station_id": "8",
+      "customer_data_id": "74",
+      "auto": {
+        "placa": "ULTS9K",
+        "b-sisa": "8E9N-1LRGPY8N"
+      },
+      "date": "2025-06-08T22:45:00",
+      "gas_type": "diesel",
+      "quantity_lt": 372,
+      "amount": 3720,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "132",
+      "admin_id": "3",
+      "gas_station_id": "2",
+      "customer_data_id": "17",
+      "auto": {
+        "placa": "R5QHKO",
+        "b-sisa": "6EAE-Y10NIXQZ"
+      },
+      "date": "2025-04-13T07:45:00",
+      "gas_type": "diesel",
+      "quantity_lt": 384,
+      "amount": 3840,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "133",
+      "admin_id": "2",
+      "gas_station_id": "6",
+      "customer_data_id": "112",
+      "auto": {
+        "placa": "EZ9PCE",
+        "b-sisa": "BR2Y-KSUZ57ID"
+      },
+      "date": "2025-04-20T20:15:00",
+      "gas_type": "GNV",
+      "quantity_lt": 111,
+      "amount": 1110,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "134",
+      "admin_id": "2",
+      "gas_station_id": "1",
+      "customer_data_id": "157",
+      "auto": {
+        "placa": "18HHE1",
+        "b-sisa": "QLNY-4U7J955I"
+      },
+      "date": "2025-04-27T23:45:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 160,
+      "amount": 1600,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "135",
+      "admin_id": "3",
+      "gas_station_id": "8",
+      "customer_data_id": "163",
+      "auto": {
+        "placa": "AKECUD",
+        "b-sisa": "4QUA-GN04GC42"
+      },
+      "date": "2025-04-22T15:30:00",
+      "gas_type": "GNV",
+      "quantity_lt": 278,
+      "amount": 2780,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "136",
+      "admin_id": "3",
+      "gas_station_id": "7",
+      "customer_data_id": "153",
+      "auto": {
+        "placa": "4YLEBV",
+        "b-sisa": "TVEH-A8HZJDNN"
+      },
+      "date": "2025-04-05T19:00:00",
+      "gas_type": "GNV",
+      "quantity_lt": 257,
+      "amount": 2570,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "137",
+      "admin_id": "3",
+      "gas_station_id": "5",
+      "customer_data_id": "119",
+      "auto": {
+        "placa": "9VNWDX",
+        "b-sisa": "NDG0-W0AKHYX5"
+      },
+      "date": "2025-05-10T01:45:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 284,
+      "amount": 2840,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "138",
+      "admin_id": "2",
+      "gas_station_id": "10",
+      "customer_data_id": "200",
+      "auto": {
+        "placa": "G39V57",
+        "b-sisa": "FKUQ-UFUK34PB"
+      },
+      "date": "2025-04-28T08:00:00",
+      "gas_type": "diesel",
+      "quantity_lt": 326,
+      "amount": 3260,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "139",
+      "admin_id": "2",
+      "gas_station_id": "8",
+      "customer_data_id": "129",
+      "auto": {
+        "placa": "7C26W3",
+        "b-sisa": "KOGS-JIAU2547"
+      },
+      "date": "2025-04-20T08:30:00",
+      "gas_type": "diesel",
+      "quantity_lt": 358,
+      "amount": 3580,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "140",
+      "admin_id": "3",
+      "gas_station_id": "3",
+      "customer_data_id": "68",
+      "auto": {
+        "placa": "W9BDX5",
+        "b-sisa": "YY30-9WCZLSH0"
+      },
+      "date": "2025-06-12T08:15:00",
+      "gas_type": "GNV",
+      "quantity_lt": 358,
+      "amount": 3580,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "141",
+      "admin_id": "3",
+      "gas_station_id": "8",
+      "customer_data_id": "118",
+      "auto": {
+        "placa": "VG4LZH",
+        "b-sisa": "OGQ6-YLFAMVWO"
+      },
+      "date": "2025-06-04T10:15:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 131,
+      "amount": 1310,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "142",
+      "admin_id": "1",
+      "gas_station_id": "8",
+      "customer_data_id": "70",
+      "auto": {
+        "placa": "UFW8AM",
+        "b-sisa": "4HPL-DOVTNCWK"
+      },
+      "date": "2025-05-13T05:00:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 75,
+      "amount": 750,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "143",
+      "admin_id": "2",
+      "gas_station_id": "7",
+      "customer_data_id": "184",
+      "auto": {
+        "placa": "YA43OD",
+        "b-sisa": "Y9N6-FOGXG2LL"
+      },
+      "date": "2025-04-07T04:30:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 228,
+      "amount": 2280,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "144",
+      "admin_id": "3",
+      "gas_station_id": "4",
+      "customer_data_id": "1",
+      "auto": {
+        "placa": "B25FI9",
+        "b-sisa": "FCDH-NM8ZTLR6"
+      },
+      "date": "2025-04-18T02:00:00",
+      "gas_type": "GNV",
+      "quantity_lt": 288,
+      "amount": 2880,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "145",
+      "admin_id": "3",
+      "gas_station_id": "6",
+      "customer_data_id": "191",
+      "auto": {
+        "placa": "5W4UTX",
+        "b-sisa": "JQ64-V8OSIRSB"
+      },
+      "date": "2025-05-24T05:30:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 376,
+      "amount": 3760,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "146",
+      "admin_id": "1",
+      "gas_station_id": "10",
+      "customer_data_id": "112",
+      "auto": {
+        "placa": "751WXF",
+        "b-sisa": "MGDB-VUKT4R06"
+      },
+      "date": "2025-04-13T16:00:00",
+      "gas_type": "diesel",
+      "quantity_lt": 364,
+      "amount": 3640,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "147",
+      "admin_id": "3",
+      "gas_station_id": "6",
+      "customer_data_id": "183",
+      "auto": {
+        "placa": "BHIU7I",
+        "b-sisa": "P11Q-7F6HS61I"
+      },
+      "date": "2025-04-16T06:00:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 103,
+      "amount": 1030,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "148",
+      "admin_id": "2",
+      "gas_station_id": "2",
+      "customer_data_id": "17",
+      "auto": {
+        "placa": "LKEUX0",
+        "b-sisa": "3CYY-FVF0U0GO"
+      },
+      "date": "2025-04-17T02:45:00",
+      "gas_type": "diesel",
+      "quantity_lt": 200,
+      "amount": 2000,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "149",
+      "admin_id": "2",
+      "gas_station_id": "8",
+      "customer_data_id": "23",
+      "auto": {
+        "placa": "K6X7K4",
+        "b-sisa": "VTTK-9WLEQ0XP"
+      },
+      "date": "2025-04-28T13:00:00",
+      "gas_type": "diesel",
+      "quantity_lt": 95,
+      "amount": 950,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "150",
+      "admin_id": "2",
+      "gas_station_id": "5",
+      "customer_data_id": "86",
+      "auto": {
+        "placa": "JUXAIY",
+        "b-sisa": "NM0A-QXFA9EFG"
+      },
+      "date": "2025-06-09T03:15:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 226,
+      "amount": 2260,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "151",
+      "admin_id": "1",
+      "gas_station_id": "10",
+      "customer_data_id": "132",
+      "auto": {
+        "placa": "FPWFL7",
+        "b-sisa": "BBXC-DCAYCU82"
+      },
+      "date": "2025-06-13T15:15:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 120,
+      "amount": 1200,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "152",
+      "admin_id": "1",
+      "gas_station_id": "3",
+      "customer_data_id": "81",
+      "auto": {
+        "placa": "SVMR6O",
+        "b-sisa": "ZH74-U1HH9BPR"
+      },
+      "date": "2025-05-31T23:30:00",
+      "gas_type": "GNV",
+      "quantity_lt": 253,
+      "amount": 2530,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "153",
+      "admin_id": "1",
+      "gas_station_id": "2",
+      "customer_data_id": "88",
+      "auto": {
+        "placa": "8T2YNY",
+        "b-sisa": "DBMZ-0LGCHEWU"
+      },
+      "date": "2025-04-08T22:30:00",
+      "gas_type": "GNV",
+      "quantity_lt": 342,
+      "amount": 3420,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "154",
+      "admin_id": "1",
+      "gas_station_id": "10",
+      "customer_data_id": "136",
+      "auto": {
+        "placa": "XQJAG6",
+        "b-sisa": "3JBP-1MF4CQ2Z"
+      },
+      "date": "2025-04-22T23:00:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 146,
+      "amount": 1460,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "155",
+      "admin_id": "2",
+      "gas_station_id": "10",
+      "customer_data_id": "150",
+      "auto": {
+        "placa": "0948B6",
+        "b-sisa": "1XBT-Z5S5MNQH"
+      },
+      "date": "2025-04-01T15:15:00",
+      "gas_type": "GNV",
+      "quantity_lt": 319,
+      "amount": 3190,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "156",
+      "admin_id": "2",
+      "gas_station_id": "4",
+      "customer_data_id": "23",
+      "auto": {
+        "placa": "02F2M4",
+        "b-sisa": "9I1Z-N472YRTM"
+      },
+      "date": "2025-06-13T03:30:00",
+      "gas_type": "diesel",
+      "quantity_lt": 129,
+      "amount": 1290,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "157",
+      "admin_id": "3",
+      "gas_station_id": "10",
+      "customer_data_id": "194",
+      "auto": {
+        "placa": "KT70N2",
+        "b-sisa": "I19Q-TZ3Q35BP"
+      },
+      "date": "2025-04-17T16:30:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 137,
+      "amount": 1370,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "158",
+      "admin_id": "2",
+      "gas_station_id": "8",
+      "customer_data_id": "179",
+      "auto": {
+        "placa": "GIQEOH",
+        "b-sisa": "468E-VN8HRGFZ"
+      },
+      "date": "2025-04-14T05:15:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 232,
+      "amount": 2320,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "159",
+      "admin_id": "2",
+      "gas_station_id": "8",
+      "customer_data_id": "177",
+      "auto": {
+        "placa": "Q9TFUM",
+        "b-sisa": "FABK-09J99FT7"
+      },
+      "date": "2025-05-11T14:45:00",
+      "gas_type": "diesel",
+      "quantity_lt": 57,
+      "amount": 570,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "160",
+      "admin_id": "1",
+      "gas_station_id": "1",
+      "customer_data_id": "84",
+      "auto": {
+        "placa": "GJ3SSE",
+        "b-sisa": "WRH7-SOPIJNB0"
+      },
+      "date": "2025-04-27T17:30:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 320,
+      "amount": 3200,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "161",
+      "admin_id": "3",
+      "gas_station_id": "3",
+      "customer_data_id": "135",
+      "auto": {
+        "placa": "VPXOKX",
+        "b-sisa": "91PO-9HARX63H"
+      },
+      "date": "2025-05-10T08:15:00",
+      "gas_type": "diesel",
+      "quantity_lt": 188,
+      "amount": 1880,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "162",
+      "admin_id": "1",
+      "gas_station_id": "1",
+      "customer_data_id": "21",
+      "auto": {
+        "placa": "4Q05JQ",
+        "b-sisa": "72H8-EVRFD1TX"
+      },
+      "date": "2025-05-31T00:00:00",
+      "gas_type": "diesel",
+      "quantity_lt": 167,
+      "amount": 1670,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "163",
+      "admin_id": "2",
+      "gas_station_id": "8",
+      "customer_data_id": "34",
+      "auto": {
+        "placa": "JORAR7",
+        "b-sisa": "DLUU-O49YATAA"
+      },
+      "date": "2025-04-21T16:30:00",
+      "gas_type": "diesel",
+      "quantity_lt": 155,
+      "amount": 1550,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "164",
+      "admin_id": "3",
+      "gas_station_id": "6",
+      "customer_data_id": "59",
+      "auto": {
+        "placa": "P8TFYQ",
+        "b-sisa": "ADVZ-8BEV0PVG"
+      },
+      "date": "2025-05-04T05:15:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 144,
+      "amount": 1440,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "165",
+      "admin_id": "2",
+      "gas_station_id": "8",
+      "customer_data_id": "164",
+      "auto": {
+        "placa": "Q2WCN5",
+        "b-sisa": "JAZ8-GKZGMO1E"
+      },
+      "date": "2025-06-02T08:45:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 155,
+      "amount": 1550,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "166",
+      "admin_id": "1",
+      "gas_station_id": "6",
+      "customer_data_id": "143",
+      "auto": {
+        "placa": "444H59",
+        "b-sisa": "LPDE-0OAVDT67"
+      },
+      "date": "2025-05-11T12:30:00",
+      "gas_type": "GNV",
+      "quantity_lt": 339,
+      "amount": 3390,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "167",
+      "admin_id": "3",
+      "gas_station_id": "3",
+      "customer_data_id": "175",
+      "auto": {
+        "placa": "PLQEI7",
+        "b-sisa": "NZ6V-1Y6BCSAB"
+      },
+      "date": "2025-04-19T00:45:00",
+      "gas_type": "diesel",
+      "quantity_lt": 261,
+      "amount": 2610,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "168",
+      "admin_id": "1",
+      "gas_station_id": "4",
+      "customer_data_id": "93",
+      "auto": {
+        "placa": "RWHLM3",
+        "b-sisa": "JW76-YLK3BHRO"
+      },
+      "date": "2025-05-30T18:30:00",
+      "gas_type": "diesel",
+      "quantity_lt": 343,
+      "amount": 3430,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "169",
+      "admin_id": "1",
+      "gas_station_id": "10",
+      "customer_data_id": "84",
+      "auto": {
+        "placa": "46ZN3T",
+        "b-sisa": "KJG3-UEKF55ZJ"
+      },
+      "date": "2025-05-28T17:45:00",
+      "gas_type": "diesel",
+      "quantity_lt": 207,
+      "amount": 2070,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "170",
+      "admin_id": "1",
+      "gas_station_id": "7",
+      "customer_data_id": "34",
+      "auto": {
+        "placa": "DWS1CT",
+        "b-sisa": "VPZS-SZLE8RXI"
+      },
+      "date": "2025-04-21T14:45:00",
+      "gas_type": "GNV",
+      "quantity_lt": 147,
+      "amount": 1470,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "171",
+      "admin_id": "3",
+      "gas_station_id": "5",
+      "customer_data_id": "139",
+      "auto": {
+        "placa": "VQMJR3",
+        "b-sisa": "SQT8-TCQ1TA07"
+      },
+      "date": "2025-04-22T16:30:00",
+      "gas_type": "GNV",
+      "quantity_lt": 242,
+      "amount": 2420,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "172",
+      "admin_id": "1",
+      "gas_station_id": "2",
+      "customer_data_id": "87",
+      "auto": {
+        "placa": "TG6TQH",
+        "b-sisa": "90GS-CE72YEBS"
+      },
+      "date": "2025-04-10T11:45:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 377,
+      "amount": 3770,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "173",
+      "admin_id": "2",
+      "gas_station_id": "5",
+      "customer_data_id": "47",
+      "auto": {
+        "placa": "1M9SJ2",
+        "b-sisa": "Y5LE-JDLE2919"
+      },
+      "date": "2025-05-01T05:00:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 139,
+      "amount": 1390,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "174",
+      "admin_id": "1",
+      "gas_station_id": "5",
+      "customer_data_id": "67",
+      "auto": {
+        "placa": "OMLGCD",
+        "b-sisa": "C9IV-K625VH2I"
+      },
+      "date": "2025-04-16T11:00:00",
+      "gas_type": "GNV",
+      "quantity_lt": 386,
+      "amount": 3860,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "175",
+      "admin_id": "3",
+      "gas_station_id": "7",
+      "customer_data_id": "16",
+      "auto": {
+        "placa": "EWECSQ",
+        "b-sisa": "G1Q4-01RPCMJH"
+      },
+      "date": "2025-04-21T04:00:00",
+      "gas_type": "diesel",
+      "quantity_lt": 256,
+      "amount": 2560,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "176",
+      "admin_id": "1",
+      "gas_station_id": "6",
+      "customer_data_id": "153",
+      "auto": {
+        "placa": "KO6U9K",
+        "b-sisa": "5AZ3-VS9ZU0F2"
+      },
+      "date": "2025-04-19T02:00:00",
+      "gas_type": "GNV",
+      "quantity_lt": 396,
+      "amount": 3960,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "177",
+      "admin_id": "1",
+      "gas_station_id": "6",
+      "customer_data_id": "168",
+      "auto": {
+        "placa": "TQ7Z4F",
+        "b-sisa": "U3UI-TB956VZL"
+      },
+      "date": "2025-04-24T16:45:00",
+      "gas_type": "GNV",
+      "quantity_lt": 372,
+      "amount": 3720,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "178",
+      "admin_id": "1",
+      "gas_station_id": "3",
+      "customer_data_id": "101",
+      "auto": {
+        "placa": "4TOM76",
+        "b-sisa": "15JG-DAE3IE13"
+      },
+      "date": "2025-06-04T13:00:00",
+      "gas_type": "GNV",
+      "quantity_lt": 247,
+      "amount": 2470,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "179",
+      "admin_id": "3",
+      "gas_station_id": "6",
+      "customer_data_id": "158",
+      "auto": {
+        "placa": "LZR17T",
+        "b-sisa": "C3VI-XCJSRDPN"
+      },
+      "date": "2025-04-02T16:45:00",
+      "gas_type": "diesel",
+      "quantity_lt": 327,
+      "amount": 3270,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "180",
+      "admin_id": "2",
+      "gas_station_id": "4",
+      "customer_data_id": "52",
+      "auto": {
+        "placa": "ZPVAH7",
+        "b-sisa": "G5NI-DBO4MXX2"
+      },
+      "date": "2025-06-12T23:30:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 109,
+      "amount": 1090,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "181",
+      "admin_id": "1",
+      "gas_station_id": "5",
+      "customer_data_id": "191",
+      "auto": {
+        "placa": "A8AB2G",
+        "b-sisa": "HPYD-K7QKF0R9"
+      },
+      "date": "2025-04-08T00:30:00",
+      "gas_type": "GNV",
+      "quantity_lt": 332,
+      "amount": 3320,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "182",
+      "admin_id": "1",
+      "gas_station_id": "9",
+      "customer_data_id": "141",
+      "auto": {
+        "placa": "NAYPSY",
+        "b-sisa": "CCLJ-Q2J787V2"
+      },
+      "date": "2025-06-12T16:00:00",
+      "gas_type": "GNV",
+      "quantity_lt": 61,
+      "amount": 610,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "183",
+      "admin_id": "3",
+      "gas_station_id": "7",
+      "customer_data_id": "20",
+      "auto": {
+        "placa": "O7266E",
+        "b-sisa": "0YTD-M3K4Z70B"
+      },
+      "date": "2025-05-15T19:15:00",
+      "gas_type": "GNV",
+      "quantity_lt": 198,
+      "amount": 1980,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "184",
+      "admin_id": "1",
+      "gas_station_id": "4",
+      "customer_data_id": "179",
+      "auto": {
+        "placa": "THD2VJ",
+        "b-sisa": "YA9A-Y39NRX98"
+      },
+      "date": "2025-04-04T19:30:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 78,
+      "amount": 780,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "185",
+      "admin_id": "2",
+      "gas_station_id": "7",
+      "customer_data_id": "66",
+      "auto": {
+        "placa": "WL9F7X",
+        "b-sisa": "ULJN-KOIPAWLW"
+      },
+      "date": "2025-04-08T09:30:00",
+      "gas_type": "diesel",
+      "quantity_lt": 252,
+      "amount": 2520,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "186",
+      "admin_id": "1",
+      "gas_station_id": "3",
+      "customer_data_id": "75",
+      "auto": {
+        "placa": "WUO68N",
+        "b-sisa": "G413-O6J3XFAQ"
+      },
+      "date": "2025-06-13T11:30:00",
+      "gas_type": "diesel",
+      "quantity_lt": 200,
+      "amount": 2000,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "187",
+      "admin_id": "3",
+      "gas_station_id": "4",
+      "customer_data_id": "133",
+      "auto": {
+        "placa": "DCLCN1",
+        "b-sisa": "6STD-2JR0X4WT"
+      },
+      "date": "2025-05-27T03:15:00",
+      "gas_type": "diesel",
+      "quantity_lt": 355,
+      "amount": 3550,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "188",
+      "admin_id": "2",
+      "gas_station_id": "3",
+      "customer_data_id": "63",
+      "auto": {
+        "placa": "25OSGS",
+        "b-sisa": "O9L6-877RICWN"
+      },
+      "date": "2025-05-03T05:15:00",
+      "gas_type": "diesel",
+      "quantity_lt": 30,
+      "amount": 300,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "189",
+      "admin_id": "2",
+      "gas_station_id": "4",
+      "customer_data_id": "6",
+      "auto": {
+        "placa": "XJ60ST",
+        "b-sisa": "6DQP-RCX3GIA8"
+      },
+      "date": "2025-05-04T20:15:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 387,
+      "amount": 3870,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "190",
+      "admin_id": "1",
+      "gas_station_id": "5",
+      "customer_data_id": "69",
+      "auto": {
+        "placa": "3FZDQA",
+        "b-sisa": "NC07-QC2WS7Y6"
+      },
+      "date": "2025-05-10T01:15:00",
+      "gas_type": "GNV",
+      "quantity_lt": 85,
+      "amount": 850,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "191",
+      "admin_id": "2",
+      "gas_station_id": "10",
+      "customer_data_id": "35",
+      "auto": {
+        "placa": "1YHQKT",
+        "b-sisa": "7TIM-BT4CLWIZ"
+      },
+      "date": "2025-04-19T01:15:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 339,
+      "amount": 3390,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "192",
+      "admin_id": "3",
+      "gas_station_id": "3",
+      "customer_data_id": "161",
+      "auto": {
+        "placa": "J7L9BX",
+        "b-sisa": "31BV-NBMCVOPS"
+      },
+      "date": "2025-05-23T13:00:00",
+      "gas_type": "GNV",
+      "quantity_lt": 76,
+      "amount": 760,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "193",
+      "admin_id": "2",
+      "gas_station_id": "6",
+      "customer_data_id": "154",
+      "auto": {
+        "placa": "WG188Q",
+        "b-sisa": "UWB7-I0CD82LR"
+      },
+      "date": "2025-05-23T05:45:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 64,
+      "amount": 640,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "194",
+      "admin_id": "1",
+      "gas_station_id": "5",
+      "customer_data_id": "83",
+      "auto": {
+        "placa": "GBN4CG",
+        "b-sisa": "SRCC-HMLKY3DJ"
+      },
+      "date": "2025-05-15T09:15:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 242,
+      "amount": 2420,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "195",
+      "admin_id": "2",
+      "gas_station_id": "1",
+      "customer_data_id": "45",
+      "auto": {
+        "placa": "SBAILX",
+        "b-sisa": "K7F4-HLR5T5J5"
+      },
+      "date": "2025-05-28T06:15:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 362,
+      "amount": 3620,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "196",
+      "admin_id": "3",
+      "gas_station_id": "6",
+      "customer_data_id": "129",
+      "auto": {
+        "placa": "YLI7BQ",
+        "b-sisa": "TUDJ-5J7V07RH"
+      },
+      "date": "2025-05-27T18:15:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 32,
+      "amount": 320,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "197",
+      "admin_id": "1",
+      "gas_station_id": "10",
+      "customer_data_id": "33",
+      "auto": {
+        "placa": "DMIT5C",
+        "b-sisa": "4FHM-1ANM82V3"
+      },
+      "date": "2025-04-13T02:15:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 359,
+      "amount": 3590,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "198",
+      "admin_id": "3",
+      "gas_station_id": "5",
+      "customer_data_id": "35",
+      "auto": {
+        "placa": "SGRJLM",
+        "b-sisa": "K69H-N7QO7UNO"
+      },
+      "date": "2025-04-06T06:45:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 313,
+      "amount": 3130,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "199",
+      "admin_id": "3",
+      "gas_station_id": "2",
+      "customer_data_id": "30",
+      "auto": {
+        "placa": "XKVSSA",
+        "b-sisa": "N72K-HHN8BCH4"
+      },
+      "date": "2025-05-19T15:30:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 32,
+      "amount": 320,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "200",
+      "admin_id": "2",
+      "gas_station_id": "2",
+      "customer_data_id": "27",
+      "auto": {
+        "placa": "2E2HXF",
+        "b-sisa": "NHGO-B2UAFAIX"
+      },
+      "date": "2025-06-04T05:30:00",
+      "gas_type": "diesel",
+      "quantity_lt": 336,
+      "amount": 3360,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "201",
+      "admin_id": "2",
+      "gas_station_id": "9",
+      "customer_data_id": "158",
+      "auto": {
+        "placa": "PRBUVG",
+        "b-sisa": "I4EG-F46AG0AB"
+      },
+      "date": "2025-04-01T06:15:00",
+      "gas_type": "diesel",
+      "quantity_lt": 139,
+      "amount": 1390,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "202",
+      "admin_id": "3",
+      "gas_station_id": "8",
+      "customer_data_id": "14",
+      "auto": {
+        "placa": "J3FVAY",
+        "b-sisa": "ZYCK-NS0015FQ"
+      },
+      "date": "2025-05-03T16:00:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 228,
+      "amount": 2280,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "203",
+      "admin_id": "3",
+      "gas_station_id": "9",
+      "customer_data_id": "176",
+      "auto": {
+        "placa": "CQP9SN",
+        "b-sisa": "WPX8-VWJ7T89A"
+      },
+      "date": "2025-05-20T04:45:00",
+      "gas_type": "GNV",
+      "quantity_lt": 86,
+      "amount": 860,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "204",
+      "admin_id": "3",
+      "gas_station_id": "9",
+      "customer_data_id": "167",
+      "auto": {
+        "placa": "7ZBW4V",
+        "b-sisa": "JCC9-MS24C984"
+      },
+      "date": "2025-04-10T18:00:00",
+      "gas_type": "GNV",
+      "quantity_lt": 379,
+      "amount": 3790,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "205",
+      "admin_id": "1",
+      "gas_station_id": "6",
+      "customer_data_id": "56",
+      "auto": {
+        "placa": "V8V5U3",
+        "b-sisa": "RRM5-Z0E9DQHU"
+      },
+      "date": "2025-05-06T23:00:00",
+      "gas_type": "GNV",
+      "quantity_lt": 175,
+      "amount": 1750,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "206",
+      "admin_id": "1",
+      "gas_station_id": "9",
+      "customer_data_id": "157",
+      "auto": {
+        "placa": "4E4ERA",
+        "b-sisa": "RD4I-RF27ISZH"
+      },
+      "date": "2025-04-06T13:45:00",
+      "gas_type": "diesel",
+      "quantity_lt": 375,
+      "amount": 3750,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "207",
+      "admin_id": "2",
+      "gas_station_id": "8",
+      "customer_data_id": "38",
+      "auto": {
+        "placa": "64WBGM",
+        "b-sisa": "76M6-J5PB6VAK"
+      },
+      "date": "2025-04-07T21:30:00",
+      "gas_type": "GNV",
+      "quantity_lt": 34,
+      "amount": 340,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "208",
+      "admin_id": "2",
+      "gas_station_id": "1",
+      "customer_data_id": "40",
+      "auto": {
+        "placa": "D4S1A4",
+        "b-sisa": "26FK-S8YXUP49"
+      },
+      "date": "2025-04-03T16:15:00",
+      "gas_type": "diesel",
+      "quantity_lt": 384,
+      "amount": 3840,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "209",
+      "admin_id": "3",
+      "gas_station_id": "9",
+      "customer_data_id": "198",
+      "auto": {
+        "placa": "ZGZJY0",
+        "b-sisa": "U26B-P2GKEUV1"
+      },
+      "date": "2025-05-14T22:00:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 338,
+      "amount": 3380,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "210",
+      "admin_id": "3",
+      "gas_station_id": "7",
+      "customer_data_id": "100",
+      "auto": {
+        "placa": "SE5JGY",
+        "b-sisa": "7X0G-TA55U7PT"
+      },
+      "date": "2025-05-27T06:00:00",
+      "gas_type": "GNV",
+      "quantity_lt": 26,
+      "amount": 260,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "211",
+      "admin_id": "3",
+      "gas_station_id": "3",
+      "customer_data_id": "141",
+      "auto": {
+        "placa": "TJAS7N",
+        "b-sisa": "QSJB-7OUNKD8C"
+      },
+      "date": "2025-06-12T13:00:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 89,
+      "amount": 890,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "212",
+      "admin_id": "1",
+      "gas_station_id": "10",
+      "customer_data_id": "20",
+      "auto": {
+        "placa": "CN9OUK",
+        "b-sisa": "XGY4-8DV8XLTC"
+      },
+      "date": "2025-05-03T04:15:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 331,
+      "amount": 3310,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "213",
+      "admin_id": "3",
+      "gas_station_id": "7",
+      "customer_data_id": "77",
+      "auto": {
+        "placa": "9JSFTW",
+        "b-sisa": "PA8Q-DW8608PF"
+      },
+      "date": "2025-04-03T00:30:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 174,
+      "amount": 1740,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "214",
+      "admin_id": "1",
+      "gas_station_id": "9",
+      "customer_data_id": "46",
+      "auto": {
+        "placa": "L4TQDE",
+        "b-sisa": "QP2T-T4CMEMUF"
+      },
+      "date": "2025-05-11T12:00:00",
+      "gas_type": "GNV",
+      "quantity_lt": 145,
+      "amount": 1450,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "215",
+      "admin_id": "2",
+      "gas_station_id": "3",
+      "customer_data_id": "100",
+      "auto": {
+        "placa": "HU6HX9",
+        "b-sisa": "U9BK-SBA2UIA7"
+      },
+      "date": "2025-06-08T11:30:00",
+      "gas_type": "GNV",
+      "quantity_lt": 355,
+      "amount": 3550,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "216",
+      "admin_id": "2",
+      "gas_station_id": "7",
+      "customer_data_id": "99",
+      "auto": {
+        "placa": "MUK3C6",
+        "b-sisa": "R565-F84HJ9Z2"
+      },
+      "date": "2025-05-30T22:15:00",
+      "gas_type": "diesel",
+      "quantity_lt": 216,
+      "amount": 2160,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "217",
+      "admin_id": "3",
+      "gas_station_id": "5",
+      "customer_data_id": "66",
+      "auto": {
+        "placa": "BIHI9I",
+        "b-sisa": "9ILM-Z02F2CP1"
+      },
+      "date": "2025-04-25T06:15:00",
+      "gas_type": "GNV",
+      "quantity_lt": 300,
+      "amount": 3000,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "218",
+      "admin_id": "3",
+      "gas_station_id": "10",
+      "customer_data_id": "11",
+      "auto": {
+        "placa": "EC7CEM",
+        "b-sisa": "I6SO-BRDSGRIX"
+      },
+      "date": "2025-06-02T16:45:00",
+      "gas_type": "diesel",
+      "quantity_lt": 110,
+      "amount": 1100,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "219",
+      "admin_id": "2",
+      "gas_station_id": "4",
+      "customer_data_id": "38",
+      "auto": {
+        "placa": "PUK71F",
+        "b-sisa": "M3X6-STJ6C87U"
+      },
+      "date": "2025-04-10T23:45:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 367,
+      "amount": 3670,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "220",
+      "admin_id": "1",
+      "gas_station_id": "4",
+      "customer_data_id": "37",
+      "auto": {
+        "placa": "GQVGHY",
+        "b-sisa": "I1CC-318LCV08"
+      },
+      "date": "2025-04-18T02:30:00",
+      "gas_type": "GNV",
+      "quantity_lt": 147,
+      "amount": 1470,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "221",
+      "admin_id": "2",
+      "gas_station_id": "3",
+      "customer_data_id": "30",
+      "auto": {
+        "placa": "LG0LB7",
+        "b-sisa": "BTMJ-3UBLAPB0"
+      },
+      "date": "2025-06-01T14:00:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 286,
+      "amount": 2860,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "222",
+      "admin_id": "1",
+      "gas_station_id": "7",
+      "customer_data_id": "98",
+      "auto": {
+        "placa": "D70T6L",
+        "b-sisa": "3KLT-NM7F7EOG"
+      },
+      "date": "2025-05-19T20:30:00",
+      "gas_type": "GNV",
+      "quantity_lt": 202,
+      "amount": 2020,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "223",
+      "admin_id": "3",
+      "gas_station_id": "9",
+      "customer_data_id": "137",
+      "auto": {
+        "placa": "KIR4GJ",
+        "b-sisa": "Y7SA-GWWJ5MR2"
+      },
+      "date": "2025-04-15T22:30:00",
+      "gas_type": "GNV",
+      "quantity_lt": 230,
+      "amount": 2300,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "224",
+      "admin_id": "2",
+      "gas_station_id": "10",
+      "customer_data_id": "105",
+      "auto": {
+        "placa": "GCIOAK",
+        "b-sisa": "AJH7-04NTUFKN"
+      },
+      "date": "2025-04-16T04:30:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 216,
+      "amount": 2160,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "225",
+      "admin_id": "1",
+      "gas_station_id": "2",
+      "customer_data_id": "166",
+      "auto": {
+        "placa": "MH0W7I",
+        "b-sisa": "YRR4-12000R4N"
+      },
+      "date": "2025-05-09T08:15:00",
+      "gas_type": "GNV",
+      "quantity_lt": 346,
+      "amount": 3460,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "226",
+      "admin_id": "3",
+      "gas_station_id": "1",
+      "customer_data_id": "143",
+      "auto": {
+        "placa": "RLGZ1W",
+        "b-sisa": "PXQ4-OAL7R02U"
+      },
+      "date": "2025-06-09T08:30:00",
+      "gas_type": "diesel",
+      "quantity_lt": 105,
+      "amount": 1050,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "227",
+      "admin_id": "1",
+      "gas_station_id": "3",
+      "customer_data_id": "21",
+      "auto": {
+        "placa": "VQYKX3",
+        "b-sisa": "U2HI-F59ROKFX"
+      },
+      "date": "2025-04-07T06:45:00",
+      "gas_type": "diesel",
+      "quantity_lt": 297,
+      "amount": 2970,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "228",
+      "admin_id": "3",
+      "gas_station_id": "6",
+      "customer_data_id": "113",
+      "auto": {
+        "placa": "7LAMMF",
+        "b-sisa": "X3H9-H8YBASW3"
+      },
+      "date": "2025-05-29T06:00:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 268,
+      "amount": 2680,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "229",
+      "admin_id": "1",
+      "gas_station_id": "3",
+      "customer_data_id": "40",
+      "auto": {
+        "placa": "6HPO47",
+        "b-sisa": "3ATO-VAYU0A9V"
+      },
+      "date": "2025-06-06T21:30:00",
+      "gas_type": "diesel",
+      "quantity_lt": 132,
+      "amount": 1320,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "230",
+      "admin_id": "3",
+      "gas_station_id": "9",
+      "customer_data_id": "48",
+      "auto": {
+        "placa": "6BIUL4",
+        "b-sisa": "LIZ7-1Y245V2B"
+      },
+      "date": "2025-04-02T20:45:00",
+      "gas_type": "GNV",
+      "quantity_lt": 183,
+      "amount": 1830,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "231",
+      "admin_id": "2",
+      "gas_station_id": "10",
+      "customer_data_id": "133",
+      "auto": {
+        "placa": "GQM6Q2",
+        "b-sisa": "CMSW-R2DGLZMM"
+      },
+      "date": "2025-06-13T11:15:00",
+      "gas_type": "diesel",
+      "quantity_lt": 233,
+      "amount": 2330,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "232",
+      "admin_id": "2",
+      "gas_station_id": "3",
+      "customer_data_id": "190",
+      "auto": {
+        "placa": "SZFSXS",
+        "b-sisa": "7T64-84L46B5S"
+      },
+      "date": "2025-06-05T10:15:00",
+      "gas_type": "GNV",
+      "quantity_lt": 32,
+      "amount": 320,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "233",
+      "admin_id": "2",
+      "gas_station_id": "4",
+      "customer_data_id": "32",
+      "auto": {
+        "placa": "3DDDQ1",
+        "b-sisa": "I7T7-UNFKP37Q"
+      },
+      "date": "2025-04-27T00:30:00",
+      "gas_type": "GNV",
+      "quantity_lt": 100,
+      "amount": 1000,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "234",
+      "admin_id": "3",
+      "gas_station_id": "7",
+      "customer_data_id": "48",
+      "auto": {
+        "placa": "FVQKOE",
+        "b-sisa": "0LD4-3RS6GWCB"
+      },
+      "date": "2025-04-25T03:00:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 113,
+      "amount": 1130,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "235",
+      "admin_id": "1",
+      "gas_station_id": "8",
+      "customer_data_id": "74",
+      "auto": {
+        "placa": "GKZUEC",
+        "b-sisa": "4QPN-RGONO73V"
+      },
+      "date": "2025-05-17T14:15:00",
+      "gas_type": "GNV",
+      "quantity_lt": 142,
+      "amount": 1420,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "236",
+      "admin_id": "3",
+      "gas_station_id": "10",
+      "customer_data_id": "47",
+      "auto": {
+        "placa": "SUSM83",
+        "b-sisa": "WHB6-DDOZ78BJ"
+      },
+      "date": "2025-04-13T12:00:00",
+      "gas_type": "diesel",
+      "quantity_lt": 123,
+      "amount": 1230,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "237",
+      "admin_id": "1",
+      "gas_station_id": "10",
+      "customer_data_id": "22",
+      "auto": {
+        "placa": "WBXCU3",
+        "b-sisa": "30ZJ-KARUJNF5"
+      },
+      "date": "2025-05-08T01:00:00",
+      "gas_type": "GNV",
+      "quantity_lt": 48,
+      "amount": 480,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "238",
+      "admin_id": "3",
+      "gas_station_id": "3",
+      "customer_data_id": "100",
+      "auto": {
+        "placa": "ZJ3KVK",
+        "b-sisa": "F0AF-8YL9XYE4"
+      },
+      "date": "2025-04-09T11:15:00",
+      "gas_type": "diesel",
+      "quantity_lt": 80,
+      "amount": 800,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "239",
+      "admin_id": "1",
+      "gas_station_id": "9",
+      "customer_data_id": "26",
+      "auto": {
+        "placa": "KTCMA9",
+        "b-sisa": "59DN-2RNF4AZN"
+      },
+      "date": "2025-04-07T12:45:00",
+      "gas_type": "GNV",
+      "quantity_lt": 389,
+      "amount": 3890,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "240",
+      "admin_id": "3",
+      "gas_station_id": "5",
+      "customer_data_id": "48",
+      "auto": {
+        "placa": "ABVCWT",
+        "b-sisa": "7529-N20ZV8IA"
+      },
+      "date": "2025-06-10T10:45:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 158,
+      "amount": 1580,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "241",
+      "admin_id": "1",
+      "gas_station_id": "5",
+      "customer_data_id": "172",
+      "auto": {
+        "placa": "7XA873",
+        "b-sisa": "O1R7-KGA2YO0U"
+      },
+      "date": "2025-05-21T15:15:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 154,
+      "amount": 1540,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "242",
+      "admin_id": "1",
+      "gas_station_id": "6",
+      "customer_data_id": "107",
+      "auto": {
+        "placa": "LKMDEY",
+        "b-sisa": "016F-RQN1Q2DS"
+      },
+      "date": "2025-04-01T20:30:00",
+      "gas_type": "GNV",
+      "quantity_lt": 325,
+      "amount": 3250,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "243",
+      "admin_id": "3",
+      "gas_station_id": "5",
+      "customer_data_id": "61",
+      "auto": {
+        "placa": "3419MS",
+        "b-sisa": "DE6T-JFRKUSCG"
+      },
+      "date": "2025-04-28T15:15:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 311,
+      "amount": 3110,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "244",
+      "admin_id": "1",
+      "gas_station_id": "7",
+      "customer_data_id": "16",
+      "auto": {
+        "placa": "F85TSZ",
+        "b-sisa": "YSV5-R9UABDSQ"
+      },
+      "date": "2025-04-13T23:00:00",
+      "gas_type": "GNV",
+      "quantity_lt": 117,
+      "amount": 1170,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "245",
+      "admin_id": "2",
+      "gas_station_id": "8",
+      "customer_data_id": "168",
+      "auto": {
+        "placa": "7EQCD0",
+        "b-sisa": "N2ZL-RF5UMNQO"
+      },
+      "date": "2025-05-05T05:15:00",
+      "gas_type": "diesel",
+      "quantity_lt": 31,
+      "amount": 310,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "246",
+      "admin_id": "2",
+      "gas_station_id": "6",
+      "customer_data_id": "143",
+      "auto": {
+        "placa": "MQHBY4",
+        "b-sisa": "YUGP-2H0TTUJ5"
+      },
+      "date": "2025-06-11T01:30:00",
+      "gas_type": "GNV",
+      "quantity_lt": 196,
+      "amount": 1960,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "247",
+      "admin_id": "3",
+      "gas_station_id": "1",
+      "customer_data_id": "181",
+      "auto": {
+        "placa": "VTTO8O",
+        "b-sisa": "SK9D-JCDTK7P3"
+      },
+      "date": "2025-04-21T08:00:00",
+      "gas_type": "GNV",
+      "quantity_lt": 124,
+      "amount": 1240,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "248",
+      "admin_id": "2",
+      "gas_station_id": "4",
+      "customer_data_id": "128",
+      "auto": {
+        "placa": "5LCR63",
+        "b-sisa": "RQ4I-AFUYXVPR"
+      },
+      "date": "2025-05-01T11:30:00",
+      "gas_type": "diesel",
+      "quantity_lt": 336,
+      "amount": 3360,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "249",
+      "admin_id": "2",
+      "gas_station_id": "7",
+      "customer_data_id": "22",
+      "auto": {
+        "placa": "T4QZU8",
+        "b-sisa": "B2V9-V4E5VSNX"
+      },
+      "date": "2025-05-02T03:15:00",
+      "gas_type": "GNV",
+      "quantity_lt": 51,
+      "amount": 510,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "250",
+      "admin_id": "2",
+      "gas_station_id": "7",
+      "customer_data_id": "102",
+      "auto": {
+        "placa": "3AVUOD",
+        "b-sisa": "HYL5-SXZ7WD2V"
+      },
+      "date": "2025-06-05T09:45:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 205,
+      "amount": 2050,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "251",
+      "admin_id": "1",
+      "gas_station_id": "10",
+      "customer_data_id": "155",
+      "auto": {
+        "placa": "QOC1NG",
+        "b-sisa": "885T-XX369DJH"
+      },
+      "date": "2025-05-12T12:15:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 248,
+      "amount": 2480,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "252",
+      "admin_id": "1",
+      "gas_station_id": "1",
+      "customer_data_id": "5",
+      "auto": {
+        "placa": "D36A57",
+        "b-sisa": "OPJT-YI4VHLXI"
+      },
+      "date": "2025-05-17T02:30:00",
+      "gas_type": "GNV",
+      "quantity_lt": 79,
+      "amount": 790,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "253",
+      "admin_id": "3",
+      "gas_station_id": "9",
+      "customer_data_id": "116",
+      "auto": {
+        "placa": "5SCZTI",
+        "b-sisa": "6I16-XZHCNW72"
+      },
+      "date": "2025-05-27T13:00:00",
+      "gas_type": "GNV",
+      "quantity_lt": 211,
+      "amount": 2110,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "254",
+      "admin_id": "1",
+      "gas_station_id": "9",
+      "customer_data_id": "86",
+      "auto": {
+        "placa": "TU7YYS",
+        "b-sisa": "FS6Q-4YGMLYK5"
+      },
+      "date": "2025-06-11T21:45:00",
+      "gas_type": "GNV",
+      "quantity_lt": 304,
+      "amount": 3040,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "255",
+      "admin_id": "2",
+      "gas_station_id": "3",
+      "customer_data_id": "26",
+      "auto": {
+        "placa": "6ZM7H7",
+        "b-sisa": "U28V-ZV405Y85"
+      },
+      "date": "2025-05-30T15:15:00",
+      "gas_type": "diesel",
+      "quantity_lt": 302,
+      "amount": 3020,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "256",
+      "admin_id": "2",
+      "gas_station_id": "1",
+      "customer_data_id": "49",
+      "auto": {
+        "placa": "ZNT471",
+        "b-sisa": "0BG6-VNXM9QV5"
+      },
+      "date": "2025-05-04T19:30:00",
+      "gas_type": "GNV",
+      "quantity_lt": 125,
+      "amount": 1250,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "257",
+      "admin_id": "3",
+      "gas_station_id": "6",
+      "customer_data_id": "116",
+      "auto": {
+        "placa": "7RW885",
+        "b-sisa": "ATFW-7K7IMTQL"
+      },
+      "date": "2025-06-11T22:00:00",
+      "gas_type": "diesel",
+      "quantity_lt": 229,
+      "amount": 2290,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "258",
+      "admin_id": "3",
+      "gas_station_id": "1",
+      "customer_data_id": "38",
+      "auto": {
+        "placa": "6CA9MC",
+        "b-sisa": "9A89-TI0OGJ6Q"
+      },
+      "date": "2025-06-14T06:00:00",
+      "gas_type": "diesel",
+      "quantity_lt": 32,
+      "amount": 320,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "259",
+      "admin_id": "1",
+      "gas_station_id": "2",
+      "customer_data_id": "15",
+      "auto": {
+        "placa": "HYGAMK",
+        "b-sisa": "R52Y-26J72B0G"
+      },
+      "date": "2025-05-07T22:00:00",
+      "gas_type": "diesel",
+      "quantity_lt": 152,
+      "amount": 1520,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "260",
+      "admin_id": "1",
+      "gas_station_id": "8",
+      "customer_data_id": "102",
+      "auto": {
+        "placa": "GYXMH1",
+        "b-sisa": "ZYFC-OBV78GAZ"
+      },
+      "date": "2025-06-13T07:30:00",
+      "gas_type": "diesel",
+      "quantity_lt": 187,
+      "amount": 1870,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "261",
+      "admin_id": "3",
+      "gas_station_id": "4",
+      "customer_data_id": "175",
+      "auto": {
+        "placa": "M42QZI",
+        "b-sisa": "J7SZ-12S67DPK"
+      },
+      "date": "2025-05-17T14:15:00",
+      "gas_type": "GNV",
+      "quantity_lt": 374,
+      "amount": 3740,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "262",
+      "admin_id": "3",
+      "gas_station_id": "1",
+      "customer_data_id": "145",
+      "auto": {
+        "placa": "ALWXHF",
+        "b-sisa": "AV2Y-9ML2JLQ3"
+      },
+      "date": "2025-06-13T23:45:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 149,
+      "amount": 1490,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "263",
+      "admin_id": "1",
+      "gas_station_id": "1",
+      "customer_data_id": "103",
+      "auto": {
+        "placa": "WZONLU",
+        "b-sisa": "9KBP-QDNHY4T5"
+      },
+      "date": "2025-04-22T07:15:00",
+      "gas_type": "diesel",
+      "quantity_lt": 287,
+      "amount": 2870,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "264",
+      "admin_id": "2",
+      "gas_station_id": "6",
+      "customer_data_id": "142",
+      "auto": {
+        "placa": "PMCSF1",
+        "b-sisa": "G1YK-ISW9VACE"
+      },
+      "date": "2025-05-04T03:00:00",
+      "gas_type": "GNV",
+      "quantity_lt": 215,
+      "amount": 2150,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "265",
+      "admin_id": "1",
+      "gas_station_id": "9",
+      "customer_data_id": "162",
+      "auto": {
+        "placa": "N111SL",
+        "b-sisa": "PQIZ-MADFGA0A"
+      },
+      "date": "2025-04-28T09:45:00",
+      "gas_type": "diesel",
+      "quantity_lt": 160,
+      "amount": 1600,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "266",
+      "admin_id": "2",
+      "gas_station_id": "9",
+      "customer_data_id": "55",
+      "auto": {
+        "placa": "DRFK57",
+        "b-sisa": "DMSE-UL62U8PU"
+      },
+      "date": "2025-06-11T10:30:00",
+      "gas_type": "diesel",
+      "quantity_lt": 172,
+      "amount": 1720,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "267",
+      "admin_id": "3",
+      "gas_station_id": "9",
+      "customer_data_id": "98",
+      "auto": {
+        "placa": "RNEHX0",
+        "b-sisa": "9AZ5-SXT1BRD5"
+      },
+      "date": "2025-04-01T21:15:00",
+      "gas_type": "GNV",
+      "quantity_lt": 218,
+      "amount": 2180,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "268",
+      "admin_id": "2",
+      "gas_station_id": "10",
+      "customer_data_id": "155",
+      "auto": {
+        "placa": "VQE1UG",
+        "b-sisa": "QJ2D-QNMZPG72"
+      },
+      "date": "2025-04-14T15:30:00",
+      "gas_type": "GNV",
+      "quantity_lt": 84,
+      "amount": 840,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "269",
+      "admin_id": "1",
+      "gas_station_id": "2",
+      "customer_data_id": "200",
+      "auto": {
+        "placa": "TAK1VX",
+        "b-sisa": "4WQT-A85MDRUI"
+      },
+      "date": "2025-05-13T16:15:00",
+      "gas_type": "diesel",
+      "quantity_lt": 204,
+      "amount": 2040,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "270",
+      "admin_id": "1",
+      "gas_station_id": "10",
+      "customer_data_id": "105",
+      "auto": {
+        "placa": "X5PO3D",
+        "b-sisa": "4L89-9TJTRVN6"
+      },
+      "date": "2025-06-05T03:45:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 239,
+      "amount": 2390,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "271",
+      "admin_id": "3",
+      "gas_station_id": "6",
+      "customer_data_id": "8",
+      "auto": {
+        "placa": "2G1SPS",
+        "b-sisa": "9TTI-60178SO6"
+      },
+      "date": "2025-04-23T11:45:00",
+      "gas_type": "diesel",
+      "quantity_lt": 24,
+      "amount": 240,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "272",
+      "admin_id": "2",
+      "gas_station_id": "4",
+      "customer_data_id": "17",
+      "auto": {
+        "placa": "QWWUMW",
+        "b-sisa": "6HFR-C53UIAYX"
+      },
+      "date": "2025-05-06T22:00:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 133,
+      "amount": 1330,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "273",
+      "admin_id": "2",
+      "gas_station_id": "5",
+      "customer_data_id": "100",
+      "auto": {
+        "placa": "NDVTOM",
+        "b-sisa": "ET3Y-66N3VHKP"
+      },
+      "date": "2025-04-17T08:30:00",
+      "gas_type": "diesel",
+      "quantity_lt": 371,
+      "amount": 3710,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "274",
+      "admin_id": "2",
+      "gas_station_id": "9",
+      "customer_data_id": "132",
+      "auto": {
+        "placa": "6DY5W5",
+        "b-sisa": "3KLE-REKTPZO2"
+      },
+      "date": "2025-06-02T00:45:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 261,
+      "amount": 2610,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "275",
+      "admin_id": "2",
+      "gas_station_id": "1",
+      "customer_data_id": "186",
+      "auto": {
+        "placa": "ZAWTBZ",
+        "b-sisa": "81UM-5DDG09MO"
+      },
+      "date": "2025-05-07T20:15:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 328,
+      "amount": 3280,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "276",
+      "admin_id": "1",
+      "gas_station_id": "7",
+      "customer_data_id": "76",
+      "auto": {
+        "placa": "D24JHF",
+        "b-sisa": "DE0N-OHCE5RGH"
+      },
+      "date": "2025-05-12T03:15:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 171,
+      "amount": 1710,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "277",
+      "admin_id": "2",
+      "gas_station_id": "6",
+      "customer_data_id": "182",
+      "auto": {
+        "placa": "Y6AYPC",
+        "b-sisa": "7CLO-U50UAAMN"
+      },
+      "date": "2025-05-15T03:45:00",
+      "gas_type": "GNV",
+      "quantity_lt": 112,
+      "amount": 1120,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "278",
+      "admin_id": "1",
+      "gas_station_id": "5",
+      "customer_data_id": "1",
+      "auto": {
+        "placa": "EISFSG",
+        "b-sisa": "8XK0-QBM65XBO"
+      },
+      "date": "2025-05-01T09:45:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 166,
+      "amount": 1660,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "279",
+      "admin_id": "3",
+      "gas_station_id": "10",
+      "customer_data_id": "13",
+      "auto": {
+        "placa": "DD4JR4",
+        "b-sisa": "E4PY-BEL0PQUV"
+      },
+      "date": "2025-06-07T13:30:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 161,
+      "amount": 1610,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "280",
+      "admin_id": "1",
+      "gas_station_id": "2",
+      "customer_data_id": "138",
+      "auto": {
+        "placa": "L9E5PA",
+        "b-sisa": "E1OR-PMRCWQYV"
+      },
+      "date": "2025-04-05T16:15:00",
+      "gas_type": "diesel",
+      "quantity_lt": 82,
+      "amount": 820,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "281",
+      "admin_id": "2",
+      "gas_station_id": "10",
+      "customer_data_id": "169",
+      "auto": {
+        "placa": "2U67NX",
+        "b-sisa": "9DHI-NFM2J7JI"
+      },
+      "date": "2025-04-14T11:15:00",
+      "gas_type": "GNV",
+      "quantity_lt": 42,
+      "amount": 420,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "282",
+      "admin_id": "1",
+      "gas_station_id": "2",
+      "customer_data_id": "155",
+      "auto": {
+        "placa": "3V099B",
+        "b-sisa": "CVXB-94B5KI8Y"
+      },
+      "date": "2025-04-22T01:30:00",
+      "gas_type": "GNV",
+      "quantity_lt": 267,
+      "amount": 2670,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "283",
+      "admin_id": "1",
+      "gas_station_id": "5",
+      "customer_data_id": "134",
+      "auto": {
+        "placa": "QTN4AV",
+        "b-sisa": "49G2-EJSU6RDX"
+      },
+      "date": "2025-05-16T10:45:00",
+      "gas_type": "GNV",
+      "quantity_lt": 193,
+      "amount": 1930,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "284",
+      "admin_id": "2",
+      "gas_station_id": "10",
+      "customer_data_id": "74",
+      "auto": {
+        "placa": "7Y86T7",
+        "b-sisa": "XIA3-CC1ET2C1"
+      },
+      "date": "2025-04-17T20:30:00",
+      "gas_type": "diesel",
+      "quantity_lt": 61,
+      "amount": 610,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "285",
+      "admin_id": "1",
+      "gas_station_id": "5",
+      "customer_data_id": "95",
+      "auto": {
+        "placa": "H8PX4C",
+        "b-sisa": "J07Y-FNS7JJ1E"
+      },
+      "date": "2025-06-09T18:15:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 297,
+      "amount": 2970,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "286",
+      "admin_id": "2",
+      "gas_station_id": "4",
+      "customer_data_id": "12",
+      "auto": {
+        "placa": "8R6AEQ",
+        "b-sisa": "ZDWF-88UC9OYI"
+      },
+      "date": "2025-05-05T05:45:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 360,
+      "amount": 3600,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "287",
+      "admin_id": "2",
+      "gas_station_id": "4",
+      "customer_data_id": "78",
+      "auto": {
+        "placa": "7DWAH4",
+        "b-sisa": "YN9Z-0STHB4L5"
+      },
+      "date": "2025-04-02T07:30:00",
+      "gas_type": "GNV",
+      "quantity_lt": 230,
+      "amount": 2300,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "288",
+      "admin_id": "3",
+      "gas_station_id": "8",
+      "customer_data_id": "195",
+      "auto": {
+        "placa": "G5OCX2",
+        "b-sisa": "9WOP-TJUVUOUO"
+      },
+      "date": "2025-04-26T06:00:00",
+      "gas_type": "diesel",
+      "quantity_lt": 65,
+      "amount": 650,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "289",
+      "admin_id": "3",
+      "gas_station_id": "2",
+      "customer_data_id": "36",
+      "auto": {
+        "placa": "3L3LB5",
+        "b-sisa": "20Y0-9Z1T6DOA"
+      },
+      "date": "2025-05-26T13:45:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 42,
+      "amount": 420,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "290",
+      "admin_id": "2",
+      "gas_station_id": "5",
+      "customer_data_id": "45",
+      "auto": {
+        "placa": "Z7U4OS",
+        "b-sisa": "VVK3-2HI8JDVD"
+      },
+      "date": "2025-04-03T08:00:00",
+      "gas_type": "GNV",
+      "quantity_lt": 271,
+      "amount": 2710,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "291",
+      "admin_id": "2",
+      "gas_station_id": "6",
+      "customer_data_id": "3",
+      "auto": {
+        "placa": "JBS1SC",
+        "b-sisa": "G5J5-V1M89TQV"
+      },
+      "date": "2025-05-25T12:45:00",
+      "gas_type": "GNV",
+      "quantity_lt": 165,
+      "amount": 1650,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "292",
+      "admin_id": "1",
+      "gas_station_id": "7",
+      "customer_data_id": "62",
+      "auto": {
+        "placa": "X8FP73",
+        "b-sisa": "0B93-H86SP5VD"
+      },
+      "date": "2025-05-31T03:30:00",
+      "gas_type": "diesel",
+      "quantity_lt": 220,
+      "amount": 2200,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "293",
+      "admin_id": "1",
+      "gas_station_id": "10",
+      "customer_data_id": "145",
+      "auto": {
+        "placa": "B2K6QA",
+        "b-sisa": "DGQ4-Z8RDN9CP"
+      },
+      "date": "2025-04-17T15:45:00",
+      "gas_type": "GNV",
+      "quantity_lt": 166,
+      "amount": 1660,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "294",
+      "admin_id": "1",
+      "gas_station_id": "8",
+      "customer_data_id": "114",
+      "auto": {
+        "placa": "P4XDAO",
+        "b-sisa": "OTXD-4TRNQPU5"
+      },
+      "date": "2025-04-22T02:15:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 207,
+      "amount": 2070,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "295",
+      "admin_id": "1",
+      "gas_station_id": "1",
+      "customer_data_id": "97",
+      "auto": {
+        "placa": "RQWFT2",
+        "b-sisa": "LQCY-35646YYG"
+      },
+      "date": "2025-06-11T05:45:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 389,
+      "amount": 3890,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "296",
+      "admin_id": "2",
+      "gas_station_id": "7",
+      "customer_data_id": "195",
+      "auto": {
+        "placa": "6WKZ45",
+        "b-sisa": "2068-IH2DYEEP"
+      },
+      "date": "2025-04-28T23:45:00",
+      "gas_type": "diesel",
+      "quantity_lt": 24,
+      "amount": 240,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "297",
+      "admin_id": "3",
+      "gas_station_id": "1",
+      "customer_data_id": "177",
+      "auto": {
+        "placa": "PU0N7F",
+        "b-sisa": "5PCC-5HQKC64M"
+      },
+      "date": "2025-06-03T12:30:00",
+      "gas_type": "GNV",
+      "quantity_lt": 135,
+      "amount": 1350,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "298",
+      "admin_id": "1",
+      "gas_station_id": "9",
+      "customer_data_id": "69",
+      "auto": {
+        "placa": "YPT30K",
+        "b-sisa": "VGFX-5ONTGOW4"
+      },
+      "date": "2025-04-19T08:30:00",
+      "gas_type": "diesel",
+      "quantity_lt": 380,
+      "amount": 3800,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "299",
+      "admin_id": "3",
+      "gas_station_id": "6",
+      "customer_data_id": "70",
+      "auto": {
+        "placa": "VNB8HO",
+        "b-sisa": "WF8R-JFQ9TJVE"
+      },
+      "date": "2025-04-21T13:00:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 64,
+      "amount": 640,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "300",
+      "admin_id": "3",
+      "gas_station_id": "3",
+      "customer_data_id": "7",
+      "auto": {
+        "placa": "PQCE1D",
+        "b-sisa": "VYPJ-I21VDUME"
+      },
+      "date": "2025-06-10T06:15:00",
+      "gas_type": "GNV",
+      "quantity_lt": 359,
+      "amount": 3590,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "301",
+      "admin_id": "2",
+      "gas_station_id": "3",
+      "customer_data_id": "23",
+      "auto": {
+        "placa": "RTEGA7",
+        "b-sisa": "KP73-MEW5GXUP"
+      },
+      "date": "2025-06-05T03:45:00",
+      "gas_type": "diesel",
+      "quantity_lt": 282,
+      "amount": 2820,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "302",
+      "admin_id": "1",
+      "gas_station_id": "2",
+      "customer_data_id": "9",
+      "auto": {
+        "placa": "INQCK4",
+        "b-sisa": "VN41-U792JW8R"
+      },
+      "date": "2025-04-15T13:15:00",
+      "gas_type": "diesel",
+      "quantity_lt": 93,
+      "amount": 930,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "303",
+      "admin_id": "1",
+      "gas_station_id": "3",
+      "customer_data_id": "148",
+      "auto": {
+        "placa": "OX8HZM",
+        "b-sisa": "PT7P-CZXBT1OI"
+      },
+      "date": "2025-05-16T20:30:00",
+      "gas_type": "diesel",
+      "quantity_lt": 369,
+      "amount": 3690,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "304",
+      "admin_id": "1",
+      "gas_station_id": "1",
+      "customer_data_id": "152",
+      "auto": {
+        "placa": "CJM6D8",
+        "b-sisa": "S1A0-3TZQHDO1"
+      },
+      "date": "2025-04-29T05:45:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 109,
+      "amount": 1090,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "305",
+      "admin_id": "3",
+      "gas_station_id": "7",
+      "customer_data_id": "59",
+      "auto": {
+        "placa": "2ICQYD",
+        "b-sisa": "8ZF9-F76J3HYA"
+      },
+      "date": "2025-06-13T09:30:00",
+      "gas_type": "diesel",
+      "quantity_lt": 133,
+      "amount": 1330,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "306",
+      "admin_id": "3",
+      "gas_station_id": "3",
+      "customer_data_id": "62",
+      "auto": {
+        "placa": "6XEPSK",
+        "b-sisa": "WAAZ-HZPR32F6"
+      },
+      "date": "2025-05-27T06:15:00",
+      "gas_type": "GNV",
+      "quantity_lt": 183,
+      "amount": 1830,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "307",
+      "admin_id": "1",
+      "gas_station_id": "10",
+      "customer_data_id": "121",
+      "auto": {
+        "placa": "82FDK3",
+        "b-sisa": "YAG3-T1IYIKOD"
+      },
+      "date": "2025-06-04T16:15:00",
+      "gas_type": "diesel",
+      "quantity_lt": 183,
+      "amount": 1830,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "308",
+      "admin_id": "1",
+      "gas_station_id": "8",
+      "customer_data_id": "8",
+      "auto": {
+        "placa": "W3559H",
+        "b-sisa": "NWCC-X2Q89QLI"
+      },
+      "date": "2025-05-29T19:30:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 173,
+      "amount": 1730,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "309",
+      "admin_id": "3",
+      "gas_station_id": "2",
+      "customer_data_id": "10",
+      "auto": {
+        "placa": "RD97PL",
+        "b-sisa": "ZBTH-YFXNKGWW"
+      },
+      "date": "2025-04-26T13:30:00",
+      "gas_type": "diesel",
+      "quantity_lt": 188,
+      "amount": 1880,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "310",
+      "admin_id": "2",
+      "gas_station_id": "10",
+      "customer_data_id": "98",
+      "auto": {
+        "placa": "P9IQ2N",
+        "b-sisa": "R7QU-F2B0Q2UP"
+      },
+      "date": "2025-04-21T14:45:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 26,
+      "amount": 260,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "311",
+      "admin_id": "1",
+      "gas_station_id": "4",
+      "customer_data_id": "18",
+      "auto": {
+        "placa": "BRXCXA",
+        "b-sisa": "0ISW-LNXZ7TKH"
+      },
+      "date": "2025-06-04T05:45:00",
+      "gas_type": "GNV",
+      "quantity_lt": 386,
+      "amount": 3860,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "312",
+      "admin_id": "3",
+      "gas_station_id": "8",
+      "customer_data_id": "48",
+      "auto": {
+        "placa": "4J5LL4",
+        "b-sisa": "YYWR-9FEPOPDF"
+      },
+      "date": "2025-04-26T05:30:00",
+      "gas_type": "diesel",
+      "quantity_lt": 195,
+      "amount": 1950,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "313",
+      "admin_id": "3",
+      "gas_station_id": "1",
+      "customer_data_id": "157",
+      "auto": {
+        "placa": "BI406A",
+        "b-sisa": "I3QB-QOY89S11"
+      },
+      "date": "2025-05-15T12:15:00",
+      "gas_type": "diesel",
+      "quantity_lt": 340,
+      "amount": 3400,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "314",
+      "admin_id": "2",
+      "gas_station_id": "8",
+      "customer_data_id": "48",
+      "auto": {
+        "placa": "8J1LBX",
+        "b-sisa": "BOPJ-O6N9SMF7"
+      },
+      "date": "2025-05-24T05:45:00",
+      "gas_type": "GNV",
+      "quantity_lt": 211,
+      "amount": 2110,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "315",
+      "admin_id": "3",
+      "gas_station_id": "10",
+      "customer_data_id": "24",
+      "auto": {
+        "placa": "KTOWIE",
+        "b-sisa": "8T7B-WFJVXC8I"
+      },
+      "date": "2025-04-04T13:45:00",
+      "gas_type": "GNV",
+      "quantity_lt": 214,
+      "amount": 2140,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "316",
+      "admin_id": "2",
+      "gas_station_id": "7",
+      "customer_data_id": "194",
+      "auto": {
+        "placa": "GQO4LX",
+        "b-sisa": "H3GW-MTYKY281"
+      },
+      "date": "2025-05-26T20:30:00",
+      "gas_type": "diesel",
+      "quantity_lt": 351,
+      "amount": 3510,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "317",
+      "admin_id": "2",
+      "gas_station_id": "3",
+      "customer_data_id": "179",
+      "auto": {
+        "placa": "2DATLH",
+        "b-sisa": "5R6I-JTD05IZ4"
+      },
+      "date": "2025-04-27T06:00:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 353,
+      "amount": 3530,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "318",
+      "admin_id": "3",
+      "gas_station_id": "6",
+      "customer_data_id": "108",
+      "auto": {
+        "placa": "QM0KEO",
+        "b-sisa": "AIY3-48C5COBE"
+      },
+      "date": "2025-04-01T20:15:00",
+      "gas_type": "diesel",
+      "quantity_lt": 109,
+      "amount": 1090,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "319",
+      "admin_id": "2",
+      "gas_station_id": "8",
+      "customer_data_id": "192",
+      "auto": {
+        "placa": "04RJLE",
+        "b-sisa": "HE0I-T1SX2H9A"
+      },
+      "date": "2025-04-02T22:30:00",
+      "gas_type": "GNV",
+      "quantity_lt": 279,
+      "amount": 2790,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "320",
+      "admin_id": "1",
+      "gas_station_id": "10",
+      "customer_data_id": "6",
+      "auto": {
+        "placa": "VE7CD2",
+        "b-sisa": "LU95-1GJ43BXM"
+      },
+      "date": "2025-06-07T16:15:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 223,
+      "amount": 2230,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "321",
+      "admin_id": "3",
+      "gas_station_id": "3",
+      "customer_data_id": "165",
+      "auto": {
+        "placa": "9IPMXY",
+        "b-sisa": "ZMJI-UVH9Y81P"
+      },
+      "date": "2025-05-11T07:00:00",
+      "gas_type": "diesel",
+      "quantity_lt": 395,
+      "amount": 3950,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "322",
+      "admin_id": "1",
+      "gas_station_id": "3",
+      "customer_data_id": "137",
+      "auto": {
+        "placa": "1Q7NQV",
+        "b-sisa": "AC7X-JW4OI2GA"
+      },
+      "date": "2025-05-13T14:30:00",
+      "gas_type": "diesel",
+      "quantity_lt": 398,
+      "amount": 3980,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "323",
+      "admin_id": "3",
+      "gas_station_id": "8",
+      "customer_data_id": "186",
+      "auto": {
+        "placa": "JPXDHN",
+        "b-sisa": "X7WH-26RIQKF6"
+      },
+      "date": "2025-06-05T18:15:00",
+      "gas_type": "GNV",
+      "quantity_lt": 226,
+      "amount": 2260,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "324",
+      "admin_id": "2",
+      "gas_station_id": "9",
+      "customer_data_id": "87",
+      "auto": {
+        "placa": "5XE5PX",
+        "b-sisa": "MA4K-Z3EJ70AF"
+      },
+      "date": "2025-04-20T11:45:00",
+      "gas_type": "diesel",
+      "quantity_lt": 178,
+      "amount": 1780,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "325",
+      "admin_id": "2",
+      "gas_station_id": "6",
+      "customer_data_id": "59",
+      "auto": {
+        "placa": "XCFX9J",
+        "b-sisa": "5X5C-I1CLMXA7"
+      },
+      "date": "2025-04-09T13:30:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 359,
+      "amount": 3590,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "326",
+      "admin_id": "2",
+      "gas_station_id": "1",
+      "customer_data_id": "95",
+      "auto": {
+        "placa": "EV66SU",
+        "b-sisa": "7BM2-NJZCP3IJ"
+      },
+      "date": "2025-04-05T14:45:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 237,
+      "amount": 2370,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "327",
+      "admin_id": "1",
+      "gas_station_id": "1",
+      "customer_data_id": "173",
+      "auto": {
+        "placa": "HTG9V1",
+        "b-sisa": "RX07-5IV26BWX"
+      },
+      "date": "2025-05-31T03:00:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 191,
+      "amount": 1910,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "328",
+      "admin_id": "3",
+      "gas_station_id": "2",
+      "customer_data_id": "96",
+      "auto": {
+        "placa": "C56V77",
+        "b-sisa": "P3KT-3JZIPK9R"
+      },
+      "date": "2025-05-19T15:45:00",
+      "gas_type": "GNV",
+      "quantity_lt": 235,
+      "amount": 2350,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "329",
+      "admin_id": "3",
+      "gas_station_id": "4",
+      "customer_data_id": "77",
+      "auto": {
+        "placa": "SJF4PO",
+        "b-sisa": "J0XL-AS28MBKL"
+      },
+      "date": "2025-04-26T12:30:00",
+      "gas_type": "GNV",
+      "quantity_lt": 236,
+      "amount": 2360,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "330",
+      "admin_id": "3",
+      "gas_station_id": "10",
+      "customer_data_id": "25",
+      "auto": {
+        "placa": "0665XO",
+        "b-sisa": "GOON-BLZD607C"
+      },
+      "date": "2025-05-24T14:15:00",
+      "gas_type": "diesel",
+      "quantity_lt": 347,
+      "amount": 3470,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "331",
+      "admin_id": "2",
+      "gas_station_id": "4",
+      "customer_data_id": "179",
+      "auto": {
+        "placa": "XLRLGP",
+        "b-sisa": "ED4O-K4CRS3WS"
+      },
+      "date": "2025-04-19T00:30:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 326,
+      "amount": 3260,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "332",
+      "admin_id": "3",
+      "gas_station_id": "5",
+      "customer_data_id": "48",
+      "auto": {
+        "placa": "3HBQFM",
+        "b-sisa": "8R4J-6VE9YECQ"
+      },
+      "date": "2025-05-07T00:45:00",
+      "gas_type": "GNV",
+      "quantity_lt": 144,
+      "amount": 1440,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "333",
+      "admin_id": "3",
+      "gas_station_id": "1",
+      "customer_data_id": "200",
+      "auto": {
+        "placa": "8TV4TO",
+        "b-sisa": "PGNH-CBZCVA24"
+      },
+      "date": "2025-04-14T05:00:00",
+      "gas_type": "diesel",
+      "quantity_lt": 135,
+      "amount": 1350,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "334",
+      "admin_id": "2",
+      "gas_station_id": "6",
+      "customer_data_id": "118",
+      "auto": {
+        "placa": "PC96PU",
+        "b-sisa": "OS3I-CS8RNJFB"
+      },
+      "date": "2025-06-06T03:30:00",
+      "gas_type": "diesel",
+      "quantity_lt": 154,
+      "amount": 1540,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "335",
+      "admin_id": "1",
+      "gas_station_id": "7",
+      "customer_data_id": "39",
+      "auto": {
+        "placa": "3MZR56",
+        "b-sisa": "QM52-13EARJ9O"
+      },
+      "date": "2025-04-12T03:30:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 395,
+      "amount": 3950,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "336",
+      "admin_id": "1",
+      "gas_station_id": "10",
+      "customer_data_id": "87",
+      "auto": {
+        "placa": "V31FFN",
+        "b-sisa": "AFTJ-APK7S8VS"
+      },
+      "date": "2025-06-03T12:15:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 145,
+      "amount": 1450,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "337",
+      "admin_id": "1",
+      "gas_station_id": "4",
+      "customer_data_id": "4",
+      "auto": {
+        "placa": "HEZIGI",
+        "b-sisa": "B0I7-UH1LGX8W"
+      },
+      "date": "2025-04-11T19:30:00",
+      "gas_type": "diesel",
+      "quantity_lt": 396,
+      "amount": 3960,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "338",
+      "admin_id": "2",
+      "gas_station_id": "5",
+      "customer_data_id": "118",
+      "auto": {
+        "placa": "LWZ1SV",
+        "b-sisa": "C3WG-MXQGZL7L"
+      },
+      "date": "2025-06-06T23:45:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 211,
+      "amount": 2110,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "339",
+      "admin_id": "3",
+      "gas_station_id": "5",
+      "customer_data_id": "109",
+      "auto": {
+        "placa": "96H2FF",
+        "b-sisa": "FR0Y-61P8D2LJ"
+      },
+      "date": "2025-05-05T13:30:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 129,
+      "amount": 1290,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "340",
+      "admin_id": "2",
+      "gas_station_id": "3",
+      "customer_data_id": "98",
+      "auto": {
+        "placa": "DKHT4J",
+        "b-sisa": "TAY4-CS7HHN1M"
+      },
+      "date": "2025-06-02T19:30:00",
+      "gas_type": "GNV",
+      "quantity_lt": 32,
+      "amount": 320,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "341",
+      "admin_id": "1",
+      "gas_station_id": "10",
+      "customer_data_id": "29",
+      "auto": {
+        "placa": "NZ8ZVO",
+        "b-sisa": "QWHP-IIA36SE9"
+      },
+      "date": "2025-04-27T13:45:00",
+      "gas_type": "diesel",
+      "quantity_lt": 22,
+      "amount": 220,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "342",
+      "admin_id": "3",
+      "gas_station_id": "5",
+      "customer_data_id": "46",
+      "auto": {
+        "placa": "ZBW9WI",
+        "b-sisa": "KDS9-TRIUP281"
+      },
+      "date": "2025-04-25T12:30:00",
+      "gas_type": "GNV",
+      "quantity_lt": 400,
+      "amount": 4000,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "343",
+      "admin_id": "3",
+      "gas_station_id": "10",
+      "customer_data_id": "116",
+      "auto": {
+        "placa": "32F5ES",
+        "b-sisa": "ZJNQ-USCYDI2E"
+      },
+      "date": "2025-04-25T17:30:00",
+      "gas_type": "diesel",
+      "quantity_lt": 378,
+      "amount": 3780,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "344",
+      "admin_id": "1",
+      "gas_station_id": "7",
+      "customer_data_id": "96",
+      "auto": {
+        "placa": "7AA8Y2",
+        "b-sisa": "8ZX6-M0X68RMN"
+      },
+      "date": "2025-04-26T03:15:00",
+      "gas_type": "GNV",
+      "quantity_lt": 262,
+      "amount": 2620,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "345",
+      "admin_id": "3",
+      "gas_station_id": "8",
+      "customer_data_id": "170",
+      "auto": {
+        "placa": "AKOVER",
+        "b-sisa": "K5JM-3ZREQTRX"
+      },
+      "date": "2025-04-14T05:45:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 135,
+      "amount": 1350,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "346",
+      "admin_id": "3",
+      "gas_station_id": "4",
+      "customer_data_id": "42",
+      "auto": {
+        "placa": "JYZB16",
+        "b-sisa": "K0DC-MUQKIDTF"
+      },
+      "date": "2025-04-25T07:30:00",
+      "gas_type": "diesel",
+      "quantity_lt": 57,
+      "amount": 570,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "347",
+      "admin_id": "1",
+      "gas_station_id": "7",
+      "customer_data_id": "35",
+      "auto": {
+        "placa": "0UPV6G",
+        "b-sisa": "5JFI-ODZXE6K8"
+      },
+      "date": "2025-04-30T18:45:00",
+      "gas_type": "diesel",
+      "quantity_lt": 388,
+      "amount": 3880,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "348",
+      "admin_id": "2",
+      "gas_station_id": "1",
+      "customer_data_id": "26",
+      "auto": {
+        "placa": "P9DLKN",
+        "b-sisa": "D79R-C2B9U9QA"
+      },
+      "date": "2025-05-21T08:45:00",
+      "gas_type": "GNV",
+      "quantity_lt": 358,
+      "amount": 3580,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "349",
+      "admin_id": "3",
+      "gas_station_id": "7",
+      "customer_data_id": "140",
+      "auto": {
+        "placa": "XY5IB2",
+        "b-sisa": "GU5S-VR0VFOIK"
+      },
+      "date": "2025-06-04T12:30:00",
+      "gas_type": "diesel",
+      "quantity_lt": 358,
+      "amount": 3580,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "350",
+      "admin_id": "3",
+      "gas_station_id": "1",
+      "customer_data_id": "160",
+      "auto": {
+        "placa": "VXVD3O",
+        "b-sisa": "RW6B-WKDWWBZF"
+      },
+      "date": "2025-04-12T04:00:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 237,
+      "amount": 2370,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "351",
+      "admin_id": "2",
+      "gas_station_id": "8",
+      "customer_data_id": "93",
+      "auto": {
+        "placa": "U8Q8E6",
+        "b-sisa": "3GU5-VEIWBSO6"
+      },
+      "date": "2025-04-11T11:30:00",
+      "gas_type": "diesel",
+      "quantity_lt": 171,
+      "amount": 1710,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "352",
+      "admin_id": "2",
+      "gas_station_id": "5",
+      "customer_data_id": "170",
+      "auto": {
+        "placa": "ZLHLW9",
+        "b-sisa": "TKAW-WTPJIDKH"
+      },
+      "date": "2025-05-30T15:15:00",
+      "gas_type": "diesel",
+      "quantity_lt": 39,
+      "amount": 390,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "353",
+      "admin_id": "3",
+      "gas_station_id": "7",
+      "customer_data_id": "197",
+      "auto": {
+        "placa": "3SSWF6",
+        "b-sisa": "4QRW-HV204PGS"
+      },
+      "date": "2025-04-29T04:45:00",
+      "gas_type": "diesel",
+      "quantity_lt": 46,
+      "amount": 460,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "354",
+      "admin_id": "2",
+      "gas_station_id": "7",
+      "customer_data_id": "42",
+      "auto": {
+        "placa": "XIHUPK",
+        "b-sisa": "WB64-31YCB2XK"
+      },
+      "date": "2025-04-02T12:30:00",
+      "gas_type": "GNV",
+      "quantity_lt": 144,
+      "amount": 1440,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "355",
+      "admin_id": "2",
+      "gas_station_id": "10",
+      "customer_data_id": "160",
+      "auto": {
+        "placa": "XSI2D5",
+        "b-sisa": "3PAF-XVM0JK60"
+      },
+      "date": "2025-04-30T08:15:00",
+      "gas_type": "diesel",
+      "quantity_lt": 265,
+      "amount": 2650,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "356",
+      "admin_id": "3",
+      "gas_station_id": "6",
+      "customer_data_id": "176",
+      "auto": {
+        "placa": "3S6613",
+        "b-sisa": "9RXE-E4HFMXJM"
+      },
+      "date": "2025-05-01T08:15:00",
+      "gas_type": "diesel",
+      "quantity_lt": 328,
+      "amount": 3280,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "357",
+      "admin_id": "3",
+      "gas_station_id": "9",
+      "customer_data_id": "45",
+      "auto": {
+        "placa": "X0INTP",
+        "b-sisa": "XTUA-65BV83O6"
+      },
+      "date": "2025-04-07T23:00:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 155,
+      "amount": 1550,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "358",
+      "admin_id": "1",
+      "gas_station_id": "4",
+      "customer_data_id": "110",
+      "auto": {
+        "placa": "LCE97M",
+        "b-sisa": "VJLC-ISKYVXPV"
+      },
+      "date": "2025-05-23T09:15:00",
+      "gas_type": "diesel",
+      "quantity_lt": 106,
+      "amount": 1060,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "359",
+      "admin_id": "3",
+      "gas_station_id": "7",
+      "customer_data_id": "52",
+      "auto": {
+        "placa": "9O040I",
+        "b-sisa": "LBKE-H3EX0ZSP"
+      },
+      "date": "2025-04-08T01:30:00",
+      "gas_type": "GNV",
+      "quantity_lt": 86,
+      "amount": 860,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "360",
+      "admin_id": "2",
+      "gas_station_id": "10",
+      "customer_data_id": "52",
+      "auto": {
+        "placa": "XEEOU1",
+        "b-sisa": "37FL-ZPGCVXNB"
+      },
+      "date": "2025-06-10T03:00:00",
+      "gas_type": "GNV",
+      "quantity_lt": 393,
+      "amount": 3930,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "361",
+      "admin_id": "1",
+      "gas_station_id": "10",
+      "customer_data_id": "88",
+      "auto": {
+        "placa": "8RDQU9",
+        "b-sisa": "LE00-PEFON4UL"
+      },
+      "date": "2025-04-23T23:45:00",
+      "gas_type": "GNV",
+      "quantity_lt": 71,
+      "amount": 710,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "362",
+      "admin_id": "2",
+      "gas_station_id": "2",
+      "customer_data_id": "156",
+      "auto": {
+        "placa": "ML8MNS",
+        "b-sisa": "9UPL-MB8Z9I21"
+      },
+      "date": "2025-06-05T01:15:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 339,
+      "amount": 3390,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "363",
+      "admin_id": "2",
+      "gas_station_id": "8",
+      "customer_data_id": "105",
+      "auto": {
+        "placa": "RISRL5",
+        "b-sisa": "AKIW-XDSD5KB6"
+      },
+      "date": "2025-06-14T16:45:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 322,
+      "amount": 3220,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "364",
+      "admin_id": "1",
+      "gas_station_id": "6",
+      "customer_data_id": "95",
+      "auto": {
+        "placa": "KFE0WQ",
+        "b-sisa": "K6BN-2TZ4JVYZ"
+      },
+      "date": "2025-04-03T15:00:00",
+      "gas_type": "GNV",
+      "quantity_lt": 281,
+      "amount": 2810,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "365",
+      "admin_id": "3",
+      "gas_station_id": "7",
+      "customer_data_id": "19",
+      "auto": {
+        "placa": "7IEQIS",
+        "b-sisa": "R1LN-03M0PXX8"
+      },
+      "date": "2025-05-10T22:30:00",
+      "gas_type": "GNV",
+      "quantity_lt": 388,
+      "amount": 3880,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "366",
+      "admin_id": "3",
+      "gas_station_id": "7",
+      "customer_data_id": "93",
+      "auto": {
+        "placa": "5BMCQW",
+        "b-sisa": "QJRV-ZN6QOF71"
+      },
+      "date": "2025-05-22T19:15:00",
+      "gas_type": "GNV",
+      "quantity_lt": 337,
+      "amount": 3370,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "367",
+      "admin_id": "3",
+      "gas_station_id": "4",
+      "customer_data_id": "147",
+      "auto": {
+        "placa": "PZKFOW",
+        "b-sisa": "8I1G-A210D1M4"
+      },
+      "date": "2025-04-08T13:30:00",
+      "gas_type": "diesel",
+      "quantity_lt": 210,
+      "amount": 2100,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "368",
+      "admin_id": "2",
+      "gas_station_id": "8",
+      "customer_data_id": "68",
+      "auto": {
+        "placa": "STE3HE",
+        "b-sisa": "SO9M-WLE09SU2"
+      },
+      "date": "2025-04-04T21:00:00",
+      "gas_type": "GNV",
+      "quantity_lt": 264,
+      "amount": 2640,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "369",
+      "admin_id": "2",
+      "gas_station_id": "7",
+      "customer_data_id": "178",
+      "auto": {
+        "placa": "M99GRV",
+        "b-sisa": "FR4F-Q97IMR1D"
+      },
+      "date": "2025-05-09T07:00:00",
+      "gas_type": "diesel",
+      "quantity_lt": 29,
+      "amount": 290,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "370",
+      "admin_id": "3",
+      "gas_station_id": "1",
+      "customer_data_id": "51",
+      "auto": {
+        "placa": "V0KUB6",
+        "b-sisa": "9C33-TELWHGJ9"
+      },
+      "date": "2025-05-16T07:30:00",
+      "gas_type": "GNV",
+      "quantity_lt": 385,
+      "amount": 3850,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "371",
+      "admin_id": "3",
+      "gas_station_id": "3",
+      "customer_data_id": "160",
+      "auto": {
+        "placa": "07SR8Q",
+        "b-sisa": "AE5K-YQY0VB91"
+      },
+      "date": "2025-06-08T05:15:00",
+      "gas_type": "diesel",
+      "quantity_lt": 69,
+      "amount": 690,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "372",
+      "admin_id": "2",
+      "gas_station_id": "2",
+      "customer_data_id": "46",
+      "auto": {
+        "placa": "5KE8OE",
+        "b-sisa": "PIA7-W37NHJ0O"
+      },
+      "date": "2025-04-29T05:15:00",
+      "gas_type": "GNV",
+      "quantity_lt": 290,
+      "amount": 2900,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "373",
+      "admin_id": "1",
+      "gas_station_id": "3",
+      "customer_data_id": "152",
+      "auto": {
+        "placa": "JUUJKI",
+        "b-sisa": "7PQB-52QM2G9D"
+      },
+      "date": "2025-05-23T02:15:00",
+      "gas_type": "diesel",
+      "quantity_lt": 120,
+      "amount": 1200,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "374",
+      "admin_id": "1",
+      "gas_station_id": "4",
+      "customer_data_id": "91",
+      "auto": {
+        "placa": "QFWAOS",
+        "b-sisa": "9TTK-VIVBXKNG"
+      },
+      "date": "2025-05-31T17:00:00",
+      "gas_type": "diesel",
+      "quantity_lt": 356,
+      "amount": 3560,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "375",
+      "admin_id": "3",
+      "gas_station_id": "1",
+      "customer_data_id": "177",
+      "auto": {
+        "placa": "5VJXSV",
+        "b-sisa": "WGJF-O0U8AKFB"
+      },
+      "date": "2025-06-09T18:15:00",
+      "gas_type": "diesel",
+      "quantity_lt": 42,
+      "amount": 420,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "376",
+      "admin_id": "2",
+      "gas_station_id": "4",
+      "customer_data_id": "184",
+      "auto": {
+        "placa": "XT86X7",
+        "b-sisa": "MQ6R-K816VHAC"
+      },
+      "date": "2025-04-25T10:15:00",
+      "gas_type": "GNV",
+      "quantity_lt": 368,
+      "amount": 3680,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "377",
+      "admin_id": "1",
+      "gas_station_id": "9",
+      "customer_data_id": "131",
+      "auto": {
+        "placa": "OKDJYI",
+        "b-sisa": "LSBO-EFFSD8AN"
+      },
+      "date": "2025-05-15T16:00:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 386,
+      "amount": 3860,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "378",
+      "admin_id": "1",
+      "gas_station_id": "7",
+      "customer_data_id": "32",
+      "auto": {
+        "placa": "IW90WN",
+        "b-sisa": "ATQN-KIF1OMQQ"
+      },
+      "date": "2025-05-27T13:30:00",
+      "gas_type": "diesel",
+      "quantity_lt": 331,
+      "amount": 3310,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "379",
+      "admin_id": "2",
+      "gas_station_id": "5",
+      "customer_data_id": "189",
+      "auto": {
+        "placa": "GJUOBL",
+        "b-sisa": "UF8Y-WNLMO56A"
+      },
+      "date": "2025-06-10T07:00:00",
+      "gas_type": "diesel",
+      "quantity_lt": 144,
+      "amount": 1440,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "380",
+      "admin_id": "3",
+      "gas_station_id": "4",
+      "customer_data_id": "144",
+      "auto": {
+        "placa": "PV6NOA",
+        "b-sisa": "YGMA-EGJPVOII"
+      },
+      "date": "2025-05-08T05:00:00",
+      "gas_type": "diesel",
+      "quantity_lt": 57,
+      "amount": 570,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "381",
+      "admin_id": "1",
+      "gas_station_id": "7",
+      "customer_data_id": "52",
+      "auto": {
+        "placa": "0YD0BL",
+        "b-sisa": "SN3E-X3WIN8QR"
+      },
+      "date": "2025-05-19T06:30:00",
+      "gas_type": "GNV",
+      "quantity_lt": 103,
+      "amount": 1030,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "382",
+      "admin_id": "1",
+      "gas_station_id": "8",
+      "customer_data_id": "6",
+      "auto": {
+        "placa": "HBPS0R",
+        "b-sisa": "VQQE-0DS5LDU9"
+      },
+      "date": "2025-06-13T12:15:00",
+      "gas_type": "diesel",
+      "quantity_lt": 150,
+      "amount": 1500,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "383",
+      "admin_id": "3",
+      "gas_station_id": "7",
+      "customer_data_id": "129",
+      "auto": {
+        "placa": "APDAHS",
+        "b-sisa": "BPI0-22QHEESC"
+      },
+      "date": "2025-04-30T03:30:00",
+      "gas_type": "GNV",
+      "quantity_lt": 285,
+      "amount": 2850,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "384",
+      "admin_id": "1",
+      "gas_station_id": "1",
+      "customer_data_id": "75",
+      "auto": {
+        "placa": "ZKG1SO",
+        "b-sisa": "YCL6-GPCWYYC2"
+      },
+      "date": "2025-05-15T05:00:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 130,
+      "amount": 1300,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "385",
+      "admin_id": "2",
+      "gas_station_id": "8",
+      "customer_data_id": "172",
+      "auto": {
+        "placa": "92BZ6S",
+        "b-sisa": "NNBX-69XBAAHD"
+      },
+      "date": "2025-05-29T22:00:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 66,
+      "amount": 660,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "386",
+      "admin_id": "2",
+      "gas_station_id": "2",
+      "customer_data_id": "45",
+      "auto": {
+        "placa": "Q3JLIW",
+        "b-sisa": "YMVS-97UGBYYH"
+      },
+      "date": "2025-05-20T14:30:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 357,
+      "amount": 3570,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "387",
+      "admin_id": "2",
+      "gas_station_id": "6",
+      "customer_data_id": "171",
+      "auto": {
+        "placa": "9COA7Z",
+        "b-sisa": "LKKF-4VWR09GV"
+      },
+      "date": "2025-04-10T03:30:00",
+      "gas_type": "diesel",
+      "quantity_lt": 133,
+      "amount": 1330,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "388",
+      "admin_id": "2",
+      "gas_station_id": "5",
+      "customer_data_id": "74",
+      "auto": {
+        "placa": "XY4IMW",
+        "b-sisa": "JQBI-K13Y5GPY"
+      },
+      "date": "2025-05-06T03:30:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 86,
+      "amount": 860,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "389",
+      "admin_id": "3",
+      "gas_station_id": "6",
+      "customer_data_id": "30",
+      "auto": {
+        "placa": "KRLFWJ",
+        "b-sisa": "PRO8-YOZXQFR4"
+      },
+      "date": "2025-06-12T22:30:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 97,
+      "amount": 970,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "390",
+      "admin_id": "2",
+      "gas_station_id": "7",
+      "customer_data_id": "174",
+      "auto": {
+        "placa": "1ZTEIP",
+        "b-sisa": "M3G4-DLSFZFOF"
+      },
+      "date": "2025-05-01T22:00:00",
+      "gas_type": "diesel",
+      "quantity_lt": 200,
+      "amount": 2000,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "391",
+      "admin_id": "3",
+      "gas_station_id": "4",
+      "customer_data_id": "135",
+      "auto": {
+        "placa": "4C0BEF",
+        "b-sisa": "6X3C-S0AWC736"
+      },
+      "date": "2025-06-02T10:45:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 58,
+      "amount": 580,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "392",
+      "admin_id": "2",
+      "gas_station_id": "6",
+      "customer_data_id": "76",
+      "auto": {
+        "placa": "EX85YE",
+        "b-sisa": "RO8F-6UOYG9C3"
+      },
+      "date": "2025-04-14T04:15:00",
+      "gas_type": "diesel",
+      "quantity_lt": 74,
+      "amount": 740,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "393",
+      "admin_id": "3",
+      "gas_station_id": "1",
+      "customer_data_id": "92",
+      "auto": {
+        "placa": "BEHHP8",
+        "b-sisa": "AK41-R0HO6HQA"
+      },
+      "date": "2025-05-06T13:45:00",
+      "gas_type": "diesel",
+      "quantity_lt": 376,
+      "amount": 3760,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "394",
+      "admin_id": "3",
+      "gas_station_id": "5",
+      "customer_data_id": "12",
+      "auto": {
+        "placa": "XKWTTK",
+        "b-sisa": "PP0V-50U5CVDR"
+      },
+      "date": "2025-04-16T15:30:00",
+      "gas_type": "GNV",
+      "quantity_lt": 49,
+      "amount": 490,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "395",
+      "admin_id": "1",
+      "gas_station_id": "1",
+      "customer_data_id": "195",
+      "auto": {
+        "placa": "FBPO0H",
+        "b-sisa": "UJ0B-JHTYC3UL"
+      },
+      "date": "2025-05-20T13:45:00",
+      "gas_type": "GNV",
+      "quantity_lt": 388,
+      "amount": 3880,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "396",
+      "admin_id": "1",
+      "gas_station_id": "6",
+      "customer_data_id": "195",
+      "auto": {
+        "placa": "686XM9",
+        "b-sisa": "Z8WH-6H4RMIUS"
+      },
+      "date": "2025-06-03T18:15:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 197,
+      "amount": 1970,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "397",
+      "admin_id": "1",
+      "gas_station_id": "5",
+      "customer_data_id": "39",
+      "auto": {
+        "placa": "6CLOWQ",
+        "b-sisa": "TZGN-1L5TPZZ6"
+      },
+      "date": "2025-04-04T01:45:00",
+      "gas_type": "diesel",
+      "quantity_lt": 333,
+      "amount": 3330,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "398",
+      "admin_id": "1",
+      "gas_station_id": "1",
+      "customer_data_id": "65",
+      "auto": {
+        "placa": "SAMYWO",
+        "b-sisa": "402L-GZ2XR5XW"
+      },
+      "date": "2025-04-11T12:00:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 63,
+      "amount": 630,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "399",
+      "admin_id": "1",
+      "gas_station_id": "4",
+      "customer_data_id": "21",
+      "auto": {
+        "placa": "UILIG9",
+        "b-sisa": "AM68-MUIJ13JD"
+      },
+      "date": "2025-05-28T17:30:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 186,
+      "amount": 1860,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "400",
+      "admin_id": "3",
+      "gas_station_id": "3",
+      "customer_data_id": "33",
+      "auto": {
+        "placa": "Z2ITIC",
+        "b-sisa": "FNK5-2W1UQQ8Y"
+      },
+      "date": "2025-04-02T14:30:00",
+      "gas_type": "GNV",
+      "quantity_lt": 232,
+      "amount": 2320,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "401",
+      "admin_id": "2",
+      "gas_station_id": "4",
+      "customer_data_id": "105",
+      "auto": {
+        "placa": "OVQ1JJ",
+        "b-sisa": "7916-JUXZ5U8K"
+      },
+      "date": "2025-04-09T14:15:00",
+      "gas_type": "diesel",
+      "quantity_lt": 163,
+      "amount": 1630,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "402",
+      "admin_id": "1",
+      "gas_station_id": "4",
+      "customer_data_id": "56",
+      "auto": {
+        "placa": "9TGDBL",
+        "b-sisa": "B93S-FUHKIPRZ"
+      },
+      "date": "2025-04-21T01:45:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 380,
+      "amount": 3800,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "403",
+      "admin_id": "1",
+      "gas_station_id": "5",
+      "customer_data_id": "75",
+      "auto": {
+        "placa": "863QV6",
+        "b-sisa": "Z6GG-1VUI4HTU"
+      },
+      "date": "2025-05-27T05:00:00",
+      "gas_type": "diesel",
+      "quantity_lt": 126,
+      "amount": 1260,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "404",
+      "admin_id": "3",
+      "gas_station_id": "6",
+      "customer_data_id": "47",
+      "auto": {
+        "placa": "DCOGX8",
+        "b-sisa": "CO6U-93EC7HSM"
+      },
+      "date": "2025-06-03T02:00:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 202,
+      "amount": 2020,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "405",
+      "admin_id": "3",
+      "gas_station_id": "2",
+      "customer_data_id": "183",
+      "auto": {
+        "placa": "NGBZVF",
+        "b-sisa": "2VF0-70D7N7WZ"
+      },
+      "date": "2025-04-30T23:45:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 372,
+      "amount": 3720,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "406",
+      "admin_id": "1",
+      "gas_station_id": "3",
+      "customer_data_id": "77",
+      "auto": {
+        "placa": "GL12Y5",
+        "b-sisa": "ELTA-KXS5GCK6"
+      },
+      "date": "2025-05-09T10:45:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 261,
+      "amount": 2610,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "407",
+      "admin_id": "2",
+      "gas_station_id": "4",
+      "customer_data_id": "137",
+      "auto": {
+        "placa": "BEF5Z3",
+        "b-sisa": "VEQJ-K6Q4IA7R"
+      },
+      "date": "2025-04-28T16:00:00",
+      "gas_type": "GNV",
+      "quantity_lt": 234,
+      "amount": 2340,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "408",
+      "admin_id": "2",
+      "gas_station_id": "9",
+      "customer_data_id": "200",
+      "auto": {
+        "placa": "LS6TZB",
+        "b-sisa": "8LYX-MCL9UA4F"
+      },
+      "date": "2025-06-11T03:30:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 208,
+      "amount": 2080,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "409",
+      "admin_id": "3",
+      "gas_station_id": "4",
+      "customer_data_id": "198",
+      "auto": {
+        "placa": "WVK17X",
+        "b-sisa": "HC43-PTAB45OJ"
+      },
+      "date": "2025-04-19T08:45:00",
+      "gas_type": "GNV",
+      "quantity_lt": 175,
+      "amount": 1750,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "410",
+      "admin_id": "3",
+      "gas_station_id": "7",
+      "customer_data_id": "191",
+      "auto": {
+        "placa": "18XBKB",
+        "b-sisa": "88PG-0PTN9JQE"
+      },
+      "date": "2025-04-07T11:45:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 57,
+      "amount": 570,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "411",
+      "admin_id": "2",
+      "gas_station_id": "8",
+      "customer_data_id": "159",
+      "auto": {
+        "placa": "JVLQJC",
+        "b-sisa": "554G-CMZ2A8DS"
+      },
+      "date": "2025-05-04T17:30:00",
+      "gas_type": "diesel",
+      "quantity_lt": 110,
+      "amount": 1100,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "412",
+      "admin_id": "3",
+      "gas_station_id": "8",
+      "customer_data_id": "133",
+      "auto": {
+        "placa": "JZCROM",
+        "b-sisa": "I028-WENUZEDU"
+      },
+      "date": "2025-05-04T18:15:00",
+      "gas_type": "diesel",
+      "quantity_lt": 132,
+      "amount": 1320,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "413",
+      "admin_id": "1",
+      "gas_station_id": "10",
+      "customer_data_id": "115",
+      "auto": {
+        "placa": "QMTROW",
+        "b-sisa": "D8IF-LLX3UU97"
+      },
+      "date": "2025-05-05T20:00:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 246,
+      "amount": 2460,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "414",
+      "admin_id": "2",
+      "gas_station_id": "5",
+      "customer_data_id": "19",
+      "auto": {
+        "placa": "9W5KRK",
+        "b-sisa": "MZ1A-P140HE6D"
+      },
+      "date": "2025-04-11T01:45:00",
+      "gas_type": "diesel",
+      "quantity_lt": 214,
+      "amount": 2140,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "415",
+      "admin_id": "2",
+      "gas_station_id": "5",
+      "customer_data_id": "7",
+      "auto": {
+        "placa": "RFPXMD",
+        "b-sisa": "2S8Y-TR2XHA3A"
+      },
+      "date": "2025-06-02T13:30:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 159,
+      "amount": 1590,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "416",
+      "admin_id": "1",
+      "gas_station_id": "7",
+      "customer_data_id": "63",
+      "auto": {
+        "placa": "NUQ10C",
+        "b-sisa": "DKT2-Z5KFULS4"
+      },
+      "date": "2025-05-12T06:00:00",
+      "gas_type": "GNV",
+      "quantity_lt": 137,
+      "amount": 1370,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "417",
+      "admin_id": "1",
+      "gas_station_id": "6",
+      "customer_data_id": "101",
+      "auto": {
+        "placa": "U0YL5Q",
+        "b-sisa": "9NXY-03T5AG7W"
+      },
+      "date": "2025-05-03T23:30:00",
+      "gas_type": "diesel",
+      "quantity_lt": 388,
+      "amount": 3880,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "418",
+      "admin_id": "3",
+      "gas_station_id": "4",
+      "customer_data_id": "158",
+      "auto": {
+        "placa": "D1NTOU",
+        "b-sisa": "WSAR-3VLBJGTJ"
+      },
+      "date": "2025-05-30T20:15:00",
+      "gas_type": "diesel",
+      "quantity_lt": 57,
+      "amount": 570,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "419",
+      "admin_id": "2",
+      "gas_station_id": "2",
+      "customer_data_id": "116",
+      "auto": {
+        "placa": "A9EIRG",
+        "b-sisa": "ST1G-CR94HUVX"
+      },
+      "date": "2025-05-05T01:00:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 129,
+      "amount": 1290,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "420",
+      "admin_id": "1",
+      "gas_station_id": "8",
+      "customer_data_id": "12",
+      "auto": {
+        "placa": "7D8XE4",
+        "b-sisa": "EUKY-34KUEV44"
+      },
+      "date": "2025-05-27T01:00:00",
+      "gas_type": "GNV",
+      "quantity_lt": 237,
+      "amount": 2370,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "421",
+      "admin_id": "3",
+      "gas_station_id": "7",
+      "customer_data_id": "125",
+      "auto": {
+        "placa": "RUWNMR",
+        "b-sisa": "F9HI-KARU7R0K"
+      },
+      "date": "2025-05-16T23:45:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 139,
+      "amount": 1390,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "422",
+      "admin_id": "2",
+      "gas_station_id": "6",
+      "customer_data_id": "140",
+      "auto": {
+        "placa": "JMUXFH",
+        "b-sisa": "NY5O-C6RJV8BV"
+      },
+      "date": "2025-04-27T09:30:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 299,
+      "amount": 2990,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "423",
+      "admin_id": "1",
+      "gas_station_id": "3",
+      "customer_data_id": "4",
+      "auto": {
+        "placa": "ZHYMHQ",
+        "b-sisa": "MW1Q-Q005RWN1"
+      },
+      "date": "2025-05-14T03:45:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 104,
+      "amount": 1040,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "424",
+      "admin_id": "3",
+      "gas_station_id": "2",
+      "customer_data_id": "40",
+      "auto": {
+        "placa": "O88DHO",
+        "b-sisa": "9HZX-JHSNOK5L"
+      },
+      "date": "2025-05-30T23:00:00",
+      "gas_type": "diesel",
+      "quantity_lt": 343,
+      "amount": 3430,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "425",
+      "admin_id": "1",
+      "gas_station_id": "3",
+      "customer_data_id": "18",
+      "auto": {
+        "placa": "XP0UO2",
+        "b-sisa": "VI98-V858SLWY"
+      },
+      "date": "2025-05-29T16:00:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 291,
+      "amount": 2910,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "426",
+      "admin_id": "2",
+      "gas_station_id": "9",
+      "customer_data_id": "193",
+      "auto": {
+        "placa": "MXE65T",
+        "b-sisa": "WPTH-WMDWNHHS"
+      },
+      "date": "2025-05-06T01:30:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 310,
+      "amount": 3100,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "427",
+      "admin_id": "1",
+      "gas_station_id": "3",
+      "customer_data_id": "9",
+      "auto": {
+        "placa": "7KWVQ0",
+        "b-sisa": "85Q1-MUO1M867"
+      },
+      "date": "2025-05-12T10:30:00",
+      "gas_type": "diesel",
+      "quantity_lt": 202,
+      "amount": 2020,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "428",
+      "admin_id": "2",
+      "gas_station_id": "5",
+      "customer_data_id": "52",
+      "auto": {
+        "placa": "B0LR9X",
+        "b-sisa": "KG54-MZQCJY2F"
+      },
+      "date": "2025-06-14T22:15:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 26,
+      "amount": 260,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "429",
+      "admin_id": "1",
+      "gas_station_id": "6",
+      "customer_data_id": "117",
+      "auto": {
+        "placa": "0N6IDY",
+        "b-sisa": "C7E0-S0W9BGUW"
+      },
+      "date": "2025-05-15T18:45:00",
+      "gas_type": "diesel",
+      "quantity_lt": 146,
+      "amount": 1460,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "430",
+      "admin_id": "2",
+      "gas_station_id": "3",
+      "customer_data_id": "34",
+      "auto": {
+        "placa": "UK488Y",
+        "b-sisa": "B882-HXD43WZZ"
+      },
+      "date": "2025-05-04T08:45:00",
+      "gas_type": "diesel",
+      "quantity_lt": 286,
+      "amount": 2860,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "431",
+      "admin_id": "1",
+      "gas_station_id": "5",
+      "customer_data_id": "98",
+      "auto": {
+        "placa": "M0HEQI",
+        "b-sisa": "63DI-4NM4YTZ7"
+      },
+      "date": "2025-04-25T16:30:00",
+      "gas_type": "GNV",
+      "quantity_lt": 341,
+      "amount": 3410,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "432",
+      "admin_id": "2",
+      "gas_station_id": "10",
+      "customer_data_id": "38",
+      "auto": {
+        "placa": "93IUV9",
+        "b-sisa": "G40O-7KTS6W9G"
+      },
+      "date": "2025-06-05T09:00:00",
+      "gas_type": "GNV",
+      "quantity_lt": 262,
+      "amount": 2620,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "433",
+      "admin_id": "1",
+      "gas_station_id": "8",
+      "customer_data_id": "161",
+      "auto": {
+        "placa": "KL4LWC",
+        "b-sisa": "96SR-BH9IU84O"
+      },
+      "date": "2025-05-05T11:00:00",
+      "gas_type": "GNV",
+      "quantity_lt": 219,
+      "amount": 2190,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "434",
+      "admin_id": "3",
+      "gas_station_id": "8",
+      "customer_data_id": "199",
+      "auto": {
+        "placa": "IIQW3I",
+        "b-sisa": "7LNP-576UPEA6"
+      },
+      "date": "2025-04-19T23:30:00",
+      "gas_type": "diesel",
+      "quantity_lt": 223,
+      "amount": 2230,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "435",
+      "admin_id": "2",
+      "gas_station_id": "10",
+      "customer_data_id": "62",
+      "auto": {
+        "placa": "0IJ3OF",
+        "b-sisa": "0EB9-M2D1NZ1Q"
+      },
+      "date": "2025-04-08T02:30:00",
+      "gas_type": "diesel",
+      "quantity_lt": 145,
+      "amount": 1450,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "436",
+      "admin_id": "3",
+      "gas_station_id": "1",
+      "customer_data_id": "145",
+      "auto": {
+        "placa": "71TM2S",
+        "b-sisa": "SANI-CLV07I46"
+      },
+      "date": "2025-04-03T15:00:00",
+      "gas_type": "diesel",
+      "quantity_lt": 210,
+      "amount": 2100,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "437",
+      "admin_id": "3",
+      "gas_station_id": "8",
+      "customer_data_id": "68",
+      "auto": {
+        "placa": "EWRI5S",
+        "b-sisa": "508Q-Y5MT0ET0"
+      },
+      "date": "2025-05-30T14:15:00",
+      "gas_type": "diesel",
+      "quantity_lt": 325,
+      "amount": 3250,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "438",
+      "admin_id": "1",
+      "gas_station_id": "6",
+      "customer_data_id": "194",
+      "auto": {
+        "placa": "B1H7IP",
+        "b-sisa": "AJA4-9R5LRYPW"
+      },
+      "date": "2025-04-02T00:15:00",
+      "gas_type": "diesel",
+      "quantity_lt": 350,
+      "amount": 3500,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "439",
+      "admin_id": "3",
+      "gas_station_id": "7",
+      "customer_data_id": "48",
+      "auto": {
+        "placa": "3UD0AA",
+        "b-sisa": "J82L-79NUKAEI"
+      },
+      "date": "2025-05-05T15:15:00",
+      "gas_type": "GNV",
+      "quantity_lt": 367,
+      "amount": 3670,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "440",
+      "admin_id": "2",
+      "gas_station_id": "5",
+      "customer_data_id": "13",
+      "auto": {
+        "placa": "9NY4WE",
+        "b-sisa": "3OXI-0HX4FMER"
+      },
+      "date": "2025-05-11T12:30:00",
+      "gas_type": "diesel",
+      "quantity_lt": 218,
+      "amount": 2180,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "441",
+      "admin_id": "2",
+      "gas_station_id": "9",
+      "customer_data_id": "196",
+      "auto": {
+        "placa": "RIC2X6",
+        "b-sisa": "B6T5-27P7XSGK"
+      },
+      "date": "2025-06-09T11:15:00",
+      "gas_type": "GNV",
+      "quantity_lt": 187,
+      "amount": 1870,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "442",
+      "admin_id": "3",
+      "gas_station_id": "5",
+      "customer_data_id": "96",
+      "auto": {
+        "placa": "R7E0E8",
+        "b-sisa": "K8Q1-DV2KJNIY"
+      },
+      "date": "2025-05-25T10:30:00",
+      "gas_type": "diesel",
+      "quantity_lt": 206,
+      "amount": 2060,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "443",
+      "admin_id": "3",
+      "gas_station_id": "6",
+      "customer_data_id": "52",
+      "auto": {
+        "placa": "HR0I77",
+        "b-sisa": "IOVR-967VC99P"
+      },
+      "date": "2025-04-08T04:00:00",
+      "gas_type": "diesel",
+      "quantity_lt": 44,
+      "amount": 440,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "444",
+      "admin_id": "2",
+      "gas_station_id": "7",
+      "customer_data_id": "87",
+      "auto": {
+        "placa": "I1H2GA",
+        "b-sisa": "BVJE-MAB2JQZK"
+      },
+      "date": "2025-05-12T01:00:00",
+      "gas_type": "GNV",
+      "quantity_lt": 268,
+      "amount": 2680,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "445",
+      "admin_id": "1",
+      "gas_station_id": "7",
+      "customer_data_id": "128",
+      "auto": {
+        "placa": "9MF2NV",
+        "b-sisa": "GF2U-QZW7RQKS"
+      },
+      "date": "2025-05-19T16:00:00",
+      "gas_type": "diesel",
+      "quantity_lt": 190,
+      "amount": 1900,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "446",
+      "admin_id": "1",
+      "gas_station_id": "6",
+      "customer_data_id": "66",
+      "auto": {
+        "placa": "CGX8Y4",
+        "b-sisa": "EY31-B4C5MBYM"
+      },
+      "date": "2025-06-04T04:30:00",
+      "gas_type": "diesel",
+      "quantity_lt": 30,
+      "amount": 300,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "447",
+      "admin_id": "3",
+      "gas_station_id": "5",
+      "customer_data_id": "168",
+      "auto": {
+        "placa": "Z1DLRR",
+        "b-sisa": "BZVE-E1EM51S7"
+      },
+      "date": "2025-04-03T20:15:00",
+      "gas_type": "diesel",
+      "quantity_lt": 146,
+      "amount": 1460,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "448",
+      "admin_id": "2",
+      "gas_station_id": "2",
+      "customer_data_id": "142",
+      "auto": {
+        "placa": "V9J5J3",
+        "b-sisa": "79JK-77A67UF7"
+      },
+      "date": "2025-04-05T22:15:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 293,
+      "amount": 2930,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "449",
+      "admin_id": "2",
+      "gas_station_id": "7",
+      "customer_data_id": "46",
+      "auto": {
+        "placa": "WRRCDL",
+        "b-sisa": "2PWJ-OWGNLNZL"
+      },
+      "date": "2025-04-02T20:45:00",
+      "gas_type": "GNV",
+      "quantity_lt": 309,
+      "amount": 3090,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "450",
+      "admin_id": "3",
+      "gas_station_id": "8",
+      "customer_data_id": "170",
+      "auto": {
+        "placa": "1HCPAJ",
+        "b-sisa": "GXX9-G6MYBJHJ"
+      },
+      "date": "2025-06-14T22:00:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 57,
+      "amount": 570,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "451",
+      "admin_id": "3",
+      "gas_station_id": "7",
+      "customer_data_id": "92",
+      "auto": {
+        "placa": "HWJKK7",
+        "b-sisa": "XUHM-WREOD3PY"
+      },
+      "date": "2025-05-22T01:45:00",
+      "gas_type": "GNV",
+      "quantity_lt": 45,
+      "amount": 450,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "452",
+      "admin_id": "1",
+      "gas_station_id": "5",
+      "customer_data_id": "19",
+      "auto": {
+        "placa": "PK1AG7",
+        "b-sisa": "EBCN-RINCXW1X"
+      },
+      "date": "2025-04-22T06:00:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 365,
+      "amount": 3650,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "453",
+      "admin_id": "2",
+      "gas_station_id": "8",
+      "customer_data_id": "116",
+      "auto": {
+        "placa": "RFFK7X",
+        "b-sisa": "OWXJ-9YLTA2XG"
+      },
+      "date": "2025-05-23T01:30:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 292,
+      "amount": 2920,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "454",
+      "admin_id": "2",
+      "gas_station_id": "2",
+      "customer_data_id": "136",
+      "auto": {
+        "placa": "8O76MR",
+        "b-sisa": "NAKR-TPAVPM1O"
+      },
+      "date": "2025-05-04T18:30:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 31,
+      "amount": 310,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "455",
+      "admin_id": "2",
+      "gas_station_id": "10",
+      "customer_data_id": "76",
+      "auto": {
+        "placa": "A506VV",
+        "b-sisa": "X2M7-SVTUFOYL"
+      },
+      "date": "2025-04-01T19:00:00",
+      "gas_type": "diesel",
+      "quantity_lt": 279,
+      "amount": 2790,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "456",
+      "admin_id": "2",
+      "gas_station_id": "8",
+      "customer_data_id": "64",
+      "auto": {
+        "placa": "AQMZ5Q",
+        "b-sisa": "KTNG-I7V6O8OU"
+      },
+      "date": "2025-05-05T10:00:00",
+      "gas_type": "diesel",
+      "quantity_lt": 208,
+      "amount": 2080,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "457",
+      "admin_id": "3",
+      "gas_station_id": "3",
+      "customer_data_id": "70",
+      "auto": {
+        "placa": "T931VV",
+        "b-sisa": "LB3J-ZLYJPVGJ"
+      },
+      "date": "2025-05-14T22:15:00",
+      "gas_type": "GNV",
+      "quantity_lt": 232,
+      "amount": 2320,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "458",
+      "admin_id": "3",
+      "gas_station_id": "9",
+      "customer_data_id": "58",
+      "auto": {
+        "placa": "J5QL53",
+        "b-sisa": "D48W-EHVFZO7T"
+      },
+      "date": "2025-04-25T04:15:00",
+      "gas_type": "GNV",
+      "quantity_lt": 69,
+      "amount": 690,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "459",
+      "admin_id": "3",
+      "gas_station_id": "1",
+      "customer_data_id": "135",
+      "auto": {
+        "placa": "9BPSSM",
+        "b-sisa": "U9BI-KXSK6UX4"
+      },
+      "date": "2025-04-25T22:30:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 331,
+      "amount": 3310,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "460",
+      "admin_id": "3",
+      "gas_station_id": "8",
+      "customer_data_id": "53",
+      "auto": {
+        "placa": "ED44H6",
+        "b-sisa": "VA6H-A67Z6UIL"
+      },
+      "date": "2025-04-03T08:00:00",
+      "gas_type": "GNV",
+      "quantity_lt": 186,
+      "amount": 1860,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "461",
+      "admin_id": "1",
+      "gas_station_id": "10",
+      "customer_data_id": "144",
+      "auto": {
+        "placa": "GEP5FJ",
+        "b-sisa": "51WT-OHBBNER8"
+      },
+      "date": "2025-05-02T13:15:00",
+      "gas_type": "diesel",
+      "quantity_lt": 176,
+      "amount": 1760,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "462",
+      "admin_id": "2",
+      "gas_station_id": "2",
+      "customer_data_id": "197",
+      "auto": {
+        "placa": "ZPOPU2",
+        "b-sisa": "VW3W-26TGFL0Q"
+      },
+      "date": "2025-05-01T08:30:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 233,
+      "amount": 2330,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "463",
+      "admin_id": "1",
+      "gas_station_id": "7",
+      "customer_data_id": "56",
+      "auto": {
+        "placa": "MPQ788",
+        "b-sisa": "F1H8-AKGX5TSD"
+      },
+      "date": "2025-04-17T21:45:00",
+      "gas_type": "diesel",
+      "quantity_lt": 394,
+      "amount": 3940,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "464",
+      "admin_id": "2",
+      "gas_station_id": "9",
+      "customer_data_id": "97",
+      "auto": {
+        "placa": "MPXY0B",
+        "b-sisa": "540B-B0GJ5Q80"
+      },
+      "date": "2025-05-15T03:00:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 168,
+      "amount": 1680,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "465",
+      "admin_id": "1",
+      "gas_station_id": "5",
+      "customer_data_id": "81",
+      "auto": {
+        "placa": "X2J63V",
+        "b-sisa": "UNI2-WRJPQ2RP"
+      },
+      "date": "2025-04-09T01:30:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 175,
+      "amount": 1750,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "466",
+      "admin_id": "3",
+      "gas_station_id": "1",
+      "customer_data_id": "81",
+      "auto": {
+        "placa": "LILGXZ",
+        "b-sisa": "MFXG-8UINE246"
+      },
+      "date": "2025-06-06T00:00:00",
+      "gas_type": "diesel",
+      "quantity_lt": 222,
+      "amount": 2220,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "467",
+      "admin_id": "3",
+      "gas_station_id": "5",
+      "customer_data_id": "200",
+      "auto": {
+        "placa": "BICK6P",
+        "b-sisa": "SNOP-CDRQVHG7"
+      },
+      "date": "2025-05-21T16:00:00",
+      "gas_type": "GNV",
+      "quantity_lt": 254,
+      "amount": 2540,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "468",
+      "admin_id": "2",
+      "gas_station_id": "2",
+      "customer_data_id": "35",
+      "auto": {
+        "placa": "TY131K",
+        "b-sisa": "89JV-623F2M4T"
+      },
+      "date": "2025-06-07T22:30:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 283,
+      "amount": 2830,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "469",
+      "admin_id": "1",
+      "gas_station_id": "1",
+      "customer_data_id": "184",
+      "auto": {
+        "placa": "ZEPZBP",
+        "b-sisa": "XXU6-ETCROP8R"
+      },
+      "date": "2025-06-02T23:30:00",
+      "gas_type": "diesel",
+      "quantity_lt": 69,
+      "amount": 690,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "470",
+      "admin_id": "3",
+      "gas_station_id": "1",
+      "customer_data_id": "78",
+      "auto": {
+        "placa": "4TPBTG",
+        "b-sisa": "R443-MW06O4YV"
+      },
+      "date": "2025-05-08T16:30:00",
+      "gas_type": "diesel",
+      "quantity_lt": 172,
+      "amount": 1720,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "471",
+      "admin_id": "2",
+      "gas_station_id": "8",
+      "customer_data_id": "83",
+      "auto": {
+        "placa": "6RZQ3H",
+        "b-sisa": "VGCM-19MSR8QB"
+      },
+      "date": "2025-05-23T23:30:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 156,
+      "amount": 1560,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "472",
+      "admin_id": "3",
+      "gas_station_id": "9",
+      "customer_data_id": "83",
+      "auto": {
+        "placa": "UY25ZM",
+        "b-sisa": "SCGH-KY29AAVN"
+      },
+      "date": "2025-04-16T21:30:00",
+      "gas_type": "diesel",
+      "quantity_lt": 229,
+      "amount": 2290,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "473",
+      "admin_id": "1",
+      "gas_station_id": "10",
+      "customer_data_id": "155",
+      "auto": {
+        "placa": "F6BGST",
+        "b-sisa": "Y1J0-6XLDU5DX"
+      },
+      "date": "2025-05-28T20:45:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 194,
+      "amount": 1940,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "474",
+      "admin_id": "1",
+      "gas_station_id": "5",
+      "customer_data_id": "154",
+      "auto": {
+        "placa": "VQ9QJ3",
+        "b-sisa": "7TOH-ED8T5KNP"
+      },
+      "date": "2025-05-07T05:15:00",
+      "gas_type": "GNV",
+      "quantity_lt": 324,
+      "amount": 3240,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "475",
+      "admin_id": "2",
+      "gas_station_id": "1",
+      "customer_data_id": "87",
+      "auto": {
+        "placa": "33JH3D",
+        "b-sisa": "1P6S-GEGXP1NN"
+      },
+      "date": "2025-05-12T04:15:00",
+      "gas_type": "GNV",
+      "quantity_lt": 55,
+      "amount": 550,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "476",
+      "admin_id": "1",
+      "gas_station_id": "1",
+      "customer_data_id": "144",
+      "auto": {
+        "placa": "X9FO3S",
+        "b-sisa": "2LU7-KHNVUF6B"
+      },
+      "date": "2025-04-15T17:00:00",
+      "gas_type": "diesel",
+      "quantity_lt": 252,
+      "amount": 2520,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "477",
+      "admin_id": "2",
+      "gas_station_id": "8",
+      "customer_data_id": "46",
+      "auto": {
+        "placa": "66WVBS",
+        "b-sisa": "Q7IG-4R11UBH2"
+      },
+      "date": "2025-04-04T09:00:00",
+      "gas_type": "diesel",
+      "quantity_lt": 134,
+      "amount": 1340,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "478",
+      "admin_id": "1",
+      "gas_station_id": "9",
+      "customer_data_id": "147",
+      "auto": {
+        "placa": "NFBN18",
+        "b-sisa": "NZ02-S09D3B8B"
+      },
+      "date": "2025-04-24T20:30:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 337,
+      "amount": 3370,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "479",
+      "admin_id": "3",
+      "gas_station_id": "2",
+      "customer_data_id": "60",
+      "auto": {
+        "placa": "Z2U1W1",
+        "b-sisa": "4ITQ-1R0WT8F5"
+      },
+      "date": "2025-04-26T23:45:00",
+      "gas_type": "GNV",
+      "quantity_lt": 147,
+      "amount": 1470,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "480",
+      "admin_id": "2",
+      "gas_station_id": "3",
+      "customer_data_id": "172",
+      "auto": {
+        "placa": "W99K4T",
+        "b-sisa": "EO2S-X0VN76QU"
+      },
+      "date": "2025-04-08T03:00:00",
+      "gas_type": "GNV",
+      "quantity_lt": 319,
+      "amount": 3190,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "481",
+      "admin_id": "2",
+      "gas_station_id": "5",
+      "customer_data_id": "33",
+      "auto": {
+        "placa": "CQ35KM",
+        "b-sisa": "X6SD-NTBM8HT4"
+      },
+      "date": "2025-05-29T23:15:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 40,
+      "amount": 400,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "482",
+      "admin_id": "2",
+      "gas_station_id": "9",
+      "customer_data_id": "24",
+      "auto": {
+        "placa": "ZOPEA9",
+        "b-sisa": "MUP9-CDZCUU9B"
+      },
+      "date": "2025-05-21T01:30:00",
+      "gas_type": "GNV",
+      "quantity_lt": 367,
+      "amount": 3670,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "483",
+      "admin_id": "1",
+      "gas_station_id": "7",
+      "customer_data_id": "87",
+      "auto": {
+        "placa": "17EZWK",
+        "b-sisa": "N6BY-TU3K0HF6"
+      },
+      "date": "2025-04-14T17:15:00",
+      "gas_type": "diesel",
+      "quantity_lt": 303,
+      "amount": 3030,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "484",
+      "admin_id": "1",
+      "gas_station_id": "5",
+      "customer_data_id": "8",
+      "auto": {
+        "placa": "SGE1SC",
+        "b-sisa": "X9X1-UN6YOHVL"
+      },
+      "date": "2025-04-12T18:45:00",
+      "gas_type": "diesel",
+      "quantity_lt": 299,
+      "amount": 2990,
+      "ticket_state": "Realizado"
+    },
+    {
+      "id": "485",
+      "admin_id": "3",
+      "gas_station_id": "10",
+      "customer_data_id": "150",
+      "auto": {
+        "placa": "OL64UR",
+        "b-sisa": "3ENV-RCTKHGOO"
+      },
+      "date": "2025-04-06T23:15:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 209,
+      "amount": 2090,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "486",
+      "admin_id": "1",
+      "gas_station_id": "7",
+      "customer_data_id": "136",
+      "auto": {
+        "placa": "86PNZ3",
+        "b-sisa": "YF89-VTCVWE5L"
+      },
+      "date": "2025-05-15T18:00:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 316,
+      "amount": 3160,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "487",
+      "admin_id": "3",
+      "gas_station_id": "6",
+      "customer_data_id": "43",
+      "auto": {
+        "placa": "3VMNJD",
+        "b-sisa": "W8PR-HYHWFLQJ"
+      },
+      "date": "2025-04-08T06:15:00",
+      "gas_type": "diesel",
+      "quantity_lt": 267,
+      "amount": 2670,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "488",
+      "admin_id": "3",
+      "gas_station_id": "7",
+      "customer_data_id": "30",
+      "auto": {
+        "placa": "9I6XTV",
+        "b-sisa": "NQU9-STT9FQ9D"
+      },
+      "date": "2025-05-16T03:45:00",
+      "gas_type": "GNV",
+      "quantity_lt": 325,
+      "amount": 3250,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "489",
+      "admin_id": "1",
+      "gas_station_id": "6",
+      "customer_data_id": "78",
+      "auto": {
+        "placa": "H7S51A",
+        "b-sisa": "77HU-Y67C2KA9"
+      },
+      "date": "2025-04-26T04:45:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 219,
+      "amount": 2190,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "490",
+      "admin_id": "3",
+      "gas_station_id": "10",
+      "customer_data_id": "91",
+      "auto": {
+        "placa": "O6CL9G",
+        "b-sisa": "ADDK-FU0E1XO9"
+      },
+      "date": "2025-05-18T11:30:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 237,
+      "amount": 2370,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "491",
+      "admin_id": "2",
+      "gas_station_id": "6",
+      "customer_data_id": "92",
+      "auto": {
+        "placa": "MMFZSA",
+        "b-sisa": "UNTF-F7FJ2X7G"
+      },
+      "date": "2025-04-17T17:45:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 124,
+      "amount": 1240,
+      "ticket_state": "Notificado"
+    },
+    {
+      "id": "492",
+      "admin_id": "2",
+      "gas_station_id": "1",
+      "customer_data_id": "69",
+      "auto": {
+        "placa": "LB1PT8",
+        "b-sisa": "8INQ-YMJATW6L"
+      },
+      "date": "2025-05-08T13:00:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 106,
+      "amount": 1060,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "493",
+      "admin_id": "1",
+      "gas_station_id": "3",
+      "customer_data_id": "18",
+      "auto": {
+        "placa": "K5BWC1",
+        "b-sisa": "JUKE-735EUALI"
+      },
+      "date": "2025-04-02T11:30:00",
+      "gas_type": "diesel",
+      "quantity_lt": 335,
+      "amount": 3350,
+      "ticket_state": "Pendiente"
+    },
+    {
+      "id": "494",
+      "admin_id": "2",
+      "gas_station_id": "4",
+      "customer_data_id": "10",
+      "auto": {
+        "placa": "7ICRUN",
+        "b-sisa": "PQQ5-WUCVS2EE"
+      },
+      "date": "2025-05-06T13:00:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 181,
+      "amount": 1810,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "495",
+      "admin_id": "3",
+      "gas_station_id": "4",
+      "customer_data_id": "180",
+      "auto": {
+        "placa": "O5DM8L",
+        "b-sisa": "35MQ-N3LG1NMR"
+      },
+      "date": "2025-06-13T03:15:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 145,
+      "amount": 1450,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "496",
+      "admin_id": "2",
+      "gas_station_id": "4",
+      "customer_data_id": "168",
+      "auto": {
+        "placa": "ILDYG7",
+        "b-sisa": "6MJS-R1JYJ7YY"
+      },
+      "date": "2025-04-06T05:30:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 87,
+      "amount": 870,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "497",
+      "admin_id": "2",
+      "gas_station_id": "8",
+      "customer_data_id": "21",
+      "auto": {
+        "placa": "NBDX00",
+        "b-sisa": "QCBC-K4Y2ZWHR"
+      },
+      "date": "2025-06-02T17:30:00",
+      "gas_type": "GNV",
+      "quantity_lt": 291,
+      "amount": 2910,
+      "ticket_state": "Rechazado"
+    },
+    {
+      "id": "498",
+      "admin_id": "3",
+      "gas_station_id": "4",
+      "customer_data_id": "108",
+      "auto": {
+        "placa": "4UDUCW",
+        "b-sisa": "Q8OV-KL5KLKHX"
+      },
+      "date": "2025-05-28T19:30:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 113,
+      "amount": 1130,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "499",
+      "admin_id": "1",
+      "gas_station_id": "7",
+      "customer_data_id": "49",
+      "auto": {
+        "placa": "LK1IJQ",
+        "b-sisa": "ZHP0-6A5IY358"
+      },
+      "date": "2025-04-09T09:00:00",
+      "gas_type": "diesel",
+      "quantity_lt": 333,
+      "amount": 3330,
+      "ticket_state": "Cancelado"
+    },
+    {
+      "id": "500",
+      "admin_id": "3",
+      "gas_station_id": "5",
+      "customer_data_id": "117",
+      "auto": {
+        "placa": "QBAC8L",
+        "b-sisa": "GZBT-VJGWKKW4"
+      },
+      "date": "2025-06-06T01:45:00",
+      "gas_type": "gasolina",
+      "quantity_lt": 240,
+      "amount": 2400,
+      "ticket_state": "Cancelado"
+    }
   ]
+
 }
