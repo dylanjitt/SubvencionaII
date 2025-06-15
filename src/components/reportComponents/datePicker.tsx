@@ -44,7 +44,7 @@ export const DatePickerCustom = ({
           {isSingleDate ? (
             <>
               <DatePicker
-                label="Pick a date"
+                label="Seleccione una fecha"
                 value={singleDate}
                 onChange={setSingleDate}
                 minDate={minDate}
@@ -62,7 +62,7 @@ export const DatePickerCustom = ({
           ) : (
             <>
               <DatePicker
-                label="Start date"
+                label="Fecha Inicial"
                 value={rangeStart}
                 onChange={setRangeStart}
                 minDate={minDate}
@@ -70,7 +70,7 @@ export const DatePickerCustom = ({
                 slotProps={{ textField: { size: "small" } }}
               />
               <DatePicker
-                label="End date"
+                label="Fecha Final"
                 value={rangeEnd}
                 onChange={setRangeEnd}
                 minDate={minDate}

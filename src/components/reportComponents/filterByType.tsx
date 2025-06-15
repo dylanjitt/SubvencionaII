@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import {
   Card,
   Box,
@@ -11,38 +11,36 @@ import {
 import type { ticketData } from "../../interface/ticketDataInterface";
 import CircleChart from "./circle";
 import { DatePickerCustom } from "./datePicker";
-import { PdfExportButton } from "../../utils/PdfExport";
 
 interface TicketDataProps {
   tickets: ticketData[];
   title: string;
 }
 
-export const FilterByStation = ({ tickets, title }: TicketDataProps) => {
-
-  const [fuelFilter, setFuelFilter] = useState<"all" | "gasolina" | "diesel" | "GNV">("all");
+export const FilterByType = ({ tickets, title }: TicketDataProps) => {
+  
+  const [stationFilter, setStationFilter] = useState<"all" | "gasolina" | "diesel" | "GNV">("all");
   const [singleDate, setSingleDate] = useState<Date | null>(null);
   const [rangeStart, setRangeStart] = useState<Date | null>(null);
   const [rangeEnd, setRangeEnd] = useState<Date | null>(null);
 
-  const chartRef = useRef<HTMLDivElement>(null);
-
+  
   const [filteredData, setFilteredData] = useState<number[]>([]);
 
-
-  const countByStation = (list: ticketData[]) =>
+  
+  const countByType = (list: ticketData[]) =>
     Array.from({ length: 10 }, (_, i) => {
       const id = (i + 1).toString();
-      return list.filter((t) => t.gas_station_id === id).length;
+      return list.filter((t) => t.gas_type === id).length;
     });
 
-
+  
   useEffect(() => {
-
+    
     let temp = tickets;
-
-    if (fuelFilter !== "all") {
-      temp = temp.filter((t) => t.gas_type.toLowerCase() === fuelFilter);
+    
+    if (stationFilter !== "all") {
+      temp = temp.filter((t) => t.gas_type.toLowerCase() === stationFilter);
     }
 
     if (singleDate) {
@@ -59,40 +57,19 @@ export const FilterByStation = ({ tickets, title }: TicketDataProps) => {
       });
     }
 
-    setFilteredData(countByStation(temp));
-    // console.log('filtered:',filteredData)
-  }, [tickets, fuelFilter, singleDate, rangeStart, rangeEnd]);
+    setFilteredData(countByType(temp));
+  }, [tickets, stationFilter, singleDate, rangeStart, rangeEnd]);
 
   const restoreAll = () => {
-    setFuelFilter("all");
+    setStationFilter("all");
     setSingleDate(null);
     setRangeStart(null);
     setRangeEnd(null);
   };
 
-  const getCurrentFilters = () => {
-    let dateFilter = "";
-    if (singleDate) {
-      dateFilter = `Date: ${singleDate.toLocaleDateString()}`;
-    } else if (rangeStart && rangeEnd) {
-      dateFilter = `Range: ${rangeStart.toLocaleDateString()} to ${rangeEnd.toLocaleDateString()}`;
-    } else {
-      dateFilter = "All dates";
-    }
-
-    return {
-      fuelFilter: fuelFilter === "all" ? "All fuels" : `Fuel: ${fuelFilter}`,
-      dateFilter
-    };
-  };
-
   return (
     <Card sx={{ p: 2 }}>
-      <div ref={chartRef} style={{ position: 'relative' }}>
-        <CircleChart tickets={filteredData} title={title} />
-      </div>
-      {/* <CircleChart tickets={filteredData} title={title} /> */}
-
+      <CircleChart tickets={filteredData} title={title} />
 
       <DatePickerCustom
         singleDate={singleDate}
@@ -104,16 +81,15 @@ export const FilterByStation = ({ tickets, title }: TicketDataProps) => {
         minDate={tickets[0] ? new Date(tickets[0].date) : undefined}
         maxDate={new Date()}
       />
-
-
+     
       <Box mt={3} textAlign="center">
         <FormControl size="small" sx={{ minWidth: 160, mr: 2 }}>
           <InputLabel id="fuel-filter-label">Tipo de Combustible</InputLabel>
           <Select
             labelId="fuel-filter-label"
-            value={fuelFilter}
+            value={stationFilter}
             label="Tipo de Combustible"
-            onChange={(e) => setFuelFilter(e.target.value as any)}
+            onChange={(e) => setStationFilter(e.target.value as any)}
           >
             <MenuItem value="all">Todos</MenuItem>
             <MenuItem value="gasolina">Gasolina</MenuItem>
@@ -126,17 +102,6 @@ export const FilterByStation = ({ tickets, title }: TicketDataProps) => {
           Reiniciar
         </Button>
       </Box>
-      
-      <Box mt={3} textAlign="center">
-      <PdfExportButton
-          chartRef={chartRef}
-          data={filteredData}
-          title={title}
-          filters={getCurrentFilters()}
-        />
-      </Box>
-
     </Card>
   );
 };
-

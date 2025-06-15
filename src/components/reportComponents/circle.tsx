@@ -35,7 +35,7 @@ const CircleChart = ({tickets,title}:circleDataProps)=>{
         font: { size: 20 }
       },
       subtitle: {
-        display: true,
+        display: false,
         text: "Abril 1 - Hoy",
         font: { size: 14 },
         padding: { bottom: 10 }
@@ -46,7 +46,9 @@ const CircleChart = ({tickets,title}:circleDataProps)=>{
     }
   };
 return( 
-    <Doughnut data={chartData} options={chartOptions} />
+  <div style={{ position: 'relative', height: '550px', width: '100%' }}>
+  <Doughnut data={chartData} options={chartOptions} />
+</div>
 )
 }
 
