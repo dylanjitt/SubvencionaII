@@ -11,11 +11,7 @@ import {
 import type { ticketData } from "../../interface/ticketDataInterface";
 import CircleChart from "./circle";
 import { DatePickerCustom } from "./datePicker";
-
-interface TicketDataProps {
-  tickets: ticketData[];
-  title: string;
-}
+import type { TicketDataProps } from "../../interface/ticketDataProps";
 
 export const FilterByType = ({ tickets, title }: TicketDataProps) => {
   
@@ -69,7 +65,7 @@ export const FilterByType = ({ tickets, title }: TicketDataProps) => {
 
   return (
     <Card sx={{ p: 2 }}>
-      <CircleChart tickets={filteredData} title={title} />
+      <CircleChart tickets={filteredData} title={title} labels={[]} />
 
       <DatePickerCustom
         singleDate={singleDate}

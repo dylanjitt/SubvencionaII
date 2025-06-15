@@ -16,14 +16,17 @@ import { CsvExportButton } from "../../utils/CsvExport";
 import { getGasStations } from "../../services/gasStationsService";
 import type { TicketDataProps } from "../../interface/ticketDataProps";
 
-export const FilterByStation = ({ tickets, title }: TicketDataProps) => {
+export const FilterByCancel = ({ tickets, title }: TicketDataProps) => {
 
   const [fuelFilter, setFuelFilter] = useState<"all" | "gasolina" | "diesel" | "GNV">("all");
   const [singleDate, setSingleDate] = useState<Date | null>(null);
   const [rangeStart, setRangeStart] = useState<Date | null>(null);
   const [rangeEnd, setRangeEnd] = useState<Date | null>(null);
-  
-  const [gasStationNames,setGasStationNames]=useState<string[]>([])
+
+  const [gasStationNames, setGasStationNames] = useState<string[]>([])
+  const [stationFilter, setStationFilter] = useState<string>("all");
+
+  const ticketState = ["Pendiente", "Reservado", "Notificado", "EnTurno", "Realizado", "Cancelado"]
 
   const chartRef = useRef<HTMLDivElement>(null);
 
@@ -34,10 +37,9 @@ export const FilterByStation = ({ tickets, title }: TicketDataProps) => {
     const fetchStationNames = async () => {
       try {
         const stations = await getGasStations();
-        
-        const names = stations.map((station:any) => station.name);
+
+        const names = ["all", ...stations.map((station: any) => station.name)];
         setGasStationNames(names);
-        console.log('names',names)
       } catch (error) {
         console.error('Error fetching station names:', error);
         setGasStationNames([]);
@@ -45,27 +47,34 @@ export const FilterByStation = ({ tickets, title }: TicketDataProps) => {
     };
 
     fetchStationNames();
+
   }, []);
 
+  useEffect(() => {
+    console.log('gas station filter: ', stationFilter)
+  }, [stationFilter]);
 
-  const countByStation = (list: ticketData[]) =>{
-    if (!gasStationNames || gasStationNames.length === 0) {
-      return []; // Return empty array if no station names are loaded
-    }
-    return gasStationNames.map(stationName=>{
-      return list.filter(ticket=>
-        ticket.gasStationName===stationName 
+
+  const countByTicketState = (list: ticketData[]) => {
+
+    return ticketState.map(state => {
+      return list.filter(ticket =>
+        ticket.ticketState === state
       ).length
     })
-    };
+  };
 
   useEffect(() => {
 
     let temp = tickets;
-    console.log('temp',temp)
+    console.log('temp', temp)
 
     if (fuelFilter !== "all") {
       temp = temp.filter((t) => t.gasType === fuelFilter);
+    }
+
+    if (stationFilter !== "all") {
+      temp = temp.filter((t) => t.gasStationName === stationFilter);
     }
 
     if (singleDate) {
@@ -82,13 +91,14 @@ export const FilterByStation = ({ tickets, title }: TicketDataProps) => {
       });
     }
 
-    setFilteredData(countByStation(temp));
+    setFilteredData(countByTicketState(temp));
     setFilteredticketsExport(temp)
-    console.log('filtered:',filteredData)
-  }, [tickets, fuelFilter, singleDate, rangeStart, rangeEnd]);
+    console.log('filtered:', filteredData)
+  }, [tickets, fuelFilter, stationFilter, singleDate, rangeStart, rangeEnd]);
 
   const restoreAll = () => {
     setFuelFilter("all");
+    setStationFilter("all");
     setSingleDate(null);
     setRangeStart(null);
     setRangeEnd(null);
@@ -113,7 +123,7 @@ export const FilterByStation = ({ tickets, title }: TicketDataProps) => {
   return (
     <Card sx={{ p: 2 }}>
       <div ref={chartRef} style={{ position: 'relative' }}>
-        <CircleChart tickets={filteredData} title={title} labels={gasStationNames}/>
+        <CircleChart tickets={filteredData} title={title} labels={ticketState} />
       </div>
 
       <DatePickerCustom
@@ -143,6 +153,23 @@ export const FilterByStation = ({ tickets, title }: TicketDataProps) => {
           </Select>
         </FormControl>
 
+        <FormControl size="small" sx={{ minWidth: 160, mr: 2 }}>
+          <InputLabel id="station-filter-label">Estación de Servicio</InputLabel>
+          <Select
+            labelId="station-filter-label"
+            value={stationFilter}
+            label="Estación de Servicio"
+            onChange={(e) => setStationFilter(e.target.value as string)}
+          >
+            {gasStationNames.map((name) => (
+              <MenuItem key={name} value={name === "all" ? "all" : name}>
+                {name}
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
+
+
         <Button variant="outlined" color="secondary" onClick={restoreAll}>
           Reiniciar
         </Button>
@@ -157,7 +184,7 @@ export const FilterByStation = ({ tickets, title }: TicketDataProps) => {
         />
         <CsvExportButton
           data={filteredticketsExport || []}
-          filename={`turnos_por_Estacion_export_${new Date().toISOString().slice(0, 10)}`}
+          filename={`turnos_por_Cancelacion_export_${new Date().toISOString().slice(0, 10)}`}
         />
       </Box>
 

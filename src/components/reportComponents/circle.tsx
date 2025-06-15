@@ -3,10 +3,11 @@ import { Doughnut } from "react-chartjs-2"
 
 interface circleDataProps{
   tickets:number[],
-  title:string
+  title:string,
+  labels:string[]
 }
 
-const CircleChart = ({tickets,title}:circleDataProps)=>{
+const CircleChart = ({tickets,title,labels}:circleDataProps)=>{
   const colors = [
     '#FF6384', '#36A2EB', '#FFCE56',
     '#4BC0C0', '#9966FF', '#FF9F40',
@@ -17,7 +18,7 @@ const CircleChart = ({tickets,title}:circleDataProps)=>{
   
 
   let chartData = {
-    labels: Array.from({ length: 10 }, (_, i) => `Station ${i + 1}`),
+    labels: labels,
     datasets: [
       {
         data: tickets,
@@ -46,7 +47,7 @@ const CircleChart = ({tickets,title}:circleDataProps)=>{
     }
   };
 return( 
-  <div style={{ position: 'relative', height: '550px', width: '100%' }}>
+  <div style={{ position: 'relative', height: '550px', width: '500px' }}>
   <Doughnut data={chartData} options={chartOptions} />
 </div>
 )

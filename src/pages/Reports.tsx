@@ -14,6 +14,8 @@ import { useAuthStore } from "../store/authStore";
 import { useTicketDataStore } from "../store/ticketStore";
 import { getTicketsData } from "../services/ticketDataService";
 import { FilterByStation } from "../components/reportComponents/filterByStation";
+import { FilterByCancel } from "../components/reportComponents/filterByCancel";
+import { Card } from "@mui/material";
 
 
 Chart.register(ArcElement, Title, SubTitle, Tooltip, Legend);
@@ -38,9 +40,12 @@ export function ReportsPage() {
   
 
   return (
-    <div style={{ maxWidth: 600, margin: "0 auto" }}>
+    <div style={{  margin: "0 auto" }}>
       <h1>Station Usage Report</h1>
-      <FilterByStation tickets={tickets} title="Tickets Por estación"/>
+      <Card sx={{width:'100%',display:'flex'}}>
+        <FilterByStation tickets={tickets} title="Turnos Por estación"/>
+      <FilterByCancel tickets={tickets} title="Cancelaciones"/>
+      </Card>
       
     </div>
   );
