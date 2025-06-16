@@ -24,27 +24,8 @@ const Navbar = () => {
     archiveNotification,
     goToReports
   } = useNotifierNavBar();
+  console.log('user role navbar:',user.role)
 
-
-
-// import { useAuthStore } from "../store/authStore";
-// import { useNavigate } from "react-router-dom";
-// interface NavbarProps {
-//   onMenuClick: () => void;
-// }
-// const Navbar = ({ onMenuClick }: NavbarProps) => {
-//   const {logoutUser,user}=useAuthStore()
-//   const navigate = useNavigate();
-
-  // const logOut=()=>{
-  //   logoutUser()
-  //   navigate('/login', {
-  //     replace: true,
-  //   });
-  // }
-  // const goToReports=()=>{
-  //   navigate('/admin/reports')
-  // }
   return (
     <AppBar position="fixed" sx={{ backgroundColor: "white", height: 70, zIndex: theme => theme.zIndex.drawer + 1 }}>
       <Toolbar>
@@ -57,6 +38,11 @@ const Navbar = () => {
           </Grid>
           <Grid >
             <Grid container alignItems="center" spacing={2}>
+              {user.role==='admin'?
+              <Grid >
+              <Button variant="outlined" fullWidth onClick={goToReports}>Reports</Button>
+            </Grid>:<></>}
+
               <Grid >
                 <Avatar
                   onClick={handleNotifClick}
@@ -131,7 +117,7 @@ const Navbar = () => {
       >
         <Box display="flex" flexDirection="column" gap={1} sx={{ width: 100, p: 1 }}>
           <Button variant="outlined" fullWidth onClick={logOut}>Logout</Button>
-          <Button variant="outlined" fullWidth onClick={goToReports}>Reports</Button>
+
         </Box>
       </Popover>
     </AppBar>
