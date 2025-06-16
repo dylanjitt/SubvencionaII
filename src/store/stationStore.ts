@@ -4,7 +4,11 @@ import type { GasStation } from "../interface/GasStation";
 interface StationState {
   stations: GasStation[];
   setStations: (stations: GasStation[]) => void;
-  updateStationStock: (stationId: string, serviceName: string, stock: number) => void;
+  updateStationStock: (
+    stationId: string,
+    serviceName: string,
+    stock: number,
+  ) => void;
 }
 
 export const useStationStore = create<StationState>((set) => ({
@@ -17,10 +21,10 @@ export const useStationStore = create<StationState>((set) => ({
           ? {
               ...station,
               services: station.services.map((service) =>
-                service.name === serviceName ? { ...service, stock } : service
+                service.name === serviceName ? { ...service, stock } : service,
               ),
             }
-          : station
+          : station,
       ),
     })),
 }));

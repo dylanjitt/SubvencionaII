@@ -29,9 +29,15 @@ export const gasStationService = {
     }
   },
 
-  async updateStation(id: string, station: Partial<GasStation>): Promise<GasStation> {
+  async updateStation(
+    id: string,
+    station: Partial<GasStation>,
+  ): Promise<GasStation> {
     try {
-      const response = await jsonServerInstance.patch(`/gasStations/${id}`, station);
+      const response = await jsonServerInstance.patch(
+        `/gasStations/${id}`,
+        station,
+      );
       return response.data;
     } catch (error) {
       throw console.log("Failed to update station");

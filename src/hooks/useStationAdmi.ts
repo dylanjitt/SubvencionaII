@@ -36,7 +36,7 @@ export const useStationAdmin = () => {
         setIsLoading(false);
       }
     },
-    [setStations, user]
+    [setStations, user],
   );
 
   const updateStation = useCallback(
@@ -44,11 +44,14 @@ export const useStationAdmin = () => {
       if (user?.role !== "admin") return;
       setIsLoading(true);
       try {
-        const updatedStation = await gasStationService.updateStation(id, station);
+        const updatedStation = await gasStationService.updateStation(
+          id,
+          station,
+        );
         setStations(
-          useStationStore.getState().stations.map((s) =>
-            s.id === id ? updatedStation : s
-          )
+          useStationStore
+            .getState()
+            .stations.map((s) => (s.id === id ? updatedStation : s)),
         );
       } catch (err) {
         setError("Failed to update station");
@@ -56,7 +59,7 @@ export const useStationAdmin = () => {
         setIsLoading(false);
       }
     },
-    [setStations, user]
+    [setStations, user],
   );
 
   const deleteStation = useCallback(
@@ -65,14 +68,16 @@ export const useStationAdmin = () => {
       setIsLoading(true);
       try {
         await gasStationService.deleteStation(id);
-        setStations(useStationStore.getState().stations.filter((s) => s.id !== id));
+        setStations(
+          useStationStore.getState().stations.filter((s) => s.id !== id),
+        );
       } catch (err) {
         setError("Failed to delete station");
       } finally {
         setIsLoading(false);
       }
     },
-    [setStations, user]
+    [setStations, user],
   );
 
   const filterStations = useCallback(
@@ -83,17 +88,17 @@ export const useStationAdmin = () => {
       }
       if (fuelType) {
         filteredStations = filteredStations.filter((s) =>
-          s.services.some((service) => service.name === fuelType)
+          s.services.some((service) => service.name === fuelType),
         );
       }
       if (minStock !== undefined) {
         filteredStations = filteredStations.filter((s) =>
-          s.services.some((service) => service.stock >= minStock)
+          s.services.some((service) => service.stock >= minStock),
         );
       }
       return filteredStations;
     },
-    []
+    [],
   );
 
   return {
