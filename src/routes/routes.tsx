@@ -6,6 +6,7 @@ import LoginPage from "../pages/Login";
 import DashboardPage from "../pages/Dashboard";
 import { Layout } from "../layout/Layout";
 import AdminDashboard from "../pages/AdminDashdoard";
+import { ReportsPage } from "../pages/Reports";
 import BookingPage from "../pages/BookingPage";
 import BookingConfirmation from "../pages/BookingConfirmation";
 
@@ -29,7 +30,7 @@ export const AppRoutes = () => {
             <Route path="admin">
               <Route index element={<AdminDashboard />} />
               <Route path="gasStation/:id" element={<></>} />
-              <Route path="reports" element={<></>} />
+              <Route path="reports" element={<ReportsPage/>} />
               <Route path="*" element={<Navigate to="/admin" replace />} />
             </Route>
           </Route>
