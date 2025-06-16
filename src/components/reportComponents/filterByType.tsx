@@ -160,7 +160,7 @@ export const FilterByType = ({ tickets, title }: TicketDataProps) => {
           chartRef={chartRef}
           data={filteredData}
           title={title}
-          detail="Estado Ticket"
+          detail="Tipo Combustible"
           labels={gasType}
           filters={getCurrentFilters()}
         />

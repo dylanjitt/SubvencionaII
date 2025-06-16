@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
 import {
   Card,
   Box,
@@ -9,12 +9,12 @@ import {
   MenuItem
 } from "@mui/material";
 import type { ticketData } from "../../interface/ticketDataInterface";
-import CircleChart from "./circle";
 import { DatePickerCustom } from "./datePicker";
 import { PdfExportButton } from "../../utils/PdfExport";
 import { CsvExportButton } from "../../utils/CsvExport";
 import { getGasStations } from "../../services/gasStationsService";
 import type { TicketDataProps } from "../../interface/ticketDataProps";
+import TimePointChart from "./timeView";
 
 export const FilterByRushHour= ({ tickets, title }: TicketDataProps) => {
 
@@ -23,15 +23,30 @@ export const FilterByRushHour= ({ tickets, title }: TicketDataProps) => {
   const [rangeStart, setRangeStart] = useState<Date | null>(null);
   const [rangeEnd, setRangeEnd] = useState<Date | null>(null);
 
-  const [gasStationNames, setGasStationNames] = useState<string[]>([])
+  const [gasStationNames, setGasStationNames] = useState<string[]>([]);
   const [stationFilter, setStationFilter] = useState<string>("all");
 
-  const ticketState = ["Pendiente", "Reservado", "Notificado", "EnTurno", "Realizado", "Cancelado"]
+  // const ticketState = ["Pendiente", "Reservado", "Notificado", "EnTurno", "Realizado", "Cancelado"];
+  const labels = useMemo(() => {
+      const out: string[] = [];
+      const day = new Date();
+      day.setHours(0, 0, 0, 0);
+      for (let i = 0; i < 96; i++) {
+        const newdate=new Date(day.getTime() + i * 15 * 60 * 1000);
+        const hours = newdate.getHours().toString();
+        const minutes = newdate.getMinutes().toString();
+        const time = `${(hours==='0'?'00':hours)}:${(minutes==='0'?'00':minutes)}`.toString()
+
+        console.log('time:',time)
+        out.push(time);
+      }
+      return out;
+    }, []);
 
   const chartRef = useRef<HTMLDivElement>(null);
 
   const [filteredData, setFilteredData] = useState<number[]>([]);
-  const [filteredticketsExport, setFilteredticketsExport] = useState<ticketData[] | null>(tickets)
+  const [filteredticketsExport, setFilteredticketsExport] = useState<ticketData[] | null>(tickets);
 
   useEffect(() => {
     const fetchStationNames = async () => {  
@@ -45,23 +60,29 @@ export const FilterByRushHour= ({ tickets, title }: TicketDataProps) => {
         setGasStationNames([]);
       }
     };
-
     fetchStationNames();
-
   }, []);
 
-  useEffect(() => {
-    console.log('gas station filter: ', stationFilter)
-  }, [stationFilter]);
 
-
-  const countByTicketState = (list: ticketData[]) => {
-
-    return ticketState.map(state => {
-      return list.filter(ticket =>
-        ticket.ticketState === state
-      ).length
-    })
+  const countByHour = (list: ticketData[]) => {
+    // Create array of 96 elements (15-minute intervals) initialized to 0
+    const hourlyCounts = new Array(96).fill(0);
+  
+    list.forEach(ticket => {
+      const date = new Date(ticket.date);
+      const hours = date.getHours();
+      const minutes = date.getMinutes();
+      
+      // Calculate which 15-minute interval this belongs to (0-95)
+      const interval = (hours * 4) + Math.floor(minutes / 15);
+      
+      // Increment count for this interval
+      if (interval >= 0 && interval < 96) {
+        hourlyCounts[interval]++;
+      }
+    });
+  
+    return hourlyCounts;
   };
 
   useEffect(() => {
@@ -91,9 +112,9 @@ export const FilterByRushHour= ({ tickets, title }: TicketDataProps) => {
       });
     }
 
-    setFilteredData(countByTicketState(temp));
+    setFilteredData(countByHour(temp));
     setFilteredticketsExport(temp)
-    console.log('filtered:', filteredData)
+    
   }, [tickets, fuelFilter, stationFilter, singleDate, rangeStart, rangeEnd]);
 
   const restoreAll = () => {
@@ -121,10 +142,12 @@ export const FilterByRushHour= ({ tickets, title }: TicketDataProps) => {
     };
   };
 
+  //const randomDataset = Array.from({ length: 96 }, () => Math.floor(Math.random() * 201));
+
   return (
     <Card sx={{ p: 2 }}>
       <div ref={chartRef} style={{ position: 'relative' }}>
-        <CircleChart tickets={filteredData} title={title} labels={ticketState} />
+      <TimePointChart dataValues={filteredData} title={title}/>
       </div>
 
       <DatePickerCustom
@@ -181,8 +204,8 @@ export const FilterByRushHour= ({ tickets, title }: TicketDataProps) => {
           chartRef={chartRef}
           data={filteredData}
           title={title}
-          detail="Estado Ticket"
-          labels={ticketState}
+          detail="Horarios"
+          labels={labels}
           filters={getCurrentFilters()}
         />
         <CsvExportButton

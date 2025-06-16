@@ -1,5 +1,5 @@
 
-import React, { useMemo } from "react";
+import { useMemo } from "react";
 import {
   Chart as ChartJS,
   LineElement,
@@ -11,7 +11,7 @@ import {
   Tooltip,
   Legend,
   SubTitle,
-  ChartOptions
+  type ChartOptions
 } from "chart.js";
 import "chartjs-adapter-date-fns";
 import { Line } from "react-chartjs-2";
@@ -30,10 +30,11 @@ ChartJS.register(
 );
 
 interface TimePointChartProps {
-  dataValues?: number[];      // optional override
+  dataValues?: number[]; 
+  title:string
 }
 
-export default function TimePointChart({ dataValues }: TimePointChartProps) {
+export default function TimePointChart({ dataValues,title }: TimePointChartProps) {
   // 1) build the 15‑min labels from 00:00 → 23:45
   const labels = useMemo(() => {
     const out: Date[] = [];
@@ -45,25 +46,22 @@ export default function TimePointChart({ dataValues }: TimePointChartProps) {
     return out;
   }, []);
 
-  // 2) random data if none passed
+  
+
   const data = useMemo(() => {
-    const vals =
-      dataValues && dataValues.length === labels.length
-        ? dataValues
-        : labels.map(() => Math.floor(Math.random() * 80) - 20);
+
     return {
       labels,
       datasets: [
         {
           label: "My 15‑min series",
-          data: vals,
+          data: dataValues,
           fill: false,
           borderColor: "#ff6384",
           borderWidth: 2,
           tension: 0.3,
-          // Point styling from the Chart.js “Point Styling” sample:
           pointStyle: "circle",
-          pointRadius: 6,
+          pointRadius: 5,
           pointBackgroundColor: "#ff6384",
           pointBorderColor: "#fff",
           pointBorderWidth: 2,
@@ -78,11 +76,11 @@ export default function TimePointChart({ dataValues }: TimePointChartProps) {
     plugins: {
       title: {
         display: true,
-        text: "15‑Minute Interval Data",
+        text: title,
         font: { size: 18 }
       },
       subtitle: {
-        display: true,
+        display: false,
         text: "Point Styling Example with Time Scale",
         font: { size: 12 },
         padding: { bottom: 10 }
@@ -93,20 +91,24 @@ export default function TimePointChart({ dataValues }: TimePointChartProps) {
       x: {
         type: "time",
         time: {
-          unit: "hour",          // uses the TimeUnit type
+          unit: "hour",         
           //stepSize: 1,
           displayFormats: { hour: "HH:mm" }
         },
-        title: { display: true, text: "Time of Day" }
+        title: { display: true, text: "Intervalos de 15 de horas en el día" }
       },
       y: {
         beginAtZero: true,
-        title: { display: true, text: "Value" },
+        title: { display: true, text: "Cantidad de Reservas" },
         //grid: { drawBorder: false }
       }
     }
   };
   
 
-  return <Line options={options} data={data} />;
+  return( 
+    <div style={{ position: 'relative', height: '550px', width: '1100px' }}>
+      <Line options={options} data={data} />
+    </div>
+  );
 }
