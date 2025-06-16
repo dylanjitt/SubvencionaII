@@ -10,7 +10,6 @@ import {
   Checkbox,
   ListItemText,
   OutlinedInput,
-  Typography,
   Grid,
 } from "@mui/material";
 import { useStationAdmin } from "../hooks/useStationAdmi";
@@ -62,18 +61,15 @@ export default function AdminDashboard() {
   return (
     <>
       <Box sx={{ p: 3 }}>
-        <Typography variant="h4" gutterBottom>
-          Admin Dashboard
-        </Typography>
         <Box sx={{ display: "flex", gap: 2, mb: 3 }}>
           <TextField
-            label="Search by Name"
+            label="Buscar..."
             value={searchName}
             onChange={(e) => setSearchName(e.target.value)}
             sx={{ flex: 1 }}
           />
           <FormControl sx={{ width: 200 }}>
-            <InputLabel>Zones</InputLabel>
+            <InputLabel>Zonas</InputLabel>
             <Select
               multiple
               value={selectedZones}
@@ -90,12 +86,12 @@ export default function AdminDashboard() {
             </Select>
           </FormControl>
           <FormControl sx={{ width: 150 }}>
-            <InputLabel>Fuel Type</InputLabel>
+            <InputLabel>Tipo de combustible</InputLabel>
             <Select
               value={fuelType}
               onChange={(e) => setFuelType(e.target.value)}
             >
-              <MenuItem value="">All</MenuItem>
+              <MenuItem value="">Todos</MenuItem>
               {FUEL_TYPES.map((type) => (
                 <MenuItem key={type} value={type}>
                   {type}
@@ -104,12 +100,12 @@ export default function AdminDashboard() {
             </Select>
           </FormControl>
           <FormControl sx={{ width: 150 }}>
-            <InputLabel>Stock Available</InputLabel>
+            <InputLabel>Disponibilidad de combustible</InputLabel>
             <Select
               value={hasStock ? "yes" : "no"}
               onChange={(e) => setHasStock(e.target.value === "yes")}
             >
-              <MenuItem value="yes">Yes</MenuItem>
+              <MenuItem value="yes">Si</MenuItem>
               <MenuItem value="no">No</MenuItem>
             </Select>
           </FormControl>
@@ -119,7 +115,7 @@ export default function AdminDashboard() {
           onClick={() => setOpenCreateModal(true)}
           sx={{ mb: 3 }}
         >
-          Create Gas Station
+          Crear estación de gasolina
         </Button>
         <Grid container spacing={2}>
           {filteredStations.map((station) => (

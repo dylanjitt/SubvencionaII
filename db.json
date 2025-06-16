@@ -1005,9 +1005,9 @@
       "id": "00eddd49-9f8f-436b-aae0-ebc66ea026dd",
       "userId": "194f74f8-76a2-4861-b0c3-66b461c5e805",
       "phone": "67942931",
-      "zone": "Periférica",
-      "name": "GasStation_00eddd49",
-      "address": "815 Main St",
+      "zone": "Centro",
+      "name": "Anita's",
+      "address": "0 de Obrajes",
       "openingHours": [
         {
           "day": "Lunes",
@@ -1308,6 +1308,130 @@
           "name": "GNV",
           "capacity": 13890,
           "stock": 2951
+        }
+      ]
+    },
+    {
+      "id": "e6d39d7f-0277-41bf-9db0-629d5ef6d52c",
+      "userId": "d3b64e36-5754-4b8a-90e8-1b798abb268e",
+      "name": "Faster",
+      "zone": "San Antonio",
+      "address": "San Antonio 45",
+      "phone": "76545224",
+      "openingHours": [
+        {
+          "day": "Lunes",
+          "open": "12:00",
+          "close": "23:00"
+        },
+        {
+          "day": "Domingo",
+          "open": "12:00",
+          "close": "23:00"
+        },
+        {
+          "day": "Martes",
+          "open": "12:00",
+          "close": "23:00"
+        },
+        {
+          "day": "Miercoles",
+          "open": "12:00",
+          "close": "23:00"
+        },
+        {
+          "day": "Jueves",
+          "open": "12:00",
+          "close": "23:00"
+        },
+        {
+          "day": "Viernes",
+          "open": "12:00",
+          "close": "23:00"
+        },
+        {
+          "day": "Sabado",
+          "open": "12:00",
+          "close": "23:00"
+        }
+      ],
+      "services": [
+        {
+          "name": "Especial",
+          "capacity": 10000,
+          "stock": 10000
+        },
+        {
+          "name": "Diesel",
+          "capacity": 10000,
+          "stock": 8000
+        },
+        {
+          "name": "GNV",
+          "capacity": 10000,
+          "stock": 7000
+        }
+      ]
+    },
+    {
+      "id": "d21aeca8-ca7b-444c-984e-10722a99ba5a",
+      "userId": "d3b64e36-5754-4b8a-90e8-1b798abb268e",
+      "name": "San Rafael",
+      "zone": "Periférica",
+      "address": "Calle Periferica 1",
+      "phone": "75454285",
+      "openingHours": [
+        {
+          "day": "Lunes",
+          "open": "06:00",
+          "close": "00:00"
+        },
+        {
+          "day": "Martes",
+          "open": "06:00",
+          "close": "00:00"
+        },
+        {
+          "day": "Miercoles",
+          "open": "06:00",
+          "close": "00:00"
+        },
+        {
+          "day": "Jueves",
+          "open": "06:00",
+          "close": "00:00"
+        },
+        {
+          "day": "Viernes",
+          "open": "06:00",
+          "close": "00:00"
+        },
+        {
+          "day": "Sabado",
+          "open": "06:00",
+          "close": "00:00"
+        },
+        {
+          "day": "Domingo",
+          "open": "06:00",
+          "close": "00:00"
+        }
+      ],
+      "services": [
+        {
+          "name": "Especial",
+          "capacity": 10000,
+          "stock": 0
+        },
+        {
+          "name": "Diesel",
+          "capacity": 12000,
+          "stock": 0
+        },
+        {
+          "name": "GNV",
+          "capacity": 10000,
+          "stock": 0
         }
       ]
     }
@@ -1648,7 +1772,7 @@
       "date": "2025-03-22T09:45:00Z",
       "gasType": "Diesel",
       "quantity": 7.72,
-      "amount": 22.0,
+      "amount": 22,
       "ticketState": "Reservado"
     },
     {
@@ -2077,7 +2201,7 @@
       "date": "2025-03-27T09:45:00Z",
       "gasType": "GNV",
       "quantity": 48.05,
-      "amount": 74.0,
+      "amount": 74,
       "ticketState": "Realizado"
     },
     {
@@ -3221,7 +3345,7 @@
       "date": "2025-04-10T17:15:00Z",
       "gasType": "GNV",
       "quantity": 48.05,
-      "amount": 74.0,
+      "amount": 74,
       "ticketState": "Reservado"
     },
     {
@@ -3663,7 +3787,7 @@
       "date": "2025-04-17T09:45:00Z",
       "gasType": "GNV",
       "quantity": 37.01,
-      "amount": 57.0,
+      "amount": 57,
       "ticketState": "Realizado"
     },
     {
@@ -3844,7 +3968,7 @@
       "carPlate": "PXG072",
       "date": "2025-04-19T13:15:00Z",
       "gasType": "Especial",
-      "quantity": 36.0,
+      "quantity": 36,
       "amount": 126.36,
       "ticketState": "Pendiente"
     },
@@ -4157,7 +4281,7 @@
       "date": "2025-04-23T13:00:00Z",
       "gasType": "Diesel",
       "quantity": 44.56,
-      "amount": 127.0,
+      "amount": 127,
       "ticketState": "Realizado"
     },
     {
@@ -5626,7 +5750,7 @@
       "date": "2025-05-12T12:45:00Z",
       "gasType": "Especial",
       "quantity": 41.31,
-      "amount": 145.0,
+      "amount": 145,
       "ticketState": "Cancelado"
     },
     {
@@ -5977,7 +6101,7 @@
       "date": "2025-05-19T10:15:00Z",
       "gasType": "GNV",
       "quantity": 31.82,
-      "amount": 49.0,
+      "amount": 49,
       "ticketState": "Realizado"
     },
     {
@@ -6172,7 +6296,7 @@
       "date": "2025-05-20T18:30:00Z",
       "gasType": "Diesel",
       "quantity": 16.14,
-      "amount": 46.0,
+      "amount": 46,
       "ticketState": "Realizado"
     },
     {
@@ -7342,7 +7466,7 @@
       "date": "2025-06-08T13:00:00Z",
       "gasType": "Diesel",
       "quantity": 40.35,
-      "amount": 115.0,
+      "amount": 115,
       "ticketState": "Cancelado"
     },
     {
@@ -7420,7 +7544,7 @@
       "date": "2025-06-09T09:15:00Z",
       "gasType": "Especial",
       "quantity": 17.95,
-      "amount": 63.0,
+      "amount": 63,
       "ticketState": "Cancelado"
     },
     {

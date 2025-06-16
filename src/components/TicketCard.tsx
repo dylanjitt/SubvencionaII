@@ -37,31 +37,31 @@ export default function TicketCard({ ticket }: TicketCardProps) {
       }}
     >
       <CardContent sx={{ flexGrow: 1 }}>
-        <Typography variant="h6">Ticket #{ticket.id}</Typography>
+        <Typography variant="h6">Ficha #{ticket.id}</Typography>
         <Typography variant="body2" color="text.secondary">
-          Customer ID: {ticket.customerId}
+          C.I: {ticket.customerId}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          Car Plate: {ticket.carPlate}
+          Placa: {ticket.carPlate}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          Date: {new Date(ticket.date).toLocaleString()}
+          Fecha: {new Date(ticket.date).toLocaleString()}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          Fuel Type: {ticket.gasType}
+          Tipo de combustible: {ticket.gasType}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          Quantity: {ticket.quantity} L
+          Cantidad: {ticket.quantity} L
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          Amount: ${ticket.amount}
+          Precio: ${ticket.amount}
         </Typography>
         <Chip label={ticket.ticketState} color="primary" sx={{ mt: 1 }} />
       </CardContent>
       {ticket.ticketState === "EnTurno" && (
         <CardActions>
           <Button size="small" onClick={() => setOpenEnTurnoModal(true)}>
-            Finalize
+            Finalizado
           </Button>
         </CardActions>
       )}

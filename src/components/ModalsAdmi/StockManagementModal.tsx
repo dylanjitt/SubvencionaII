@@ -60,14 +60,14 @@ export default function StockManagementModal({
 
   return (
     <Dialog open={open} onClose={onClose} maxWidth="sm" fullWidth>
-      <DialogTitle>Fuel Stock Update</DialogTitle>
+      <DialogTitle>Carga del tanque de combustible</DialogTitle>
       <DialogContent>
         {station.services.map((service) => (
           <Box key={service.name} sx={{ mb: 2 }}>
             <Typography variant="subtitle1">{service.name}</Typography>
             <TextField
               fullWidth
-              label="Stock (L)"
+              label="Stock"
               type="number"
               name={service.name}
               value={formik.values[service.name]}
@@ -85,13 +85,13 @@ export default function StockManagementModal({
         ))}
       </DialogContent>
       <DialogActions>
-        <Button onClick={onClose}>Cancel</Button>
+        <Button onClick={onClose}>Cancelar</Button>
         <Button
           onClick={formik.handleSubmit}
           variant="contained"
           disabled={!formik.isValid || !formik.dirty}
         >
-          Save
+          Recargar
         </Button>
       </DialogActions>
     </Dialog>

@@ -61,16 +61,16 @@ export default function EnTurnoModal({
 
   return (
     <Dialog open={open} onClose={onClose}>
-      <DialogTitle>Did the service complete?</DialogTitle>
+      <DialogTitle>Registro de carga de combustible</DialogTitle>
       <DialogContent>
         <DialogContentText>
-          Confirm to mark this ticket as completed.
+          Confirma la ficha como completada.
         </DialogContentText>
       </DialogContent>
       <DialogActions>
-        <Button onClick={onClose}>Cancel</Button>
+        <Button onClick={onClose}>Cancelar</Button>
         <Button onClick={handleFinalize} variant="contained">
-          Finalized
+          Finalizar
         </Button>
       </DialogActions>
     </Dialog>

@@ -9,7 +9,6 @@ import {
   Grid,
   Card,
   CardContent,
-  Chip,
 } from "@mui/material";
 import { useParams } from "react-router-dom";
 import { useStationStore } from "../store/stationStore";

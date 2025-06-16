@@ -21,15 +21,15 @@ export default function DeleteStationModal({
   return (
     <Dialog open={open} onClose={onClose}>
       <DialogTitle>
-        Are you sure you want to delete this gas station?
+        ¿Estas seguro/a de eliminar esta estación de combustible?
       </DialogTitle>
       <DialogContent>
-        <DialogContentText>This action cannot be undone.</DialogContentText>
+        <DialogContentText>Esta acción es irreversible.</DialogContentText>
       </DialogContent>
       <DialogActions>
-        <Button onClick={onClose}>Cancel</Button>
+        <Button onClick={onClose}>Cancelar</Button>
         <Button onClick={onConfirm} color="error" variant="contained">
-          Delete
+          Eliminar
         </Button>
       </DialogActions>
     </Dialog>

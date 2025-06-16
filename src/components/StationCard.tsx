@@ -8,9 +8,15 @@ import {
   Chip,
   Box,
 } from "@mui/material";
+import {
+  Settings as SettingsIcon,
+  Edit as EditIcon,
+  Inventory as InventoryIcon,
+  Delete as DeleteIcon,
+} from "@mui/icons-material";
 import type { GasStation } from "../interface/GasStation";
 import { useStationAdmin } from "../hooks/useStationAdmi";
-import DeleteStationModal from "./ModalsAdmi/DeleteStationModal";
+import DeleteStationModal from "../components/ModalsAdmi/DeleteStationModal";
 import EditStationModal from "../components/ModalsAdmi/EditStationModal";
 import StockManagementModal from "../components/ModalsAdmi/StockManagementModal";
 import { useNavigate } from "react-router-dom";
@@ -36,17 +42,17 @@ export default function StationCard({ station }: StationCardProps) {
       <CardContent sx={{ flexGrow: 1 }}>
         <Typography variant="h6">{station.name}</Typography>
         <Typography variant="body2" color="text.secondary">
-          Zone: {station.zone}
+          Zona: {station.zone}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          Address: {station.address}
+          Direacción: {station.address}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          Phone: {station.phone}
+          Teléfono: {station.phone}
         </Typography>
         <Box sx={{ mt: 1 }}>
           <Typography variant="body2" color="text.secondary">
-            Services:
+            Servicios:
           </Typography>
           {station.services.map((service) => (
             <Chip
@@ -58,7 +64,7 @@ export default function StationCard({ station }: StationCardProps) {
         </Box>
         <Box sx={{ mt: 1 }}>
           <Typography variant="body2" color="text.secondary">
-            Opening Hours:
+            Horario de atención:
           </Typography>
           {station.openingHours.map((hour) => (
             <Typography key={hour.day} variant="body2" color="text.secondary">
@@ -72,20 +78,20 @@ export default function StationCard({ station }: StationCardProps) {
           size="small"
           onClick={() => navigate(`/admin/gasStation/${station.id}`)}
         >
-          Manage
+          <SettingsIcon />
         </Button>
         <Button size="small" onClick={() => setOpenEditModal(true)}>
-          Edit
+          <EditIcon />
         </Button>
         <Button size="small" onClick={() => setOpenStockModal(true)}>
-          Update Stock
+          <InventoryIcon />
         </Button>
         <Button
           size="small"
           color="error"
           onClick={() => setOpenDeleteModal(true)}
         >
-          Delete
+          <DeleteIcon />
         </Button>
       </CardActions>
       <DeleteStationModal
