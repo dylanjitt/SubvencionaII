@@ -1,8 +1,8 @@
 import {
   AppBar, Toolbar, CardMedia, Button, Grid,
-  CardActionArea, Avatar, Popover, List, Box
+  CardActionArea, Avatar, Popover, List, Box,
 } from "@mui/material";
-import { Notifications, NotificationsActive } from '@mui/icons-material';
+import { Notifications, NotificationsActive, Cached } from '@mui/icons-material';
 
 import gasolinaYaLogo from "../assets/gasolinaYaLogo.png";
 import NotificationNavBarComponent from "../components/navBar/NotificationNavBarComponent";
@@ -15,6 +15,7 @@ const Navbar = () => {
     nonReadedNotifications,
     anchorNotif,
     anchorUser,
+    handleReload,
     handleNotifClick,
     handleNotifClose,
     handleUserClick,
@@ -24,7 +25,7 @@ const Navbar = () => {
     archiveNotification,
     goToReports
   } = useNotifierNavBar();
-  
+
 
   return (
     <AppBar position="fixed" sx={{ backgroundColor: "white", height: 70, zIndex: theme => theme.zIndex.drawer + 1 }}>
@@ -38,10 +39,10 @@ const Navbar = () => {
           </Grid>
           <Grid >
             <Grid container alignItems="center" spacing={2}>
-              {user.role==='admin'?
-              <Grid >
-              <Button variant="outlined" fullWidth onClick={goToReports}>Reports</Button>
-            </Grid>:<></>}
+              {user.role === 'admin' ?
+                <Grid >
+                  <Button variant="outlined" fullWidth onClick={goToReports}>Reports</Button>
+                </Grid> : <></>}
 
               <Grid >
                 <Avatar
@@ -85,9 +86,19 @@ const Navbar = () => {
             bgcolor: 'background.paper',
             position: 'sticky',
             top: 0,
-            zIndex: 1
+            zIndex: 1,
           }}>
-            <strong>Notificaciones</strong> ({nonReadedNotifications.length} sin leer)
+            <Grid container >
+              <Grid size={8}>
+                <strong>Notificaciones</strong> ({nonReadedNotifications.length} sin leer)
+              </Grid>
+              <Grid size={4} display="flex" justifyContent="flex-end">
+                <Avatar onClick={handleReload} sx={{ cursor: 'pointer' }}>
+                  <Cached />
+                </Avatar>
+              </Grid>
+            </Grid>
+
           </Box>
 
           <Box sx={{ overflowY: 'auto', flex: 1 }}>

@@ -16,10 +16,11 @@ export const useNotifierNavBar = () => {
   const [anchorNotif, setAnchorNotif] = useState<HTMLButtonElement | null>(null);
   const [anchorUser, setAnchorUser] = useState<HTMLButtonElement | null>(null);
 
+  const handleReload = () => {
+    fetchNotifications(user.id);
+  }
+
   const handleNotifClick = (event: React.MouseEvent<HTMLDivElement>) => {
-    if (nonReadedNotifications.length === 0) {
-      fetchNotifications(user.id);
-    }
     setAnchorNotif(event.currentTarget as unknown as HTMLButtonElement | null);
   };
   const handleUserClick = (event: React.MouseEvent<HTMLDivElement>) => {
@@ -38,7 +39,7 @@ export const useNotifierNavBar = () => {
     logoutUser();
     navigate('/login', { replace: true });
   };
-  const goToReports=()=>{
+  const goToReports = () => {
     navigate('/admin/reports')
   }
   const navigateHome = () => navigate('/dashboard');
@@ -81,5 +82,5 @@ export const useNotifierNavBar = () => {
     })
   }
 
-  return { user, notifications, nonReadedNotifications, anchorNotif, anchorUser, handleNotifClick, handleNotifClose, handleUserClick, handleUserClose, logOut, navigateHome, archiveNotification,goToReports }
+  return { user, notifications, nonReadedNotifications, anchorNotif, anchorUser, handleReload ,handleNotifClick, handleNotifClose, handleUserClick, handleUserClose, logOut, navigateHome, archiveNotification, goToReports }
 }
