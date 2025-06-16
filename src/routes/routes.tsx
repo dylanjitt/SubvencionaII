@@ -6,6 +6,9 @@ import LoginPage from "../pages/Login";
 import DashboardPage from "../pages/Dashboard";
 import { Layout } from "../layout/Layout";
 import AdminDashboard from "../pages/AdminDashdoard";
+import { ReportsPage } from "../pages/Reports";
+import BookingPage from "../pages/BookingPage";
+import BookingConfirmation from "../pages/BookingConfirmation";
 import StationDetail from "../pages/StationDetail";
 
 export const AppRoutes = () => {
@@ -28,7 +31,9 @@ export const AppRoutes = () => {
             <Route path="admin">
               <Route index element={<AdminDashboard />} />
               <Route path="gasStation/:id" element={<StationDetail />} />
-              <Route path="reports" element={<></>} />
+              
+              <Route path="gasStation/:id" element={<></>} />
+              <Route path="reports" element={<ReportsPage/>} />
               <Route path="*" element={<Navigate to="/admin" replace />} />
             </Route>
           </Route>
@@ -38,6 +43,12 @@ export const AppRoutes = () => {
               <Route index element={<DashboardPage />} />
               <Route path="history" element={<></>} />
               <Route path="*" element={<Navigate to="/user" replace />} />
+            </Route>
+            <Route path="bookings">
+              <Route index element={<BookingPage/>} />
+              <Route path="history" element={<></>} />
+              <Route path="*" element={<Navigate to="/bookings" replace />} />
+              <Route path="confirmation" element={<BookingConfirmation />} />
             </Route>
           </Route>
 
