@@ -30,6 +30,10 @@ export const FilterByStation = ({ tickets, title }: TicketDataProps) => {
   const [filteredData, setFilteredData] = useState<number[]>([]);
   const [filteredticketsExport, setFilteredticketsExport] = useState<ticketData[] | null>(tickets)
 
+  const [exportedData,setexportedData]=useState<number[]>([])
+  const [exportedLabels,setexportedLabels]=useState<string[]>([])
+  
+
   useEffect(() => {
     const fetchStationNames = async () => {
       try {
@@ -87,6 +91,22 @@ export const FilterByStation = ({ tickets, title }: TicketDataProps) => {
     console.log('filtered:',filteredData)
   }, [tickets, fuelFilter, singleDate, rangeStart, rangeEnd]);
 
+  useEffect(() => {
+    
+    const nonZeroData: number[] = [];
+    const nonZeroLabels: string[] = [];
+    
+    filteredData.forEach((count, index) => {
+      if (count > 0) {
+        nonZeroData.push(count);
+        nonZeroLabels.push(gasStationNames[index]);
+      }
+    });
+    
+    setexportedData(nonZeroData);
+    setexportedLabels(nonZeroLabels);
+  }, [filteredData, gasStationNames]);
+
   const restoreAll = () => {
     setFuelFilter("all");
     setSingleDate(null);
@@ -113,7 +133,8 @@ export const FilterByStation = ({ tickets, title }: TicketDataProps) => {
   return (
     <Card sx={{ p: 2 }}>
       <div ref={chartRef} style={{ position: 'relative' }}>
-        <CircleChart tickets={filteredData} title={title} labels={gasStationNames}/>
+        {/* <CircleChart tickets={filteredData} title={title} labels={gasStationNames}/> */}
+        <CircleChart tickets={exportedData} title={title} labels={exportedLabels}/>
       </div>
 
       <DatePickerCustom
@@ -151,10 +172,10 @@ export const FilterByStation = ({ tickets, title }: TicketDataProps) => {
       <Box mt={3} textAlign="center">
         <PdfExportButton
           chartRef={chartRef}
-          data={filteredData}
+          data={exportedData}
           title={title}
           detail="Estaciones de Servicio"
-          labels={gasStationNames}
+          labels={exportedLabels}
           filters={getCurrentFilters()}
         />
         <CsvExportButton

@@ -1,4 +1,4 @@
-import { Box, Button, Checkbox, Stack } from "@mui/material";
+import { Box,Stack,Switch,FormControlLabel } from "@mui/material";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
@@ -36,9 +36,16 @@ export const DatePickerCustom = ({
           alignItems="center"
           justifyContent="center"
         >
-          <Checkbox
-            checked={!isSingleDate}
-            onChange={() => setIsSingleDate((prev) => !prev)}
+          <FormControlLabel
+            control={
+              <Switch
+                checked={!isSingleDate}
+                onChange={() => setIsSingleDate((prev) => !prev)}
+                color="primary"
+              />
+            }
+            label={"Rango de fechas"}
+            labelPlacement="start"
           />
 
           {isSingleDate ? (
@@ -49,15 +56,9 @@ export const DatePickerCustom = ({
                 onChange={setSingleDate}
                 minDate={minDate}
                 maxDate={maxDate}
+                sx={{width:315}}
                 slotProps={{ textField: { size: "small" } }}
               />
-              {/* <Button
-                variant="contained"
-                onClick={() => {}}
-                disabled={!singleDate}
-              >
-                Apply
-              </Button> */}
             </>
           ) : (
             <>
@@ -79,13 +80,6 @@ export const DatePickerCustom = ({
                 sx={{width:150}}
                 slotProps={{ textField: { size: "small" } }}
               />
-              {/* <Button
-                variant="contained"
-                onClick={() => {}}
-                disabled={!rangeStart || !rangeEnd}
-              >
-                Apply
-              </Button> */}
             </>
           )}
         </Stack>

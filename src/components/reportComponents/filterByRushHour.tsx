@@ -26,7 +26,6 @@ export const FilterByRushHour= ({ tickets, title }: TicketDataProps) => {
   const [gasStationNames, setGasStationNames] = useState<string[]>([]);
   const [stationFilter, setStationFilter] = useState<string>("all");
 
-  // const ticketState = ["Pendiente", "Reservado", "Notificado", "EnTurno", "Realizado", "Cancelado"];
   const labels = useMemo(() => {
       const out: string[] = [];
       const day = new Date();
@@ -36,13 +35,14 @@ export const FilterByRushHour= ({ tickets, title }: TicketDataProps) => {
         const hours = newdate.getHours().toString();
         const minutes = newdate.getMinutes().toString();
         const time = `${(hours==='0'?'00':hours)}:${(minutes==='0'?'00':minutes)}`.toString()
-
-        console.log('time:',time)
         out.push(time);
       }
       return out;
     }, []);
 
+  const [exportedData,setexportedData]=useState<number[]>([])
+  const [exportedLabels,setexportedLabels]=useState<string[]>([])
+  
   const chartRef = useRef<HTMLDivElement>(null);
 
   const [filteredData, setFilteredData] = useState<number[]>([]);
@@ -65,7 +65,7 @@ export const FilterByRushHour= ({ tickets, title }: TicketDataProps) => {
 
 
   const countByHour = (list: ticketData[]) => {
-    // Create array of 96 elements (15-minute intervals) initialized to 0
+    // array de 96 elementos
     const hourlyCounts = new Array(96).fill(0);
   
     list.forEach(ticket => {
@@ -73,10 +73,10 @@ export const FilterByRushHour= ({ tickets, title }: TicketDataProps) => {
       const hours = date.getHours();
       const minutes = date.getMinutes();
       
-      // Calculate which 15-minute interval this belongs to (0-95)
+      //intervalo de 15 minutos
       const interval = (hours * 4) + Math.floor(minutes / 15);
       
-      // Increment count for this interval
+      // Incrementar conteo para este intervalo
       if (interval >= 0 && interval < 96) {
         hourlyCounts[interval]++;
       }
@@ -142,7 +142,25 @@ export const FilterByRushHour= ({ tickets, title }: TicketDataProps) => {
     };
   };
 
-  //const randomDataset = Array.from({ length: 96 }, () => Math.floor(Math.random() * 201));
+  //exportar datos que no sean 0 para el PDF
+  useEffect(() => {
+    
+    const nonZeroData: number[] = [];
+    const nonZeroLabels: string[] = [];
+    
+    filteredData.forEach((count, index) => {
+      if (count > 0) {
+        nonZeroData.push(count);
+        nonZeroLabels.push(labels[index]);
+      }
+    });
+    
+    setexportedData(nonZeroData);
+    setexportedLabels(nonZeroLabels);
+  }, [filteredData, labels]);
+
+  useEffect(()=>{console.log('data size:', exportedData.length)},[exportedData])
+
 
   return (
     <Card sx={{ p: 2 }}>
@@ -202,10 +220,10 @@ export const FilterByRushHour= ({ tickets, title }: TicketDataProps) => {
       <Box mt={3} textAlign="center">
         <PdfExportButton
           chartRef={chartRef}
-          data={filteredData}
+          data={exportedData}
           title={title}
           detail="Horarios"
-          labels={labels}
+          labels={exportedLabels}
           filters={getCurrentFilters()}
         />
         <CsvExportButton

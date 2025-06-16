@@ -40,15 +40,53 @@ export const PdfExportButton = ({
     
     pdf.addImage(imgData, "PNG", margin, margin, imgWidth, imgHeight);
     
-    const tableTop = margin + imgHeight + 1;
+    
+    const tableTop = margin + imgHeight + (data.length>30?10:2);
     
     pdf.setFontSize(12);
     pdf.setTextColor(40);
     pdf.setFont("helvetica", "bold");
 
-    
+    if (data.length > 30) {
+      const third = Math.ceil(data.length / 3);
+      const column2X = margin + 60;
+      const column3X = margin + 120;
+      
+      // Column 1
+      pdf.text(detail, margin, tableTop);
+      pdf.text("Cantidad", margin + 20, tableTop);
+      for (let i = 0; i < third; i++) {
+        const yPos = tableTop + 8 + (i * 8);
+        pdf.setFont("helvetica", "normal");
+        pdf.text(labels[i], margin, yPos);
+        pdf.text(data[i].toString(), margin + 20, yPos);
+      }
+      
+      // Column 2
+      pdf.setFont("helvetica", "bold");
+      pdf.text(detail, column2X, tableTop);
+      pdf.text("Cantidad", column2X + 20, tableTop);
+      for (let i = third; i < third * 2; i++) {
+        if (i >= data.length) break;
+        const yPos = tableTop + 8 + ((i - third) * 8);
+        pdf.setFont("helvetica", "normal");
+        pdf.text(labels[i], column2X, yPos);
+        pdf.text(data[i].toString(), column2X + 20, yPos);
+      }
+      
+      // Column 3
+      pdf.setFont("helvetica", "bold");
+      pdf.text(detail, column3X, tableTop);
+      pdf.text("Cantidad", column3X + 20, tableTop);
+      for (let i = third * 2; i < data.length; i++) {
+        const yPos = tableTop + 8 + ((i - third * 2) * 8);
+        pdf.setFont("helvetica", "normal");
+        pdf.text(labels[i], column3X, yPos);
+        pdf.text(data[i].toString(), column3X + 20, yPos);
+      }
+    } 
     // Si hay mas de 6 items mostramos en 2 columnas
-    if (data.length > 6) {
+    else if (data.length > 6) {
       const half = Math.ceil(data.length / 2);
       const column2X = margin + 80; 
       
