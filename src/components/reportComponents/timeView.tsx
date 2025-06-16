@@ -31,37 +31,36 @@ ChartJS.register(
 
 interface TimePointChartProps {
   dataValues?: number[]; 
-  title:string
+  labels:string[];
+  title:string;
 }
 
-export default function TimePointChart({ dataValues,title }: TimePointChartProps) {
-  // 1) build the 15‑min labels from 00:00 → 23:45
-  const labels = useMemo(() => {
-    const out: Date[] = [];
-    const day = new Date();
-    day.setHours(0, 0, 0, 0);
-    for (let i = 0; i < 96; i++) {
-      out.push(new Date(day.getTime() + i * 15 * 60 * 1000));
-    }
-    return out;
-  }, []);
-
-  
+export default function TimePointChart({ dataValues, labels, title }: TimePointChartProps) {
+  const dateLabels = useMemo(() => {
+    return labels.map(time => {
+      const [hours, minutes] = time.split(':');
+      const date = new Date();
+      date.setHours(parseInt(hours), parseInt(minutes), 0, 0);
+      return date;
+    });
+  }, [labels]);
 
   const data = useMemo(() => {
-
     return {
-      labels,
+      labels: dateLabels,
       datasets: [
         {
-          label: "My 15‑min series",
-          data: dataValues,
+          label: "Reservas por intervalo",
+          data: dataValues?.map((value, index) => ({
+            x: dateLabels[index], // Usar objeto Date como valor
+            y: value // dato actual
+          })),
           fill: false,
           borderColor: "#ff6384",
           borderWidth: 2,
           tension: 0.3,
           pointStyle: "circle",
-          pointRadius: 5,
+          pointRadius: dataValues && dataValues.length > 96 ? 2 : 5,
           pointBackgroundColor: "#ff6384",
           pointBorderColor: "#fff",
           pointBorderWidth: 2,
@@ -69,7 +68,7 @@ export default function TimePointChart({ dataValues,title }: TimePointChartProps
         }
       ]
     };
-  }, [labels, dataValues]);
+  }, [dateLabels, dataValues]);
 
   const options: ChartOptions<"line"> = {
     responsive: true,
@@ -79,34 +78,40 @@ export default function TimePointChart({ dataValues,title }: TimePointChartProps
         text: title,
         font: { size: 18 }
       },
-      subtitle: {
-        display: false,
-        text: "Point Styling Example with Time Scale",
-        font: { size: 12 },
-        padding: { bottom: 10 }
-      },
-      legend: { display: false }
+      legend: { display: false },
+      tooltip: {
+        callbacks: {
+          title: (context) => {
+            //label original
+            return labels[context[0].dataIndex];
+          },
+          label: (context) => {
+            return `Reservas: ${context.parsed.y}`;
+          }
+        }
+      }
     },
     scales: {
       x: {
         type: "time",
         time: {
-          unit: "hour",         
-          //stepSize: 1,
-          displayFormats: { hour: "HH:mm" }
+          unit: "hour",
+          displayFormats: { 
+            hour: "HH:mm",
+            minute: "HH:mm"
+          },
+          tooltipFormat: 'HH:mm'
         },
-        title: { display: true, text: "Intervalos de 15 de horas en el día" }
+        title: { display: true, text: "Intervalos de 15 minutos en el día" }
       },
       y: {
         beginAtZero: true,
         title: { display: true, text: "Cantidad de Reservas" },
-        //grid: { drawBorder: false }
       }
     }
   };
-  
 
-  return( 
+  return ( 
     <div style={{ position: 'relative', height: '550px', width: '1100px' }}>
       <Line options={options} data={data} />
     </div>

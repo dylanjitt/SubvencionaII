@@ -159,13 +159,12 @@ export const FilterByRushHour= ({ tickets, title }: TicketDataProps) => {
     setexportedLabels(nonZeroLabels);
   }, [filteredData, labels]);
 
-  useEffect(()=>{console.log('data size:', exportedData.length)},[exportedData])
 
 
   return (
     <Card sx={{ p: 2 }}>
       <div ref={chartRef} style={{ position: 'relative' }}>
-      <TimePointChart dataValues={filteredData} title={title}/>
+      <TimePointChart labels={labels} dataValues={filteredData} title={title}/>
       </div>
 
       <DatePickerCustom

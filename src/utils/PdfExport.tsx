@@ -128,7 +128,7 @@ export const PdfExportButton = ({
       
     pdf.setFontSize(10);
     pdf.setTextColor(100);
-    pdf.text(`Filtros: ${filters.fuelFilter}, ${filters.dateFilter}, ${filters.stationFilter}`, margin, filtersY);
+    pdf.text(`Filtros: ${filters.fuelFilter?filters.fuelFilter+',':''} ${filters.dateFilter}${filters.stationFilter?', '+filters.stationFilter:''}`, margin, filtersY);
 
     pdf.save(`${title.replace(/\s+/g, '_')}_report.pdf`);
   };
