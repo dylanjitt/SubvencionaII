@@ -7,8 +7,8 @@ interface RoleGuardProps {
 }
 
 const RoleGuard: React.FC<RoleGuardProps> = ({ allowedRoles }) => {
-  const { user } = useAuthStore();
-  if (!user) {
+  const { user, isAuthenticated } = useAuthStore((state) => state);
+  if (!isAuthenticated) {
     return <Navigate to="/login" replace />;
   }
   if (!allowedRoles.includes(user.role)) {

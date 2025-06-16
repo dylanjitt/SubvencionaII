@@ -14,32 +14,37 @@ export const AppRoutes = () => {
       <Routes>
         <Route path="/" element={<Navigate to="/login" replace />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/register" element={<></>} /> /* TODO: add Register page */
-        <Route
-          element={
-            <AuthGuard>
-              <Layout />
-            </AuthGuard>
-          }
-        >
+        <Route path="/register" element={<></>/* TODO: add Register page */} />
+
+        <Route element={
+          <AuthGuard>
+            <Layout />
+          </AuthGuard>}>
           <Route path="/dashboard" element={<RoleBasedRedirect />} />
-          <Route path="profile" element={<></>} />
-          /* TODO: add profile page */
-          <Route path="/admin" element={<RoleGuard allowedRoles={["admin"]} />}>
-            <Route index element={<AdminDashboard />} />
-            <Route path="gasStation/:id" element={<StationDetail />} />
-            <Route path="reports" element={<></>} />
-            <Route path="*" element={<Navigate to="/admin" replace />} />
+
+          <Route path="profile" element={<></>/* TODO: add profile page */} />
+
+          <Route element={<RoleGuard allowedRoles={["admin"]} />}>
+            <Route path="admin">
+              <Route index element={<AdminDashboard />} />
+              <Route path="gasStation/:id" element={<StationDetail />} />
+              <Route path="reports" element={<></>} />
+              <Route path="*" element={<Navigate to="/admin" replace />} />
+            </Route>
           </Route>
-          <Route path="/user" element={<RoleGuard allowedRoles={["client"]} />}>
-            <Route index element={<DashboardPage />} />
-            <Route path="history" element={<></>} />
-            <Route path="*" element={<Navigate to="/user" replace />} />
+
+          <Route element={<RoleGuard allowedRoles={["client"]} />}>
+            <Route path="user">
+              <Route index element={<DashboardPage />} />
+              <Route path="history" element={<></>} />
+              <Route path="*" element={<Navigate to="/user" replace />} />
+            </Route>
           </Route>
+
         </Route>
-        <Route path="*" element={<></>} />
-        /* TODO: add 404 page */
+
+        <Route path="*" element={<></>/* TODO: add 404 page */} />
       </Routes>
     </BrowserRouter>
-  );
-};
+  )
+}
