@@ -29,10 +29,9 @@ export const markAsRead = async (notificationId: string): Promise<Notification> 
   }
 };
 
-export const archiveNotification = async (notificationId: string): Promise<Notification> => {
+export const archiveNotification = async (notificationId: string): Promise<void> => {
   try {
-    const notificationsResponse = await jsonServerInstance.delete(`${NOTIFICATIONS_URL}/${notificationId}`)
-    return notificationsResponse.data as Notification
+    await jsonServerInstance.delete(`${NOTIFICATIONS_URL}/${notificationId}`)
   }
   catch (error) {
     console.error("Error Updating notifications: ", error)
