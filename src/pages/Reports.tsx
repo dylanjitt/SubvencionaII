@@ -1,6 +1,3 @@
-// ReportsPage.tsx
-import { useEffect } from "react";
-
 import {
   Chart,
   ArcElement,
@@ -9,10 +6,6 @@ import {
   Tooltip,
   Legend
 } from "chart.js";
-
-import { useAuthStore } from "../store/authStore";
-import { useTicketDataStore } from "../store/ticketStore";
-import { getTicketsData } from "../services/ticketDataService";
 import { FilterByStation } from "../components/reportComponents/filterByStation";
 import { FilterByCancel } from "../components/reportComponents/filterByCancel";
 import { Card } from "@mui/material";
