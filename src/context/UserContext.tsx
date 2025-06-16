@@ -1,4 +1,5 @@
-import React, { createContext, useContext, useState, type ReactNode } from 'react';
+import React, { createContext, useContext, useState, useEffect, type ReactNode } from 'react';
+import { useAuthStore } from '../store/authStore';
 
 interface User {
   id: string;
@@ -16,13 +17,28 @@ interface UserContextType {
 const UserContext = createContext<UserContextType | undefined>(undefined);
 
 export const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [user, setUser] = useState<User>({
-    id: 'ae1e9c7c-7cb3-4249-8fa4-095353e4c137',
-    userId: '6c2a7f28-503e-4742-9a88-5cd9df93b562',
-    identificationNumber: '9421192',
-    licenseNumber: '51072',
-    cars: ['XLK743'],
-  });
+  const { user: authUser } = useAuthStore();
+  const [user, setUser] = useState<User | null>(null);
+
+  useEffect(() => {
+    const fetchUserData = async () => {
+      if (authUser?.id) {
+        try {
+          const response = await fetch('http://localhost:3000/customers');
+          const customers = await response.json();
+          const customerData = customers.find((customer: User) => customer.userId === authUser.id);
+
+          if (customerData) {
+            setUser(customerData);
+          }
+        } catch (error) {
+          console.error('Error fetching customer data:', error);
+        }
+      }
+    };
+
+    fetchUserData();
+  }, [authUser?.id]);
 
   return (
     <UserContext.Provider value={{ user, setUser }}>
