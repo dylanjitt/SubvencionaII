@@ -1,6 +1,5 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import AuthGuard from "../guards/AuthGuard";
-import RoleGuard from "../guards/RoleGuard";
 import { RoleBasedRedirect } from "./RoleBasedRedirect";
 import LoginPage from "../pages/Login";
 import DashboardPage from "../pages/Dashboard";
