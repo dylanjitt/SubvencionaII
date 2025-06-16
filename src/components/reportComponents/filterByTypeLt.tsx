@@ -16,7 +16,7 @@ import { CsvExportButton } from "../../utils/CsvExport";
 import { getGasStations } from "../../services/gasStationsService";
 import type { TicketDataProps } from "../../interface/ticketDataProps";
 
-export const FilterByType = ({ tickets, title }: TicketDataProps) => {
+export const FilterByTypeLt = ({ tickets, title }: TicketDataProps) => {
   
   const [singleDate, setSingleDate] = useState<Date | null>(null);
   const [rangeStart, setRangeStart] = useState<Date | null>(null);
@@ -54,12 +54,14 @@ export const FilterByType = ({ tickets, title }: TicketDataProps) => {
   }, [stationFilter]);
 
 
-  const countByType = (list: ticketData[]) => {
+  const sumByType = (list: ticketData[]) => {
 
     return gasType.map(state => {
-      return list.filter(ticket =>
+      const typeTicks= list.filter(ticket =>
         ticket.gasType === state
-      ).length
+      )
+      const total=typeTicks.reduce((sum,ticket)=>sum+ticket.quantity,0)
+      return parseFloat(total.toFixed(2))
     })
   };
 
@@ -86,7 +88,7 @@ export const FilterByType = ({ tickets, title }: TicketDataProps) => {
       });
     }
 
-    setFilteredData(countByType(temp));
+    setFilteredData(sumByType(temp));
     setFilteredticketsExport(temp)
     console.log('filtered:', filteredData)
   }, [tickets,  stationFilter, singleDate, rangeStart, rangeEnd]);

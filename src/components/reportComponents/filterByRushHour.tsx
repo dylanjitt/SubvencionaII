@@ -16,8 +16,9 @@ import { CsvExportButton } from "../../utils/CsvExport";
 import { getGasStations } from "../../services/gasStationsService";
 import type { TicketDataProps } from "../../interface/ticketDataProps";
 
-export const FilterByType = ({ tickets, title }: TicketDataProps) => {
-  
+export const FilterByRushHour= ({ tickets, title }: TicketDataProps) => {
+
+  const [fuelFilter, setFuelFilter] = useState<"all" | "gasolina" | "diesel" | "GNV">("all");
   const [singleDate, setSingleDate] = useState<Date | null>(null);
   const [rangeStart, setRangeStart] = useState<Date | null>(null);
   const [rangeEnd, setRangeEnd] = useState<Date | null>(null);
@@ -25,7 +26,7 @@ export const FilterByType = ({ tickets, title }: TicketDataProps) => {
   const [gasStationNames, setGasStationNames] = useState<string[]>([])
   const [stationFilter, setStationFilter] = useState<string>("all");
 
-  const gasType = ["Especial" , "Diesel" , "GNV"]
+  const ticketState = ["Pendiente", "Reservado", "Notificado", "EnTurno", "Realizado", "Cancelado"]
 
   const chartRef = useRef<HTMLDivElement>(null);
 
@@ -54,11 +55,11 @@ export const FilterByType = ({ tickets, title }: TicketDataProps) => {
   }, [stationFilter]);
 
 
-  const countByType = (list: ticketData[]) => {
+  const countByTicketState = (list: ticketData[]) => {
 
-    return gasType.map(state => {
+    return ticketState.map(state => {
       return list.filter(ticket =>
-        ticket.gasType === state
+        ticket.ticketState === state
       ).length
     })
   };
@@ -67,6 +68,10 @@ export const FilterByType = ({ tickets, title }: TicketDataProps) => {
 
     let temp = tickets;
     console.log('temp', temp)
+
+    if (fuelFilter !== "all") {
+      temp = temp.filter((t) => t.gasType === fuelFilter);
+    }
 
     if (stationFilter !== "all") {
       temp = temp.filter((t) => t.gasStationName === stationFilter);
@@ -86,12 +91,13 @@ export const FilterByType = ({ tickets, title }: TicketDataProps) => {
       });
     }
 
-    setFilteredData(countByType(temp));
+    setFilteredData(countByTicketState(temp));
     setFilteredticketsExport(temp)
     console.log('filtered:', filteredData)
-  }, [tickets,  stationFilter, singleDate, rangeStart, rangeEnd]);
+  }, [tickets, fuelFilter, stationFilter, singleDate, rangeStart, rangeEnd]);
 
   const restoreAll = () => {
+    setFuelFilter("all");
     setStationFilter("all");
     setSingleDate(null);
     setRangeStart(null);
@@ -109,15 +115,16 @@ export const FilterByType = ({ tickets, title }: TicketDataProps) => {
     }
 
     return {
+      fuelFilter: fuelFilter === "all" ? "All fuels" : `Fuel: ${fuelFilter}`,
       dateFilter,
-      stationFilter: stationFilter === "all" ? "All Gas Stations" : `Station: ${stationFilter}`,
+      stationFilter: stationFilter === "all" ? "All Gas Stations" : `Station: ${fuelFilter}`,
     };
   };
 
   return (
     <Card sx={{ p: 2 }}>
       <div ref={chartRef} style={{ position: 'relative' }}>
-        <CircleChart tickets={filteredData} title={title} labels={gasType} />
+        <CircleChart tickets={filteredData} title={title} labels={ticketState} />
       </div>
 
       <DatePickerCustom
@@ -132,6 +139,20 @@ export const FilterByType = ({ tickets, title }: TicketDataProps) => {
       />
 
       <Box mt={3} textAlign="center">
+        <FormControl size="small" sx={{ minWidth: 160, mr: 2 }}>
+          <InputLabel id="fuel-filter-label">Tipo de Combustible</InputLabel>
+          <Select
+            labelId="fuel-filter-label"
+            value={fuelFilter}
+            label="Tipo de Combustible"
+            onChange={(e) => setFuelFilter(e.target.value as any)}
+          >
+            <MenuItem value="all">Todos</MenuItem>
+            <MenuItem value="Especial">Gasolina</MenuItem>
+            <MenuItem value="Diesel">Diesel</MenuItem>
+            <MenuItem value="GNV">GNV</MenuItem>
+          </Select>
+        </FormControl>
 
         <FormControl size="small" sx={{ minWidth: 160, mr: 2 }}>
           <InputLabel id="station-filter-label">Estación de Servicio</InputLabel>
@@ -161,7 +182,7 @@ export const FilterByType = ({ tickets, title }: TicketDataProps) => {
           data={filteredData}
           title={title}
           detail="Estado Ticket"
-          labels={gasType}
+          labels={ticketState}
           filters={getCurrentFilters()}
         />
         <CsvExportButton

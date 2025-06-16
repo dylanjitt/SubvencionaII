@@ -67,6 +67,7 @@ export const DatePickerCustom = ({
                 onChange={setRangeStart}
                 minDate={minDate}
                 maxDate={maxDate}
+                sx={{width:150}}
                 slotProps={{ textField: { size: "small" } }}
               />
               <DatePicker
@@ -75,6 +76,7 @@ export const DatePickerCustom = ({
                 onChange={setRangeEnd}
                 minDate={minDate}
                 maxDate={maxDate}
+                sx={{width:150}}
                 slotProps={{ textField: { size: "small" } }}
               />
               {/* <Button

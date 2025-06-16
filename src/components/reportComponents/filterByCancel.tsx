@@ -117,7 +117,7 @@ export const FilterByCancel = ({ tickets, title }: TicketDataProps) => {
     return {
       fuelFilter: fuelFilter === "all" ? "All fuels" : `Fuel: ${fuelFilter}`,
       dateFilter,
-      stationFilter: stationFilter === "all" ? "All Gas Stations" : `Station: ${fuelFilter}`,
+      stationFilter: stationFilter === "all" ? "All Gas Stations" : `Station: ${stationFilter}`,
     };
   };
 
