@@ -19,6 +19,9 @@ const Navbar = ({ onMenuClick }: NavbarProps) => {
       replace: true,
     });
   }
+  const goToReports=()=>{
+    navigate('/admin/reports')
+  }
   return (
     <AppBar
       position="fixed"
@@ -49,7 +52,7 @@ const Navbar = ({ onMenuClick }: NavbarProps) => {
           {/* botones de la parte derecha */}
           <div style={{display:'flex', padding:20}}>
           {user.role==='admin'?
-          <Button >Reportes</Button>
+          <Button onClick={goToReports} >Reportes</Button>
           :
           <Button >Historial</Button>
           }
