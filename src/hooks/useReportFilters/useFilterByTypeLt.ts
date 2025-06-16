@@ -34,10 +34,6 @@ export const useFilterByTypeLt =(tickets: ticketData[])=>{
 
   }, []);
 
-  useEffect(() => {
-    console.log('gas station filter: ', stationFilter)
-  }, [stationFilter]);
-
 
   const sumByType = (list: ticketData[]) => {
 
@@ -53,7 +49,7 @@ export const useFilterByTypeLt =(tickets: ticketData[])=>{
   useEffect(() => {
 
     let temp = tickets;
-    console.log('temp', temp)
+
 
     if (stationFilter !== "all") {
       temp = temp.filter((t) => t.gasStationName === stationFilter);
@@ -75,7 +71,7 @@ export const useFilterByTypeLt =(tickets: ticketData[])=>{
 
     setFilteredData(sumByType(temp));
     setFilteredticketsExport(temp)
-    console.log('filtered:', filteredData)
+
   }, [tickets,  stationFilter, singleDate, rangeStart, rangeEnd]);
 
   const restoreAll = () => {

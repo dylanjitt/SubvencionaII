@@ -34,10 +34,6 @@ export const useFilterByType =(tickets: ticketData[])=>{
 
   }, []);
 
-  useEffect(() => {
-    console.log('gas station filter: ', stationFilter)
-  }, [stationFilter]);
-
 
   const countByType = (list: ticketData[]) => {
 
@@ -51,7 +47,7 @@ export const useFilterByType =(tickets: ticketData[])=>{
   useEffect(() => {
 
     let temp = tickets;
-    console.log('temp', temp)
+    
 
     if (stationFilter !== "all") {
       temp = temp.filter((t) => t.gasStationName === stationFilter);
@@ -73,7 +69,7 @@ export const useFilterByType =(tickets: ticketData[])=>{
 
     setFilteredData(countByType(temp));
     setFilteredticketsExport(temp)
-    console.log('filtered:', filteredData)
+  
   }, [tickets,  stationFilter, singleDate, rangeStart, rangeEnd]);
 
   const restoreAll = () => {

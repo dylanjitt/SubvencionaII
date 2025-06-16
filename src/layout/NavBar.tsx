@@ -24,7 +24,7 @@ const Navbar = () => {
     archiveNotification,
     goToReports
   } = useNotifierNavBar();
-  console.log('user role navbar:',user.role)
+  
 
   return (
     <AppBar position="fixed" sx={{ backgroundColor: "white", height: 70, zIndex: theme => theme.zIndex.drawer + 1 }}>

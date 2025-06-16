@@ -73,7 +73,7 @@ export const useFilterByRushHours =(tickets: ticketData[])=>{
   useEffect(() => {
 
     let temp = tickets;
-    console.log('temp', temp)
+    
 
     if (fuelFilter !== "all") {
       temp = temp.filter((t) => t.gasType === fuelFilter);
