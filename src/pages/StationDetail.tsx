@@ -99,12 +99,12 @@ export default function StationDetail() {
       <Grid container spacing={2} sx={{ mt: 2 }}>
         <Grid size={{ xs: 12, sm: 6 }}>
           <FormControl fullWidth sx={{ mr: 2 }}>
-            <InputLabel>Fuel Type</InputLabel>
+            <InputLabel>Tipo de combustible</InputLabel>
             <Select
               value={fuelTypeFilter}
               onChange={(e) => setFuelTypeFilter(e.target.value)}
             >
-              <MenuItem value="">All</MenuItem>
+              <MenuItem value="">Todos</MenuItem>
               {station?.services?.map((s) => (
                 <MenuItem key={s.name} value={s.name}>
                   {s.name}
@@ -115,12 +115,12 @@ export default function StationDetail() {
         </Grid>
         <Grid size={{ xs: 12, sm: 6 }}>
           <FormControl fullWidth>
-            <InputLabel>Ticket State</InputLabel>
+            <InputLabel>Estados ficha</InputLabel>
             <Select
               value={ticketStateFilter}
               onChange={(e) => setTicketStateFilter(e.target.value)}
             >
-              <MenuItem value="">All</MenuItem>
+              <MenuItem value="">Todos</MenuItem>
               <MenuItem value="EnTurno">EnTurno</MenuItem>
               <MenuItem value="Notificado">Notificado</MenuItem>
               <MenuItem value="Reservado">Reservado</MenuItem>
@@ -143,7 +143,7 @@ export default function StationDetail() {
             </Grid>
           ))
         ) : (
-          <Typography>No tickets available</Typography>
+          <Typography>No hay tickets disponibles</Typography>
         )}
       </Grid>
     </Box>

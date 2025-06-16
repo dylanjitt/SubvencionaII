@@ -491,7 +491,7 @@
         {
           "name": "Especial",
           "capacity": 16226,
-          "stock": 8031
+          "stock": 9000
         },
         {
           "name": "Diesel",
@@ -1308,68 +1308,6 @@
           "name": "GNV",
           "capacity": 13890,
           "stock": 2951
-        }
-      ]
-    },
-    {
-      "id": "e6d39d7f-0277-41bf-9db0-629d5ef6d52c",
-      "userId": "d3b64e36-5754-4b8a-90e8-1b798abb268e",
-      "name": "Faster",
-      "zone": "San Antonio",
-      "address": "San Antonio 45",
-      "phone": "76545224",
-      "openingHours": [
-        {
-          "day": "Lunes",
-          "open": "12:00",
-          "close": "23:00"
-        },
-        {
-          "day": "Domingo",
-          "open": "12:00",
-          "close": "23:00"
-        },
-        {
-          "day": "Martes",
-          "open": "12:00",
-          "close": "23:00"
-        },
-        {
-          "day": "Miercoles",
-          "open": "12:00",
-          "close": "23:00"
-        },
-        {
-          "day": "Jueves",
-          "open": "12:00",
-          "close": "23:00"
-        },
-        {
-          "day": "Viernes",
-          "open": "12:00",
-          "close": "23:00"
-        },
-        {
-          "day": "Sabado",
-          "open": "12:00",
-          "close": "23:00"
-        }
-      ],
-      "services": [
-        {
-          "name": "Especial",
-          "capacity": 10000,
-          "stock": 10000
-        },
-        {
-          "name": "Diesel",
-          "capacity": 10000,
-          "stock": 8000
-        },
-        {
-          "name": "GNV",
-          "capacity": 10000,
-          "stock": 7000
         }
       ]
     },
