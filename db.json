@@ -1388,19 +1388,21 @@
   "notifications": [
     {
       "id": "c1ca7a70-3d73-461c-bf8f-52bba706f30a",
-      "userId": "c00e65e8-54af-4f53-a5a7-3b44b93113a1",
+      "userId": "6c2a7f28-503e-4742-9a88-5cd9df93b562",
       "gasStationId": "220ebfba-b81a-4f39-987b-187781acf741",
-      "message": "This is a test notification",
+      "gasStationName": "GasStation_220ebfba",
+      "message": "¿quieres confirmar tu turno para el día martes 18 de junio a las 15:00 hs?",
       "read": true,
-      "archived": false
+      "type": "Confirm"
     },
     {
       "id": "2adc157d-9343-4059-a6a4-4aa703493e26",
-      "userId": "126db24f-6f01-4364-b4ca-5cfe1ec7c5ee",
+      "userId": "6c2a7f28-503e-4742-9a88-5cd9df93b562",
       "gasStationId": "876d0d78-1f2e-4849-98b5-00b7dcc75383",
-      "message": "This is a test notification",
-      "read": true,
-      "archived": false
+      "gasStationName": "GasStation_876d0d78",
+      "message": "Shell Av. Libertador: Súper 3200L, Premium 1850L, Diesel 4100L.",
+      "read": false,
+      "type": "Stock"
     }
   ],
   "tickets": [
