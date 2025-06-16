@@ -1,4 +1,3 @@
-import { useState, useEffect, useRef } from "react";
 import {
   Card,
   Box,
@@ -8,113 +7,16 @@ import {
   Select,
   MenuItem
 } from "@mui/material";
-import type { ticketData } from "../../interface/ticketDataInterface";
 import CircleChart from "./circle";
 import { DatePickerCustom } from "./datePicker";
 import { PdfExportButton } from "../../utils/PdfExport";
 import { CsvExportButton } from "../../utils/CsvExport";
-import { getGasStations } from "../../services/gasStationsService";
 import type { TicketDataProps } from "../../interface/ticketDataProps";
+import { useFilterByTypeLt } from "../../hooks/useReportFilters/useFilterByTypeLt";
 
 export const FilterByTypeLt = ({ tickets, title }: TicketDataProps) => {
   
-  const [singleDate, setSingleDate] = useState<Date | null>(null);
-  const [rangeStart, setRangeStart] = useState<Date | null>(null);
-  const [rangeEnd, setRangeEnd] = useState<Date | null>(null);
-
-  const [gasStationNames, setGasStationNames] = useState<string[]>([])
-  const [stationFilter, setStationFilter] = useState<string>("all");
-
-  const gasType = ["Especial" , "Diesel" , "GNV"]
-
-  const chartRef = useRef<HTMLDivElement>(null);
-
-  const [filteredData, setFilteredData] = useState<number[]>([]);
-  const [filteredticketsExport, setFilteredticketsExport] = useState<ticketData[] | null>(tickets)
-
-  useEffect(() => {
-    const fetchStationNames = async () => {  
-      try {
-        const stations = await getGasStations();
-
-        const names = ["all", ...stations.map((station: any) => station.name)];
-        setGasStationNames(names);
-      } catch (error) {
-        console.error('Error fetching station names:', error);
-        setGasStationNames([]);
-      }
-    };
-
-    fetchStationNames();
-
-  }, []);
-
-  useEffect(() => {
-    console.log('gas station filter: ', stationFilter)
-  }, [stationFilter]);
-
-
-  const sumByType = (list: ticketData[]) => {
-
-    return gasType.map(state => {
-      const typeTicks= list.filter(ticket =>
-        ticket.gasType === state
-      )
-      const total=typeTicks.reduce((sum,ticket)=>sum+ticket.quantity,0)
-      return parseFloat(total.toFixed(2))
-    })
-  };
-
-  useEffect(() => {
-
-    let temp = tickets;
-    console.log('temp', temp)
-
-    if (stationFilter !== "all") {
-      temp = temp.filter((t) => t.gasStationName === stationFilter);
-    }
-
-    if (singleDate) {
-      temp = temp.filter((t) => {
-        const d = new Date(t.date);
-        return d.toDateString() === singleDate.toDateString();
-      });
-    } else if (rangeStart && rangeEnd) {
-      const startTs = rangeStart.setHours(0, 0, 0, 0);
-      const endTs = rangeEnd.setHours(23, 59, 59, 999);
-      temp = temp.filter((t) => {
-        const ts = new Date(t.date).getTime();
-        return ts >= startTs && ts <= endTs;
-      });
-    }
-
-    setFilteredData(sumByType(temp));
-    setFilteredticketsExport(temp)
-    console.log('filtered:', filteredData)
-  }, [tickets,  stationFilter, singleDate, rangeStart, rangeEnd]);
-
-  const restoreAll = () => {
-    setStationFilter("all");
-    setSingleDate(null);
-    setRangeStart(null);
-    setRangeEnd(null);
-  };
-
-  const getCurrentFilters = () => {
-    let dateFilter = "";
-    if (singleDate) {
-      dateFilter = `Date: ${singleDate.toLocaleDateString()}`;
-    } else if (rangeStart && rangeEnd) {
-      dateFilter = `Range: ${rangeStart.toLocaleDateString()} to ${rangeEnd.toLocaleDateString()}`;
-    } else {
-      dateFilter = "All dates";
-    }
-
-    return {
-      dateFilter,
-      stationFilter: stationFilter === "all" ? "All Gas Stations" : `Station: ${stationFilter}`,
-    };
-  };
+  const {chartRef,filteredData,gasType,singleDate,rangeEnd,rangeStart,setSingleDate,setRangeEnd,setRangeStart,stationFilter,setStationFilter,gasStationNames,restoreAll,getCurrentFilters,filteredticketsExport}=useFilterByTypeLt(tickets)
 
   return (
     <Card sx={{ p: 2 }}>

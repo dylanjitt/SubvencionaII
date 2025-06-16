@@ -12,7 +12,7 @@ export function ReportsPage() {
 
   return (
     <div style={{  margin: "0 auto" }}>
-      <h1>Station Usage Report</h1>
+      <h1>Reporte de Uso</h1>
       <Card sx={{width:'100%',display:'flex',padding:'20px',backgroundColor:'#f4f4f4', justifyContent:'space-around'}}>
         <FilterByStation tickets={tickets} title="Turnos Por estación"/>
         <FilterByCancel tickets={tickets} title="Estados de Tickets"/>
