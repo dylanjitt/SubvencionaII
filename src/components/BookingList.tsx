@@ -1,10 +1,5 @@
-import React, { useState } from 'react';
-import BookingForm from './BookingForm';
+import React from 'react';
 import {
-  List,
-  ListItem,
-  ListItemText,
-  IconButton,
   Typography,
   Dialog,
   DialogTitle,
@@ -13,14 +8,22 @@ import {
   Button,
   Snackbar,
 } from '@mui/material';
-import DeleteIcon from '@mui/icons-material/Delete';
+import { Grid, Box } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
+import CustomerTicketCard from './CustomerTicketCard';
 
 interface Booking {
   id: number;
-  stationName: string;
-  fuelType: string;
+  adminId: number;
+  gasStationId: number;
+  gasStationName: string;
+  customerId: number;
+  carPlate: string;
   date: string;
-  time: string;
+  gasType: string;
+  quantity: number;
+  amount: number;
+  ticketState: string;
 }
 
 interface Props {
@@ -33,7 +36,7 @@ const BookingList: React.FC<Props> = ({ bookings, onCancel }) => {
   const [selectedId, setSelectedId] = React.useState<number | null>(null);
   const [snackbarOpen, setSnackbarOpen] = React.useState(false);
 
-  const [formModalOpen, setFormModalOpen] = useState(false); // Estado para el modal del formulario
+  const navigate = useNavigate();
 
   const handleDeleteClick = (id: number) => {
     setSelectedId(id);
@@ -49,37 +52,54 @@ const BookingList: React.FC<Props> = ({ bookings, onCancel }) => {
     setSelectedId(null);
   };
 
-  const handleFormSubmit = (values: any) => {
-    console.log('Form submitted:', values);
-    setFormModalOpen(false); // Cerrar el modal después de enviar el formulario
+  const handleNavigateToBookingPage = () => {
+    navigate('/bookings');
   };
+
+  if (!Array.isArray(bookings)) {
+    console.error('Invalid bookings data:', bookings);
+    return <div>No bookings available</div>;
+  }
 
   return (
     <>
       <Typography variant="h6" gutterBottom>
-        Tu turno reservado
+        TU TURNO RESERVADO
       </Typography>
-      <Button variant="contained" color="primary" onClick={() => setFormModalOpen(true)}>
+      <Button variant="contained" color="primary" onClick={handleNavigateToBookingPage}>
         Reservar Turno
       </Button>
-      <List>
-        {bookings.map((b) => (
-          <ListItem
-            key={b.id}
-            secondaryAction={
-              <IconButton edge="end" onClick={() => handleDeleteClick(b.id)}>
-                <DeleteIcon />
-              </IconButton>
-            }
+      {bookings.length === 0 ? (
+        <Typography>No hay turnos reservados</Typography>
+      ) : (
+        <Box sx={{ width: '100%' }}>
+          <Grid
+            container
+            spacing={3}
+            sx={{
+              p: 2,
+              mt: 2,
+              justifyContent: 'center',
+              alignItems: 'flex-start',
+            }}
           >
-            <ListItemText
-              primary={`${b.stationName} - ${b.fuelType}`}
-              secondary={`${b.date} a las ${b.time}`}
-            />
-          </ListItem>
-        ))}
-      </List>
-
+            {bookings.map((b) => (
+              <Grid item xs={12} sm={6} md={4} key={b.id}>
+                <CustomerTicketCard
+                  gasStationName={b.gasStationName}
+                  cardPlate={b.carPlate}
+                  ticketState={b.ticketState}
+                  date={b.date}
+                  fuelType={b.gasType}
+                  quantity={`${b.quantity} Lts`}
+                  onClick={() => handleDeleteClick(b.id)}
+                  cardType="ticket"
+                />
+              </Grid>
+            ))}
+          </Grid>
+        </Box>
+      )}
       <Dialog open={openDialog} onClose={() => setOpenDialog(false)}>
         <DialogTitle>¿Cancelar turno?</DialogTitle>
         <DialogContent>
@@ -89,13 +109,6 @@ const BookingList: React.FC<Props> = ({ bookings, onCancel }) => {
           <Button onClick={() => setOpenDialog(false)}>Cerrar</Button>
           <Button color="error" onClick={handleConfirm}>Cancelar Turno</Button>
         </DialogActions>
-      </Dialog>
-
-      <Dialog open={formModalOpen} onClose={() => setFormModalOpen(false)} fullWidth maxWidth="sm">
-        <DialogTitle>Reservar Turno</DialogTitle>
-        <DialogContent>
-          <BookingForm onSubmit={handleFormSubmit} />
-        </DialogContent>
       </Dialog>
 
       <Snackbar

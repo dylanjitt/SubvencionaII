@@ -5,6 +5,8 @@ import LoginPage from "../pages/Login";
 import DashboardPage from "../pages/Dashboard";
 import { Layout } from "../layout/Layout";
 import AdminDashboard from "../pages/AdminDashdoard";
+import BookingPage from "../pages/BookingPage";
+import BookingConfirmation from "../pages/BookingConfirmation";
 
 export const AppRoutes = () => {
   return (
@@ -35,6 +37,13 @@ export const AppRoutes = () => {
               <Route index element={<DashboardPage/>} />
               <Route path="history" element={<></>} />
               <Route path="*" element={<Navigate to="/user" replace />} />
+            </Route>
+
+            <Route path="bookings">
+              <Route index element={<BookingPage/>} />
+              <Route path="history" element={<></>} />
+              <Route path="*" element={<Navigate to="/bookings" replace />} />
+              <Route path="confirmation" element={<BookingConfirmation />} />
             </Route>
 
           </Route>
