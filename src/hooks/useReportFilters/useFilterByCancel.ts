@@ -35,9 +35,6 @@ export const useFilterByCancel =(tickets: ticketData[])=>{
 
   }, []);
 
-  useEffect(() => {
-    console.log('gas station filter: ', stationFilter)
-  }, [stationFilter]);
 
 
   const countByTicketState = (list: ticketData[]) => {
@@ -52,7 +49,7 @@ export const useFilterByCancel =(tickets: ticketData[])=>{
   useEffect(() => {
 
     let temp = tickets;
-    console.log('temp', temp)
+    
 
     if (fuelFilter !== "all") {
       temp = temp.filter((t) => t.gasType === fuelFilter);
@@ -78,7 +75,7 @@ export const useFilterByCancel =(tickets: ticketData[])=>{
 
     setFilteredData(countByTicketState(temp));
     setFilteredticketsExport(temp)
-    console.log('filtered:', filteredData)
+    
   }, [tickets, fuelFilter, stationFilter, singleDate, rangeStart, rangeEnd]);
 
   const restoreAll = () => {
