@@ -19,28 +19,14 @@ import { Card } from "@mui/material";
 import { FilterByType } from "../components/reportComponents/filterByType";
 import { FilterByTypeLt } from "../components/reportComponents/filterByTypeLt";
 import { FilterByRushHour } from "../components/reportComponents/filterByRushHour";
+import { useReports } from "../hooks/useReport";
 
 
 Chart.register(ArcElement, Title, SubTitle, Tooltip, Legend);
 
 export function ReportsPage() {
-  const { user } = useAuthStore();
-  const { tickets, saveTickets } = useTicketDataStore();
-
-  useEffect(() => {
-    loadTicks();
-  }, []);
-
-  const loadTicks = async () => {
-    try {
-      const data = await getTicketsData(user.id);
-      console.log('data:',data)
-      if (data) saveTickets(data);
-    } catch (err) {
-      console.error(err);
-    }
-  };
   
+  const {tickets}=useReports()
 
   return (
     <div style={{  margin: "0 auto" }}>
