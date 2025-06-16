@@ -21,29 +21,30 @@ const Navbar = () => {
     handleUserClose,
     logOut,
     navigateHome,
-    archiveNotification
+    archiveNotification,
+    goToReports
   } = useNotifierNavBar();
 
 
 
-import { useAuthStore } from "../store/authStore";
-import { useNavigate } from "react-router-dom";
-interface NavbarProps {
-  onMenuClick: () => void;
-}
-const Navbar = ({ onMenuClick }: NavbarProps) => {
-  const {logoutUser,user}=useAuthStore()
-  const navigate = useNavigate();
+// import { useAuthStore } from "../store/authStore";
+// import { useNavigate } from "react-router-dom";
+// interface NavbarProps {
+//   onMenuClick: () => void;
+// }
+// const Navbar = ({ onMenuClick }: NavbarProps) => {
+//   const {logoutUser,user}=useAuthStore()
+//   const navigate = useNavigate();
 
-  const logOut=()=>{
-    logoutUser()
-    navigate('/login', {
-      replace: true,
-    });
-  }
-  const goToReports=()=>{
-    navigate('/admin/reports')
-  }
+  // const logOut=()=>{
+  //   logoutUser()
+  //   navigate('/login', {
+  //     replace: true,
+  //   });
+  // }
+  // const goToReports=()=>{
+  //   navigate('/admin/reports')
+  // }
   return (
     <AppBar position="fixed" sx={{ backgroundColor: "white", height: 70, zIndex: theme => theme.zIndex.drawer + 1 }}>
       <Toolbar>
@@ -130,6 +131,7 @@ const Navbar = ({ onMenuClick }: NavbarProps) => {
       >
         <Box display="flex" flexDirection="column" gap={1} sx={{ width: 100, p: 1 }}>
           <Button variant="outlined" fullWidth onClick={logOut}>Logout</Button>
+          <Button variant="outlined" fullWidth onClick={goToReports}>Reports</Button>
         </Box>
       </Popover>
     </AppBar>

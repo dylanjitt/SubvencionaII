@@ -38,6 +38,9 @@ export const useNotifierNavBar = () => {
     logoutUser();
     navigate('/login', { replace: true });
   };
+  const goToReports=()=>{
+    navigate('/admin/reports')
+  }
   const navigateHome = () => navigate('/dashboard');
 
   useEffect(() => {
@@ -78,5 +81,5 @@ export const useNotifierNavBar = () => {
     })
   }
 
-  return { user, notifications, nonReadedNotifications, anchorNotif, anchorUser, handleNotifClick, handleNotifClose, handleUserClick, handleUserClose, logOut, navigateHome, archiveNotification }
+  return { user, notifications, nonReadedNotifications, anchorNotif, anchorUser, handleNotifClick, handleNotifClose, handleUserClick, handleUserClose, logOut, navigateHome, archiveNotification,goToReports }
 }
