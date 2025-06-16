@@ -21,7 +21,7 @@ interface NotificacionNavBarProps {
   type: string;
   read: boolean;
   gasSationName: string;
-  onArchive?: () => void;
+  onArchive: () => void;
 }
 
 const getIconByType = (type: string) => {
@@ -42,7 +42,8 @@ const NotificacionNavBarComponent = ({
   message,
   read,
   type,
-  gasSationName
+  gasSationName,
+  onArchive
 }: NotificacionNavBarProps) => {
   return (
     <ListItem
@@ -53,7 +54,7 @@ const NotificacionNavBarComponent = ({
         alignItems: "flex-start"
       }}
       secondaryAction={
-        <IconButton edge="end" aria-label="delete">
+        <IconButton edge="end" aria-label="delete" onClick={onArchive}>
           <Delete />
         </IconButton>
       }

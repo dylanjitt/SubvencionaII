@@ -5,6 +5,7 @@ import LoginPage from "../pages/Login";
 import DashboardPage from "../pages/Dashboard";
 import { Layout } from "../layout/Layout";
 import AdminDashboard from "../pages/AdminDashdoard";
+import SimTestPage from "../pages/simTestPage";
 
 export const AppRoutes = () => {
   return (
@@ -33,6 +34,7 @@ export const AppRoutes = () => {
             {/* TODO: add RoleGuard */}
             <Route path="user">
               <Route index element={<DashboardPage/>} />
+              <Route path="test" element={<SimTestPage/>} />
               <Route path="history" element={<></>} />
               <Route path="*" element={<Navigate to="/user" replace />} />
             </Route>
