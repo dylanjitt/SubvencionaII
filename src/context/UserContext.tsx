@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect, type ReactNode } from 'react';
 import { useAuthStore } from '../store/authStore';
-
+import { fetchUserData } from '../services/customerService';
 interface User {
   id: string;
   userId: string;
@@ -21,12 +21,11 @@ export const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   const [user, setUser] = useState<User | null>(null);
 
   useEffect(() => {
-    const fetchUserData = async () => {
+    const fetchData = async () => {
       if (authUser?.id) {
         try {
-          const response = await fetch('http://localhost:3000/customers');
-          const customers = await response.json();
-          const customerData = customers.find((customer: User) => customer.userId === authUser.id);
+          const response = await fetchUserData();
+          const customerData = response.find((customer: User) => customer.userId === authUser.id);
 
           if (customerData) {
             setUser(customerData);
@@ -37,7 +36,7 @@ export const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
       }
     };
 
-    fetchUserData();
+    fetchData();
   }, [authUser?.id]);
 
   return (
