@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import type { ticketData } from "../../interface/ticketDataInterface";
-import { getGasStations } from "../../services/gasStationsService";
+import { fetchStationNames } from "../../helper/fetchStationNames";
+import { useAuthStore } from "../../store/authStore";
 
 export const useFilterByCancel =(tickets: ticketData[])=>{
   const [fuelFilter, setFuelFilter] = useState<"all" | "gasolina" | "diesel" | "GNV">("all");
@@ -18,26 +19,12 @@ export const useFilterByCancel =(tickets: ticketData[])=>{
   const [filteredData, setFilteredData] = useState<number[]>([]);
   const [filteredticketsExport, setFilteredticketsExport] = useState<ticketData[] | null>(tickets)
 
-  useEffect(() => {
-    const fetchStationNames = async () => {  
-      try {
-        const stations = await getGasStations();
-
-        const names = ["all", ...stations.map((station: any) => station.name)];
-        setGasStationNames(names);
-      } catch (error) {
-        console.error('Error fetching station names:', error);
-        setGasStationNames([]);
-      }
-    };
-
-    fetchStationNames();
-
-  }, []);
+  const { user } = useAuthStore();
 
   useEffect(() => {
-    console.log('gas station filter: ', stationFilter)
-  }, [stationFilter]);
+    fetchStationNames(setGasStationNames, user);
+  }, [user]);
+
 
 
   const countByTicketState = (list: ticketData[]) => {
@@ -52,7 +39,7 @@ export const useFilterByCancel =(tickets: ticketData[])=>{
   useEffect(() => {
 
     let temp = tickets;
-    console.log('temp', temp)
+    
 
     if (fuelFilter !== "all") {
       temp = temp.filter((t) => t.gasType === fuelFilter);
@@ -78,7 +65,7 @@ export const useFilterByCancel =(tickets: ticketData[])=>{
 
     setFilteredData(countByTicketState(temp));
     setFilteredticketsExport(temp)
-    console.log('filtered:', filteredData)
+    
   }, [tickets, fuelFilter, stationFilter, singleDate, rangeStart, rangeEnd]);
 
   const restoreAll = () => {

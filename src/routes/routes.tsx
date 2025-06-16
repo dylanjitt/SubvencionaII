@@ -10,6 +10,7 @@ import { ReportsPage } from "../pages/Reports";
 import BookingPage from "../pages/BookingPage";
 import BookingConfirmation from "../pages/BookingConfirmation";
 import StationDetail from "../pages/StationDetail";
+import SimTestPage from "../pages/simTestPage";
 
 export const AppRoutes = () => {
   return (
@@ -40,7 +41,8 @@ export const AppRoutes = () => {
 
           <Route element={<RoleGuard allowedRoles={["client"]} />}>
             <Route path="user">
-              <Route index element={<DashboardPage />} />
+              <Route index element={<DashboardPage/>} />
+              <Route path="test" element={<SimTestPage/>} />
               <Route path="history" element={<></>} />
               <Route path="*" element={<Navigate to="/user" replace />} />
             </Route>

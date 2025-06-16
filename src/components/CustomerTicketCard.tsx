@@ -25,6 +25,7 @@ const CustomerTicketCard: React.FC<CustomerTicketCardProps> = ({
     const formattedDate = new Date(date).toLocaleString('es-ES', {
         dateStyle: 'short',
         timeStyle: 'short',
+        timeZone: 'UTC',
     });
 
     const getTicketStateColor = (state: string) => {

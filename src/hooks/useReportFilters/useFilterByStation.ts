@@ -26,7 +26,7 @@ export const useFilterByStation =(tickets: ticketData[])=>{
         
         const names = stations.map((station:any) => station.name);
         setGasStationNames(names);
-        console.log('names',names)
+       
       } catch (error) {
         console.error('Error fetching station names:', error);
         setGasStationNames([]);
@@ -51,7 +51,7 @@ export const useFilterByStation =(tickets: ticketData[])=>{
   useEffect(() => {
 
     let temp = tickets;
-    console.log('temp',temp)
+   
 
     if (fuelFilter !== "all") {
       temp = temp.filter((t) => t.gasType === fuelFilter);
@@ -73,7 +73,7 @@ export const useFilterByStation =(tickets: ticketData[])=>{
 
     setFilteredData(countByStation(temp));
     setFilteredticketsExport(temp)
-    console.log('filtered:',filteredData)
+    
   }, [tickets, fuelFilter, singleDate, rangeStart, rangeEnd]);
 
   useEffect(() => {
