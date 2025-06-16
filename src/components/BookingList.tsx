@@ -9,7 +9,7 @@ import {
   Snackbar,
 } from '@mui/material';
 import { Grid, Box } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import CustomerTicketCard from './CustomerTicketCard';
 
 interface Booking {
@@ -32,9 +32,18 @@ interface Props {
 }
 
 const BookingList: React.FC<Props> = ({ bookings, onCancel }) => {
+  const location = useLocation();
   const [openDialog, setOpenDialog] = React.useState(false);
   const [selectedId, setSelectedId] = React.useState<number | null>(null);
   const [snackbarOpen, setSnackbarOpen] = React.useState(false);
+  const [ticketCreatedSnackbar, setTicketCreatedSnackbar] = React.useState(false);
+
+  React.useEffect(() => {
+    if (location.state?.ticketCreated) {
+      setTicketCreatedSnackbar(true);
+      window.history.replaceState({}, document.title);
+    }
+  }, [location.state]);
 
   const navigate = useNavigate();
 
@@ -58,7 +67,7 @@ const BookingList: React.FC<Props> = ({ bookings, onCancel }) => {
 
   if (!Array.isArray(bookings)) {
     console.error('Invalid bookings data:', bookings);
-    return <div>No bookings available</div>;
+    return <div>No hay reservas disponibles</div>;
   }
 
   return (
@@ -84,7 +93,7 @@ const BookingList: React.FC<Props> = ({ bookings, onCancel }) => {
             }}
           >
             {bookings.map((b) => (
-              <Grid item xs={12} sm={6} md={4} key={b.id}>
+              <Grid key={b.id}>
                 <CustomerTicketCard
                   gasStationName={b.gasStationName}
                   cardPlate={b.carPlate}
@@ -117,6 +126,14 @@ const BookingList: React.FC<Props> = ({ bookings, onCancel }) => {
         autoHideDuration={3000}
         message="Turno cancelado exitosamente"
       />
+
+      <Snackbar
+        open={ticketCreatedSnackbar}
+        onClose={() => setTicketCreatedSnackbar(false)}
+        autoHideDuration={3000}
+        message="Turno creado exitosamente"
+      />
+
     </>
   );
 };
