@@ -8,23 +8,19 @@ import {
   Button,
 } from "@mui/material";
 import EnTurnoModal from "../components/ModalsAdmi/EnTurnoModal";
-
-interface Ticket {
-  id: string;
-  customerId: string;
-  carPlate: string;
-  date: string;
-  gasType: string;
-  quantity: number;
-  amount: number;
-  ticketState: string;
-}
+import type { Ticket } from "../interface/TicketInterface";
 
 interface TicketCardProps {
   ticket: Ticket;
+  updateTicketState: (ticketId: string, newState: string) => void;
+  gasStationId: string;
 }
 
-export default function TicketCard({ ticket }: TicketCardProps) {
+export default function TicketCard({
+  ticket,
+  updateTicketState,
+  gasStationId,
+}: TicketCardProps) {
   const [openEnTurnoModal, setOpenEnTurnoModal] = useState(false);
 
   return (
@@ -60,8 +56,15 @@ export default function TicketCard({ ticket }: TicketCardProps) {
       </CardContent>
       {ticket.ticketState === "EnTurno" && (
         <CardActions>
-          <Button size="small" onClick={() => setOpenEnTurnoModal(true)}>
-            Finalizado
+          <Button
+            size="small"
+            onClick={() => {
+              console.log("Opening EnTurnoModal for ticket:", ticket.id);
+              setOpenEnTurnoModal(true);
+            }}
+            variant="contained"
+          >
+            Finalizar
           </Button>
         </CardActions>
       )}
@@ -69,6 +72,8 @@ export default function TicketCard({ ticket }: TicketCardProps) {
         open={openEnTurnoModal}
         onClose={() => setOpenEnTurnoModal(false)}
         ticketId={ticket.id}
+        updateTicketState={updateTicketState}
+        gasStationId={gasStationId}
       />
     </Card>
   );

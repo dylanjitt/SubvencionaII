@@ -1539,7 +1539,7 @@
       "gasType": "GNV",
       "quantity": 49.43,
       "amount": 76.12,
-      "ticketState": "Pendiente"
+      "ticketState": "EnTurno"
     },
     {
       "id": "3aa33a0a-f389-4ab8-84cc-1a93cdab1b2d",
@@ -1578,7 +1578,7 @@
       "gasType": "Especial",
       "quantity": 22.71,
       "amount": 79.71,
-      "ticketState": "Reservado"
+      "ticketState": "Realizado"
     },
     {
       "id": "dd544981-1b27-4fce-8c7e-f28d63117229",
@@ -1591,7 +1591,7 @@
       "gasType": "Especial",
       "quantity": 21.47,
       "amount": 75.36,
-      "ticketState": "Reservado"
+      "ticketState": "EnTurno"
     },
     {
       "id": "a8a0c789-404b-41fb-b356-ef081fac1173",
@@ -1604,7 +1604,7 @@
       "gasType": "GNV",
       "quantity": 28.03,
       "amount": 43.17,
-      "ticketState": "Reservado"
+      "ticketState": "Notificado"
     },
     {
       "id": "acb624b2-4d4c-4746-a12c-13dc0d611b7a",
@@ -1773,7 +1773,7 @@
       "gasType": "Diesel",
       "quantity": 7.72,
       "amount": 22,
-      "ticketState": "Reservado"
+      "ticketState": "EnTurno"
     },
     {
       "id": "9fd22fec-7a94-4254-b847-8855cb83730b",
@@ -2072,7 +2072,7 @@
       "gasType": "Diesel",
       "quantity": 7.51,
       "amount": 21.4,
-      "ticketState": "Pendiente"
+      "ticketState": "Notificado"
     },
     {
       "id": "106235f1-97b4-4c72-b3be-91a5e90035d4",
@@ -2358,7 +2358,7 @@
       "gasType": "Especial",
       "quantity": 42.67,
       "amount": 149.77,
-      "ticketState": "Reservado"
+      "ticketState": "Realizado"
     },
     {
       "id": "420e11f1-22e9-4836-8e2f-1543c662d3d9",
@@ -2618,7 +2618,7 @@
       "gasType": "GNV",
       "quantity": 47.37,
       "amount": 72.95,
-      "ticketState": "Reservado"
+      "ticketState": "Realizado"
     },
     {
       "id": "cb13f9c2-e997-4a61-83a2-9e65e0d31fa3",
@@ -3424,7 +3424,7 @@
       "gasType": "Diesel",
       "quantity": 24.27,
       "amount": 69.17,
-      "ticketState": "Reservado"
+      "ticketState": "Realizado"
     },
     {
       "id": "69a2c905-265e-4c3f-8d77-69f56d390d84",
@@ -3866,7 +3866,7 @@
       "gasType": "Diesel",
       "quantity": 18.98,
       "amount": 54.09,
-      "ticketState": "Reservado"
+      "ticketState": "EnTurno"
     },
     {
       "id": "70e7ad3d-9b42-4bf2-a792-5d15367fe7e8",
@@ -4243,7 +4243,7 @@
       "gasType": "Especial",
       "quantity": 9.11,
       "amount": 31.98,
-      "ticketState": "Pendiente"
+      "ticketState": "Notificado"
     },
     {
       "id": "e37579b7-4303-48ff-b4d8-3f3bae68d2bc",
@@ -4685,7 +4685,7 @@
       "gasType": "Diesel",
       "quantity": 15.59,
       "amount": 44.43,
-      "ticketState": "Reservado"
+      "ticketState": "Notificado"
     },
     {
       "id": "30614179-5367-4db2-817c-52c700fd7271",
@@ -6921,7 +6921,7 @@
       "gasType": "Especial",
       "quantity": 46.9,
       "amount": 164.62,
-      "ticketState": "Notificado"
+      "ticketState": "Realizado"
     },
     {
       "id": "3d4f91e6-abc1-489a-bad7-6e990addf5e6",
@@ -7246,7 +7246,7 @@
       "gasType": "Diesel",
       "quantity": 49.27,
       "amount": 140.42,
-      "ticketState": "EnTurno"
+      "ticketState": "Realizado"
     },
     {
       "id": "e8573d8e-ade8-418f-bee8-ca1a26e54337",
@@ -7493,7 +7493,7 @@
       "gasType": "Especial",
       "quantity": 17.72,
       "amount": 62.2,
-      "ticketState": "EnTurno"
+      "ticketState": "Realizado"
     },
     {
       "id": "5d9987e2-cb44-445f-99c8-a80ec16b01e1",
@@ -7805,7 +7805,7 @@
       "gasType": "Diesel",
       "quantity": 38.9,
       "amount": 110.86,
-      "ticketState": "EnTurno"
+      "ticketState": "Realizado"
     },
     {
       "id": "61a31142-87d4-4004-a0d1-88e4aa767228",
@@ -7896,7 +7896,7 @@
       "gasType": "Diesel",
       "quantity": 24.08,
       "amount": 68.63,
-      "ticketState": "EnTurno"
+      "ticketState": "Realizado"
     },
     {
       "id": "253c5fb2-e3a9-4bca-a291-5f09c3f55036",
@@ -7909,7 +7909,7 @@
       "gasType": "GNV",
       "quantity": 40.43,
       "amount": 62.26,
-      "ticketState": "Notificado"
+      "ticketState": "Realizado"
     },
     {
       "id": "f5773600-fb1a-4548-823b-ba236dacff93",
@@ -7987,7 +7987,7 @@
       "gasType": "GNV",
       "quantity": 5.46,
       "amount": 8.41,
-      "ticketState": "EnTurno"
+      "ticketState": "Realizado"
     },
     {
       "id": "41974a3d-9ee1-4b35-a878-89b7c6969aef",
@@ -8027,6 +8027,162 @@
       "quantity": 24.57,
       "amount": 86.24,
       "ticketState": "EnTurno"
+    },
+    {
+      "id": "10000001-aaaa-4aaa-aaaa-aaaaaaaaaaaa",
+      "adminId": "d3b64e36-5754-4b8a-90e8-1b798abb268e",
+      "gasStationId": "a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+      "gasStationName": "San Rafael",
+      "customerId": "ae1e9c7c-7cb3-4249-8fa4-095353e4c137",
+      "carPlate": "XLK743",
+      "date": "2025-06-15T10:00:00Z",
+      "gasType": "Especial",
+      "quantity": 30.5,
+      "amount": 107.06,
+      "ticketState": "EnTurno"
+    },
+    {
+      "id": "10000002-aaaa-4aaa-aaaa-aaaaaaaaaaaa",
+      "adminId": "d3b64e36-5754-4b8a-90e8-1b798abb268e",
+      "gasStationId": "a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+      "gasStationName": "San Rafael",
+      "customerId": "07e65550-2df6-45be-90c4-97a56a5930e9",
+      "carPlate": "ZPS213",
+      "date": "2025-06-15T11:00:00Z",
+      "gasType": "GNV",
+      "quantity": 25,
+      "amount": 38.5,
+      "ticketState": "Pendiente"
+    },
+    {
+      "id": "10000003-aaaa-4aaa-aaaa-aaaaaaaaaaaa",
+      "adminId": "d3b64e36-5754-4b8a-90e8-1b798abb268e",
+      "gasStationId": "a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+      "gasStationName": "San Rafael",
+      "customerId": "c34d0ab0-b2a1-45a3-89b2-2dc8c189902a",
+      "carPlate": "OGN315",
+      "date": "2025-06-15T12:00:00Z",
+      "gasType": "Diesel",
+      "quantity": 35,
+      "amount": 99.75,
+      "ticketState": "Pendiente"
+    },
+    {
+      "id": "10000004-aaaa-4aaa-aaaa-aaaaaaaaaaaa",
+      "adminId": "d3b64e36-5754-4b8a-90e8-1b798abb268e",
+      "gasStationId": "a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+      "gasStationName": "San Rafael",
+      "customerId": "4b1ebe26-57f5-4e54-a20e-143d4baacecc",
+      "carPlate": "QXW849",
+      "date": "2025-06-15T13:00:00Z",
+      "gasType": "Especial",
+      "quantity": 20,
+      "amount": 70.2,
+      "ticketState": "Pendiente"
+    },
+    {
+      "id": "10000005-aaaa-4aaa-aaaa-aaaaaaaaaaaa",
+      "adminId": "d3b64e36-5754-4b8a-90e8-1b798abb268e",
+      "gasStationId": "a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+      "gasStationName": "San Rafael",
+      "customerId": "94663845-0abd-40c7-a0c9-b73d29c901cc",
+      "carPlate": "CRW081",
+      "date": "2025-06-15T14:00:00Z",
+      "gasType": "Diesel",
+      "quantity": 40,
+      "amount": 114,
+      "ticketState": "Reservado"
+    },
+    {
+      "id": "10000006-aaaa-4aaa-aaaa-aaaaaaaaaaaa",
+      "adminId": "d3b64e36-5754-4b8a-90e8-1b798abb268e",
+      "gasStationId": "a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+      "gasStationName": "San Rafael",
+      "customerId": "56f37a02-b687-4b75-bd90-0711d92e02dc",
+      "carPlate": "MSA326",
+      "date": "2025-06-15T15:00:00Z",
+      "gasType": "GNV",
+      "quantity": 15,
+      "amount": 23.1,
+      "ticketState": "Reservado"
+    },
+    {
+      "id": "10000007-aaaa-4aaa-aaaa-aaaaaaaaaaaa",
+      "adminId": "d3b64e36-5754-4b8a-90e8-1b798abb268e",
+      "gasStationId": "a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+      "gasStationName": "San Rafael",
+      "customerId": "09df67cb-e727-4b0d-9d0f-adaadd3e9352",
+      "carPlate": "SJL054",
+      "date": "2025-06-15T16:00:00Z",
+      "gasType": "Especial",
+      "quantity": 25,
+      "amount": 87.75,
+      "ticketState": "Notificado"
+    },
+    {
+      "id": "10000008-aaaa-4aaa-aaaa-aaaaaaaaaaaa",
+      "adminId": "d3b64e36-5754-4b8a-90e8-1b798abb268e",
+      "gasStationId": "d21eca8-ca7b-44c-984c-0722a99ba5a",
+      "gasStationName": "San Rafael",
+      "customerId": "fff4c101-f645-4beb-91f9-cad32a157bf8",
+      "carPlate": "WJJ470",
+      "date": "2025-06-14T10:00:00Z",
+      "gasType": "Especial",
+      "quantity": 35,
+      "amount": 122.85,
+      "ticketState": "Realizado"
+    },
+    {
+      "id": "10000009-aaaa-4aaa-aaaa-aaaaaaaaaaaa",
+      "adminId": "d3b64e36-5754-4b8a-90e8-1b798abb268e",
+      "gasStationId": "d21eca8-ca7b-44c-984c-0722a99ba5a",
+      "gasStationName": "San Rafael",
+      "customerId": "ff0d6d59-9bf8-4041-a0b3-cf57af3feccc",
+      "carPlate": "NBA864",
+      "date": "2025-06-14T11:00:00Z",
+      "gasType": "GNV",
+      "quantity": 30,
+      "amount": 46.2,
+      "ticketState": "Realizado"
+    },
+    {
+      "id": "10000010-aaaa-4aaa-aaaa-aaaaaaaaaaaa",
+      "adminId": "d3b64e36-5754-4b8a-90e8-1b798abb268e",
+      "gasStationId": "d21eca8-ca7b-44c-984c-0722a99ba5a",
+      "gasStationName": "San Rafael",
+      "customerId": "322490e9-4061-4f3e-bd19-4c324e16bc5d",
+      "carPlate": "RZW302",
+      "date": "2025-06-14T12:00:00Z",
+      "gasType": "Diesel",
+      "quantity": 20,
+      "amount": 57,
+      "ticketState": "Realizado"
+    },
+    {
+      "id": "10000011-aaaa-4aaa-aaaa-aaaaaaaaaaaa",
+      "adminId": "d3b64e36-5754-4b8a-90e8-1b798abb268e",
+      "gasStationId": "d21eca8-ca7b-44c-984c-0722a99ba5a",
+      "gasStationName": "San Rafael",
+      "customerId": "fe4359fe-0121-4829-b549-7d1633cc8dfc",
+      "carPlate": "MTY019",
+      "date": "2025-06-14T13:00:00Z",
+      "gasType": "Especial",
+      "quantity": 15,
+      "amount": 52.65,
+      "ticketState": "Cancelado"
+    },
+    {
+      "id": "10000012-aaaa-4aaa-aaaa-aaaaaaaaaaaa",
+      "adminId": "d3b64e36-5754-4b8a-90e8-1b798abb268e",
+      "gasStationId": "d21eca8-ca7b-44c-984c-0722a99ba5a",
+      "gasStationName": "San Rafael",
+      "customerId": "c7569287-3524-4203-892f-935accc31eab",
+      "carPlate": "XOG251",
+      "date": "2025-06-14T14:00:00Z",
+      "gasType": "Diesel",
+      "quantity": 25,
+      "amount": 71.25,
+      "ticketState": "Cancelado"
     }
   ]
 }

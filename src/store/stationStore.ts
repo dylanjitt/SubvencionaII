@@ -7,7 +7,7 @@ interface StationState {
   updateStationStock: (
     stationId: string,
     serviceName: string,
-    stock: number,
+    stock: number
   ) => void;
 }
 
@@ -21,10 +21,10 @@ export const useStationStore = create<StationState>((set) => ({
           ? {
               ...station,
               services: station.services.map((service) =>
-                service.name === serviceName ? { ...service, stock } : service,
+                service.name === serviceName ? { ...service, stock } : service
               ),
             }
-          : station,
+          : station
       ),
     })),
 }));
