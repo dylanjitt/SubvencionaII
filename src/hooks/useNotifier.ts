@@ -74,7 +74,19 @@ export const useNotifier = () => {
     });
   }
 
-  const notificateStock = (gasStationId: string, gasStationName: string, gasType: string, stock: number) => {
+  const notificateStock = (
+    adminId: string,
+    gasStationId: string,
+    gasStationName: string,
+    gasType: string,
+    stock: number,
+    recipientPhone: string
+  ) => {
+    const msg = `La gasolinera ${gasStationName} tiene ${stock} litros en ${gasType}`;
+    const encodedMsg = encodeURIComponent(msg);
+    const phone = recipientPhone.replace(/\D/g, ''); // solo dígitos
+    const waLink = `https://wa.me/${phone}?text=${encodedMsg}`;
+
     sendNotifications({
       gasStationId: gasStationId,
       gasStationName: gasStationName,
@@ -83,13 +95,16 @@ export const useNotifier = () => {
     })
 
     sendNotification({
-      userId: user.id,
+      userId: adminId,
       gasStationId: gasStationId,
       gasStationName: gasStationName,
       message: `La gasolinera ${gasStationName} tiene ${stock} litros en ${gasType}`,
       type: "Stock"
     });
-  }
+
+    return waLink
+  };
+
 
   // TODO: Eliminar Simulación
   const simHappyPath = (adminId: string, gasStationId: string, gasStationName: string, gasType: string) => {
