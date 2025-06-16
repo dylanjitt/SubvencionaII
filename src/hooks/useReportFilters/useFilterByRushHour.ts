@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { ticketData } from "../../interface/ticketDataInterface";
-import { getGasStations } from "../../services/gasStationsService";
+import { fetchStationNames } from "../../helper/fetchStationNames";
+import { useAuthStore } from "../../store/authStore";
 
 export const useFilterByRushHours =(tickets: ticketData[])=>{
   const [fuelFilter, setFuelFilter] = useState<"all" | "gasolina" | "diesel" | "GNV">("all");
@@ -33,20 +34,10 @@ export const useFilterByRushHours =(tickets: ticketData[])=>{
   const [filteredData, setFilteredData] = useState<number[]>([]);
   const [filteredticketsExport, setFilteredticketsExport] = useState<ticketData[] | null>(tickets);
 
+  const { user } = useAuthStore();
   useEffect(() => {
-    const fetchStationNames = async () => {  
-      try {
-        const stations = await getGasStations();
-
-        const names = ["all", ...stations.map((station: any) => station.name)];
-        setGasStationNames(names);
-      } catch (error) {
-        console.error('Error fetching station names:', error);
-        setGasStationNames([]);
-      }
-    };
-    fetchStationNames();
-  }, []);
+      fetchStationNames(setGasStationNames, user);
+    }, [user]);
 
 
   const countByHour = (list: ticketData[]) => {

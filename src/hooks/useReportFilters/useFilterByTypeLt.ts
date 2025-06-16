@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import type { ticketData } from "../../interface/ticketDataInterface";
-import { getGasStations } from "../../services/gasStationsService";
+import { useAuthStore } from "../../store/authStore";
+import { fetchStationNames } from "../../helper/fetchStationNames";
 
 export const useFilterByTypeLt =(tickets: ticketData[])=>{
   const [singleDate, setSingleDate] = useState<Date | null>(null);
@@ -17,22 +18,10 @@ export const useFilterByTypeLt =(tickets: ticketData[])=>{
   const [filteredData, setFilteredData] = useState<number[]>([]);
   const [filteredticketsExport, setFilteredticketsExport] = useState<ticketData[] | null>(tickets)
 
-  useEffect(() => {
-    const fetchStationNames = async () => {  
-      try {
-        const stations = await getGasStations();
-
-        const names = ["all", ...stations.map((station: any) => station.name)];
-        setGasStationNames(names);
-      } catch (error) {
-        console.error('Error fetching station names:', error);
-        setGasStationNames([]);
-      }
-    };
-
-    fetchStationNames();
-
-  }, []);
+  const { user } = useAuthStore();
+    useEffect(() => {
+        fetchStationNames(setGasStationNames, user);
+      }, [user]);
 
 
   const sumByType = (list: ticketData[]) => {
