@@ -26,6 +26,24 @@ const Navbar = () => {
 
 
 
+import { useAuthStore } from "../store/authStore";
+import { useNavigate } from "react-router-dom";
+interface NavbarProps {
+  onMenuClick: () => void;
+}
+const Navbar = ({ onMenuClick }: NavbarProps) => {
+  const {logoutUser,user}=useAuthStore()
+  const navigate = useNavigate();
+
+  const logOut=()=>{
+    logoutUser()
+    navigate('/login', {
+      replace: true,
+    });
+  }
+  const goToReports=()=>{
+    navigate('/admin/reports')
+  }
   return (
     <AppBar position="fixed" sx={{ backgroundColor: "white", height: 70, zIndex: theme => theme.zIndex.drawer + 1 }}>
       <Toolbar>

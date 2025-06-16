@@ -1,8 +1,10 @@
+import BookingList from "../components/BookingList";
+import { useBooking } from "../hooks/useBooking";
 
-function DashboardPage(){
-  return(
-    <h1>User</h1>
-  )
+function DashboardPage() {
+  const { bookings, handleCancel } = useBooking();
+
+  return <BookingList bookings={bookings} onCancel={handleCancel} />;
 }
 
-export default DashboardPage
+export default DashboardPage;
