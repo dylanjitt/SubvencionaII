@@ -1,5 +1,14 @@
-import { Doughnut } from "react-chartjs-2"
+import {
+  Chart,
+  ArcElement,
+  Title,
+  SubTitle,
+  Tooltip,
+  Legend
+} from "chart.js";
 
+import { Doughnut } from "react-chartjs-2"
+Chart.register(ArcElement, Title, SubTitle, Tooltip, Legend);
 
 interface circleDataProps{
   tickets:number[],

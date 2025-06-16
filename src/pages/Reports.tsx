@@ -1,11 +1,3 @@
-import {
-  Chart,
-  ArcElement,
-  Title,
-  SubTitle,
-  Tooltip,
-  Legend
-} from "chart.js";
 import { FilterByStation } from "../components/reportComponents/filterByStation";
 import { FilterByCancel } from "../components/reportComponents/filterByCancel";
 import { Card } from "@mui/material";
@@ -13,9 +5,6 @@ import { FilterByType } from "../components/reportComponents/filterByType";
 import { FilterByTypeLt } from "../components/reportComponents/filterByTypeLt";
 import { FilterByRushHour } from "../components/reportComponents/filterByRushHour";
 import { useReports } from "../hooks/useReport";
-
-
-Chart.register(ArcElement, Title, SubTitle, Tooltip, Legend);
 
 export function ReportsPage() {
   
