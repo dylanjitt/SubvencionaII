@@ -5,7 +5,8 @@ import {
   FormControl,
   InputLabel,
   Select,
-  MenuItem
+  MenuItem,
+  IconButton
 } from "@mui/material";
 import CircleChart from "./circle";
 import { DatePickerCustom } from "./datePicker";
@@ -13,6 +14,7 @@ import { PdfExportButton } from "../../utils/PdfExport";
 import { CsvExportButton } from "../../utils/CsvExport";
 import type { TicketDataProps } from "../../interface/ticketDataProps";
 import { useFilterByType } from "../../hooks/useReportFilters/useFilterByType";
+import RestartAltIcon from "@mui/icons-material/RestartAlt";
 
 export const FilterByType = ({ tickets, title }: TicketDataProps) => {
   
@@ -54,12 +56,15 @@ export const FilterByType = ({ tickets, title }: TicketDataProps) => {
         </FormControl>
 
 
-        <Button variant="outlined" color="secondary" onClick={restoreAll}>
-          Reiniciar
-        </Button>
+        <IconButton
+          onClick={restoreAll}
+          color="inherit" // inherit keeps it black unless overridden
+        >
+          <RestartAltIcon style={{ color: 'black' }} />
+        </IconButton>
       </Box>
 
-      <Box mt={3} textAlign="center">
+      <Box width={'100%'} display={'flex'} justifyContent={'center'} alignItems={'center'} flexDirection={'column'}  mt={1} textAlign="center">
         <PdfExportButton
           chartRef={chartRef}
           data={filteredData}

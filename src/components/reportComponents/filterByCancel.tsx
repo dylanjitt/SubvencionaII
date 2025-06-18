@@ -5,7 +5,8 @@ import {
   FormControl,
   InputLabel,
   Select,
-  MenuItem
+  MenuItem,
+  IconButton
 } from "@mui/material";
 import CircleChart from "./circle";
 import { DatePickerCustom } from "./datePicker";
@@ -13,13 +14,14 @@ import { PdfExportButton } from "../../utils/PdfExport";
 import { CsvExportButton } from "../../utils/CsvExport";
 import type { TicketDataProps } from "../../interface/ticketDataProps";
 import { useFilterByCancel } from "../../hooks/useReportFilters/useFilterByCancel";
+import RestartAltIcon from "@mui/icons-material/RestartAlt";
 
 export const FilterByCancel = ({ tickets, title }: TicketDataProps) => {
 
-  const {chartRef,filteredData,ticketState,singleDate,rangeEnd,rangeStart,setSingleDate,setRangeEnd,setRangeStart,fuelFilter,setFuelFilter,stationFilter,setStationFilter,restoreAll,gasStationNames,getCurrentFilters,filteredticketsExport} = useFilterByCancel(tickets)
+  const { chartRef, filteredData, ticketState, singleDate, rangeEnd, rangeStart, setSingleDate, setRangeEnd, setRangeStart, fuelFilter, setFuelFilter, stationFilter, setStationFilter, restoreAll, gasStationNames, getCurrentFilters, filteredticketsExport } = useFilterByCancel(tickets)
 
   return (
-    <Card sx={{ p: 2 }}>
+    <Card sx={{ p: 2, width:'100%',alignItems:'center',justifyContent:'center',display:'flex',flexDirection:'column' }}>
       <div ref={chartRef} style={{ position: 'relative' }}>
         <CircleChart tickets={filteredData} title={title} labels={ticketState} />
       </div>
@@ -36,7 +38,7 @@ export const FilterByCancel = ({ tickets, title }: TicketDataProps) => {
       />
 
       <Box mt={3} textAlign="center">
-        <FormControl size="small" sx={{ minWidth: 160, mr: 2 }}>
+        <FormControl size="small" sx={{ minWidth: 100, mr: 2 }}>
           <InputLabel id="fuel-filter-label">Tipo de Combustible</InputLabel>
           <Select
             labelId="fuel-filter-label"
@@ -51,7 +53,7 @@ export const FilterByCancel = ({ tickets, title }: TicketDataProps) => {
           </Select>
         </FormControl>
 
-        <FormControl size="small" sx={{ minWidth: 160, mr: 2 }}>
+        <FormControl size="small" sx={{ minWidth: 100, mr: 2 }}>
           <InputLabel id="station-filter-label">Estación de Servicio</InputLabel>
           <Select
             labelId="station-filter-label"
@@ -68,12 +70,15 @@ export const FilterByCancel = ({ tickets, title }: TicketDataProps) => {
         </FormControl>
 
 
-        <Button variant="outlined" color="secondary" onClick={restoreAll}>
-          Reiniciar
-        </Button>
+        <IconButton
+          onClick={restoreAll}
+          color="inherit" // inherit keeps it black unless overridden
+        >
+          <RestartAltIcon style={{ color: 'black' }} />
+        </IconButton>
       </Box>
 
-      <Box mt={3} textAlign="center">
+      <Box width={'100%'} display={'flex'} justifyContent={'center'} alignItems={'center'} flexDirection={'column'}  mt={1} textAlign="center">
         <PdfExportButton
           chartRef={chartRef}
           data={filteredData}

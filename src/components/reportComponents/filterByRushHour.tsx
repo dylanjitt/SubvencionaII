@@ -5,7 +5,8 @@ import {
   FormControl,
   InputLabel,
   Select,
-  MenuItem
+  MenuItem,
+  IconButton
 } from "@mui/material";
 import { DatePickerCustom } from "./datePicker";
 import { PdfExportButton } from "../../utils/PdfExport";
@@ -13,6 +14,7 @@ import { CsvExportButton } from "../../utils/CsvExport";
 import type { TicketDataProps } from "../../interface/ticketDataProps";
 import TimePointChart from "./timeView";
 import { useFilterByRushHours } from "../../hooks/useReportFilters/useFilterByRushHour";
+import RestartAltIcon from "@mui/icons-material/RestartAlt";
 
 export const FilterByRushHour= ({ tickets, title }: TicketDataProps) => {
   
@@ -70,9 +72,12 @@ export const FilterByRushHour= ({ tickets, title }: TicketDataProps) => {
         </FormControl>
 
 
-        <Button variant="outlined" color="secondary" onClick={restoreAll}>
-          Reiniciar
-        </Button>
+        <IconButton
+          onClick={restoreAll}
+          color="inherit" // inherit keeps it black unless overridden
+        >
+          <RestartAltIcon style={{ color: 'black' }} />
+        </IconButton>
       </Box>
 
       <Box mt={3} textAlign="center">

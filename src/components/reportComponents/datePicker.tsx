@@ -31,22 +31,12 @@ export const DatePickerCustom = ({
     <Box mt={4}>
       <LocalizationProvider dateAdapter={AdapterDateFns}>
         <Stack
-          direction={{ xs: "column", sm: "row" }}
+          direction={{ xs: "row", sm: "row" }}
           spacing={2}
           alignItems="center"
           justifyContent="center"
         >
-          <FormControlLabel
-            control={
-              <Switch
-                checked={!isSingleDate}
-                onChange={() => setIsSingleDate((prev) => !prev)}
-                color="primary"
-              />
-            }
-            label={"Rango de fechas"}
-            labelPlacement="start"
-          />
+          
 
           {isSingleDate ? (
             <>
@@ -56,19 +46,23 @@ export const DatePickerCustom = ({
                 onChange={setSingleDate}
                 minDate={minDate}
                 maxDate={maxDate}
-                sx={{width:315}}
+                sx={{width:205}}
                 slotProps={{ textField: { size: "small" } }}
               />
             </>
           ) : (
-            <>
+            <Stack
+            direction={{ xs: "row", sm: "row" }}
+            spacing={2}
+            alignItems="center"
+            justifyContent="center">
               <DatePicker
                 label="Fecha Inicial"
                 value={rangeStart}
                 onChange={setRangeStart}
                 minDate={minDate}
                 maxDate={maxDate}
-                sx={{width:150}}
+                sx={{width:100}}
                 slotProps={{ textField: { size: "small" } }}
               />
               <DatePicker
@@ -77,11 +71,23 @@ export const DatePickerCustom = ({
                 onChange={setRangeEnd}
                 minDate={minDate}
                 maxDate={maxDate}
-                sx={{width:150}}
+                sx={{width:100}}
                 slotProps={{ textField: { size: "small" } }}
               />
-            </>
+            </Stack>
           )}
+          <FormControlLabel
+            control={
+              <Switch
+                checked={!isSingleDate}
+                onChange={() => setIsSingleDate((prev) => !prev)}
+                color="primary"
+              />
+            }
+            label={"Range"}
+
+            labelPlacement="end"
+          />
         </Stack>
       </LocalizationProvider>
     </Box>

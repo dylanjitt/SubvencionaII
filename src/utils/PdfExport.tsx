@@ -138,7 +138,7 @@ export const PdfExportButton = ({
       variant="contained" 
       color="error" 
       onClick={exportToPDF}
-      sx={{ ml: 2, justifyContent: 'space-between' }}
+      sx={{ ml: 2, justifyContent: 'center',width:'200px',margin:1 }}
     >
       <PictureAsPdfIcon sx={{ marginRight: 1 }} />
       Exportar a PDF

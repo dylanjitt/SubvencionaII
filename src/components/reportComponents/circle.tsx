@@ -56,7 +56,7 @@ const CircleChart = ({tickets,title,labels}:circleDataProps)=>{
     }
   };
 return( 
-  <div style={{ position: 'relative', height: '550px', width: '500px' }}>
+  <div style={{ position: 'relative', height: '350px', width: '100%', alignItems:'center',justifyContent:'center',display:'flex' }}>
   <Doughnut data={chartData} options={chartOptions} />
 </div>
 )

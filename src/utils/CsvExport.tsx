@@ -44,7 +44,7 @@ export const CsvExportButton = ({ data, filename }: CsvExportButtonProps) => {
       variant="contained" 
       color="success" 
       onClick={exportToCsv}
-      sx={{ ml: 2, justifyContent:'space-between' }}
+      sx={{ ml: 2, justifyContent: 'center', width:'200px',margin:1 }}
     >
       <TableChartIcon sx={{marginRight:1}}/>
 

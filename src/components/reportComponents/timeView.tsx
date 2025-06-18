@@ -112,7 +112,7 @@ export default function TimePointChart({ dataValues, labels, title }: TimePointC
   };
 
   return ( 
-    <div style={{ position: 'relative', height: '550px', width: '1100px' }}>
+    <div style={{ position: 'relative', height: '385px', width: '700px' }}>
       <Line options={options} data={data} />
     </div>
   );
