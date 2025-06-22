@@ -28,21 +28,86 @@ const ZONES = ["Centro", "Max Paredes", "San Antonio", "Periférica", "Mallasa"]
 const FUEL_TYPES = ["Especial", "Diesel", "GNV"];
 
 const stationSchema = Yup.object({
-  name: Yup.string().required("Nombre de la estación es requerida"),
+  name: Yup.string()
+    .required("Nombre de la estación es requerida")
+    .min(5, "Mínimo 5 caracteres")
+    .max(50, "Máximo 50 caracteres")
+    .trim("No se permiten solo espacios")
+    .matches(/^[a-zA-Z0-9\s]+$/, "No se permiten solo caracteres especiales")
+    .matches(/^(?!.*\d+$).+$/, "No se permiten solo números"),
   zone: Yup.string().required("Zona es requerida"),
-  address: Yup.string().required("Dirección es requerida"),
+  address: Yup.string()
+    .required("Dirección es requerida")
+    .min(15, "Mínimo 15 caracteres")
+    .max(60, "Máximo 60 caracteres")
+    .trim("No se permiten solo espacios")
+    .matches(/^[a-zA-Z0-9\s]+$/, "No se permiten solo caracteres especiales")
+    .matches(/^(?!.*\d+$).+$/, "No se permiten solo números"),
   phone: Yup.string()
-    .matches(/^\d{8}$/, "Teléfono debe contener al menos 8 dígitos")
-    .required("Teléfono es requerido"),
-  selectedDays: Yup.array().min(1, "Al menos selecciona un día"),
-  services: Yup.array().of(
+    .required("Teléfono es requerido")
+    .matches(/^\d{8}$/, "Debe contener exactamente 8 dígitos numéricos"),
+  selectedDays: Yup.array().when("scheduleType", {
+    is: (val: string) => val === "Atención personalizada",
+    then: (schema) => schema.min(3, "Selecciona al menos tres días"),
+    otherwise: (schema) => schema,
+  }),
+  openTime: Yup.string()
+    .required("Hora de apertura es requerida")
+    .matches(
+      /^(0[5-9]|1[0-9]|2[0-3]):[0-5][0-9]$/,
+      "La hora no puede estar entre 00:01 y 04:59"
+    ),
+  closeTime: Yup.string()
+    .required("Hora de cierre es requerida")
+    .matches(
+      /^(0[5-9]|1[0-9]|2[0-3]):[0-5][0-9]$/,
+      "La hora no puede estar entre 00:01 y 04:59"
+    )
+    .test(
+      "is-after-open",
+      "La hora de cierre debe ser posterior a la de apertura",
+      function (value) {
+        const { openTime } = this.parent;
+        if (!openTime || !value) return true;
+        return value > openTime;
+      }
+    ),
+  openingHours: Yup.array().of(
     Yup.object().shape({
-      name: Yup.string().required(),
-      capacity: Yup.number().min(1, "La capacidad debe ser superior a 0"),
-      stock: Yup.number().min(0, "Stock no puede ser negativo"),
-      selected: Yup.boolean(),
+      day: Yup.string(),
+      open: Yup.string().matches(
+        /^(0[5-9]|1[0-9]|2[0-3]):[0-5][0-9]$/,
+        "La hora no puede estar entre 00:01 y 04:59"
+      ),
+      close: Yup.string()
+        .matches(
+          /^(0[5-9]|1[0-9]|2[0-3]):[0-5][0-9]$/,
+          "La hora no puede estar entre 00:01 y 04:59"
+        )
+        .test(
+          "is-after-open",
+          "La hora de cierre debe ser posterior a la de apertura",
+          function (value) {
+            const { open } = this.parent;
+            if (!open || !value) return true;
+            return value > open;
+          }
+        ),
     })
-  ).min(1, "Al menos selecciona un servicio"),
+  ),
+  services: Yup.array()
+    .of(
+      Yup.object().shape({
+        name: Yup.string().required(),
+        capacity: Yup.number()
+          .min(10000, "La capacidad mínima es 10000")
+          .max(600000, "La capacidad máxima es 600000")
+          .min(0, "La capacidad no puede ser negativa"),
+        stock: Yup.number().min(0, "Stock no puede ser negativo"),
+        selected: Yup.boolean(),
+      })
+    )
+    .min(1, "Al menos selecciona un servicio"),
 });
 
 interface StationModalProps {
@@ -56,7 +121,7 @@ export default function StationModal({ open, onClose, station, isEditMode }: Sta
   const { createStation, updateStation } = useStationAdmin();
   const { user } = useAuthStore();
   const [scheduleType, setScheduleType] = useState("Todos los dias");
-  const [uniformHours, setUniformHours] = useState(true);
+  const [uniformHours] = useState(true);
 
   const formik = useFormik({
     initialValues: {
@@ -67,6 +132,7 @@ export default function StationModal({ open, onClose, station, isEditMode }: Sta
       selectedDays: station ? station.openingHours.map((h) => h.day) : [],
       openTime: station?.openingHours[0]?.open || "08:00",
       closeTime: station?.openingHours[0]?.close || "20:00",
+      scheduleType,
       openingHours: ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"].map((day) => ({
         day,
         open: station?.openingHours.find((h) => h.day === day)?.open || "08:00",
@@ -210,7 +276,7 @@ export default function StationModal({ open, onClose, station, isEditMode }: Sta
         <ToggleButtonGroup
           value={scheduleType}
           exclusive
-          onChange={(e, newValue) => newValue && setScheduleType(newValue)}
+          onChange={(event, newValue) => newValue && setScheduleType(newValue)}
           sx={{ mb: 2 }}
         >
           <ToggleButton value="Todos los dias">Todos los dias</ToggleButton>
@@ -252,6 +318,11 @@ export default function StationModal({ open, onClose, station, isEditMode }: Sta
                 )}
               </Box>
             ))}
+            {formik.touched.selectedDays && formik.errors.selectedDays && (
+              <Typography color="error" variant="caption">
+                {formik.errors.selectedDays}
+              </Typography>
+            )}
           </Box>
         ) : (
           <Box sx={{ display: "flex", gap: 2, mb: 2 }}>
@@ -261,6 +332,9 @@ export default function StationModal({ open, onClose, station, isEditMode }: Sta
               name="openTime"
               value={formik.values.openTime}
               onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={formik.touched.openTime && Boolean(formik.errors.openTime)}
+              helperText={formik.touched.openTime && formik.errors.openTime}
               fullWidth
             />
             <TextField
@@ -269,6 +343,9 @@ export default function StationModal({ open, onClose, station, isEditMode }: Sta
               name="closeTime"
               value={formik.values.closeTime}
               onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={formik.touched.closeTime && Boolean(formik.errors.closeTime)}
+              helperText={formik.touched.closeTime && formik.errors.closeTime}
               fullWidth
             />
           </Box>
@@ -285,7 +362,7 @@ export default function StationModal({ open, onClose, station, isEditMode }: Sta
             </ToggleButton>
           ))}
         </ToggleButtonGroup>
-        {formik.values.services.map((service) => (
+        {formik.values.services.map((service, index) => (
           service.selected && (
             <Box key={service.name} sx={{ mb: 2 }}>
               <TextField
@@ -294,6 +371,17 @@ export default function StationModal({ open, onClose, station, isEditMode }: Sta
                 value={service.capacity}
                 onChange={(e) =>
                   handleCapacityChange(service.name, parseInt(e.target.value))
+                }
+                onBlur={() => formik.setFieldTouched(`services[${index}].capacity`)}
+                error={
+                  formik.touched.services &&
+                  Array.isArray(formik.errors.services) &&
+                  formik.errors.services[index]?.capacity
+                }
+                helperText={
+                  formik.touched.services &&
+                  Array.isArray(formik.errors.services) &&
+                  formik.errors.services[index]?.capacity
                 }
                 sx={{ width: 150 }}
               />
@@ -304,7 +392,7 @@ export default function StationModal({ open, onClose, station, isEditMode }: Sta
       <DialogActions>
         <Button onClick={onClose}>Cancelar</Button>
         <Button
-          onClick={formik.handleSubmit}
+          onClick={() => formik.handleSubmit()}
           variant="contained"
           disabled={!formik.isValid || !formik.dirty}
         >
