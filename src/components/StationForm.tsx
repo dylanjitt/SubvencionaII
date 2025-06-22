@@ -9,14 +9,14 @@ import {
   TextField,
   FormControl,
   Typography,
-  Checkbox,
-  FormControlLabel,
-  Box,
   ToggleButton,
   ToggleButtonGroup,
   InputLabel,
   Select,
   MenuItem,
+  Box,
+  FormControlLabel,
+  Checkbox,
 } from "@mui/material";
 import { v4 as uuidv4 } from "uuid";
 import { useStationAdmin } from "../hooks/useStationAdmi";
@@ -124,12 +124,13 @@ export default function StationModal({ open, onClose, station, isEditMode }: Sta
     formik.setFieldValue("selectedDays", selectedDays);
   };
 
-  const handleServiceChange = (name: string) => {
+  const handleServiceChange = (event: React.MouseEvent<HTMLElement>, newServices: string[]) => {
     formik.setFieldValue(
       "services",
-      formik.values.services.map((s) =>
-        s.name === name ? { ...s, selected: !s.selected } : s
-      )
+      formik.values.services.map((s) => ({
+        ...s,
+        selected: newServices.includes(s.name),
+      }))
     );
   };
 
@@ -273,29 +274,31 @@ export default function StationModal({ open, onClose, station, isEditMode }: Sta
           </Box>
         )}
         <Typography variant="subtitle1">Servicios</Typography>
+        <ToggleButtonGroup
+          value={formik.values.services.filter((s) => s.selected).map((s) => s.name)}
+          onChange={handleServiceChange}
+          sx={{ mb: 2 }}
+        >
+          {FUEL_TYPES.map((type) => (
+            <ToggleButton key={type} value={type}>
+              {type}
+            </ToggleButton>
+          ))}
+        </ToggleButtonGroup>
         {formik.values.services.map((service) => (
-          <Box key={service.name} sx={{ mb: 2 }}>
-            <FormControlLabel
-              control={
-                <Checkbox
-                  checked={service.selected}
-                  onChange={() => handleServiceChange(service.name)}
-                />
-              }
-              label={service.name}
-            />
-            {service.selected && (
+          service.selected && (
+            <Box key={service.name} sx={{ mb: 2 }}>
               <TextField
-                label="Capacidad"
+                label={`Capacidad (${service.name})`}
                 type="number"
                 value={service.capacity}
                 onChange={(e) =>
                   handleCapacityChange(service.name, parseInt(e.target.value))
                 }
-                sx={{ ml: 2, width: 150 }}
+                sx={{ width: 150 }}
               />
-            )}
-          </Box>
+            </Box>
+          )
         ))}
       </DialogContent>
       <DialogActions>
