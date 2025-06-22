@@ -106,7 +106,7 @@ export default function StationModal({ open, onClose, station, isEditMode }: Sta
         <ToggleButtonGroup
           value={scheduleType}
           exclusive
-          onChange={(event, newValue) => newValue && setScheduleType(newValue)}
+          onChange={(_, newValue) => newValue && setScheduleType(newValue)}
           sx={{ mb: 2 }}
         >
           <ToggleButton value="Todos los dias">Todos los dias</ToggleButton>
@@ -210,12 +210,12 @@ export default function StationModal({ open, onClose, station, isEditMode }: Sta
                 error={
                   formik.touched.services &&
                   Array.isArray(formik.errors.services) &&
-                  formik.errors.services[index]?.capacity
+                  (formik.errors.services[index] as { capacity?: string })?.capacity != null
                 }
                 helperText={
                   formik.touched.services &&
                   Array.isArray(formik.errors.services) &&
-                  formik.errors.services[index]?.capacity
+                  (formik.errors.services[index] as { capacity?: string })?.capacity
                 }
                 sx={{ width: 150 }}
                 inputProps={{ min: 10000, max: 600000 }}
