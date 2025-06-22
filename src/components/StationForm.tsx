@@ -46,11 +46,12 @@ const stationSchema = Yup.object({
   phone: Yup.string()
     .required("Teléfono es requerido")
     .matches(/^\d{8}$/, "Debe contener exactamente 8 dígitos numéricos"),
-  selectedDays: Yup.array().when("scheduleType", {
-    is: (val: string) => val === "Atención personalizada",
-    then: (schema) => schema.min(3, "Selecciona al menos tres días"),
-    otherwise: (schema) => schema,
-  }),
+  selectedDays: Yup.array()
+    .when("scheduleType", {
+      is: "Atención personalizada",
+      then: (schema) => schema.min(3, "Selecciona al menos tres días"),
+      otherwise: (schema) => schema,
+    }),
   openTime: Yup.string()
     .required("Hora de apertura es requerida")
     .matches(
@@ -100,9 +101,14 @@ const stationSchema = Yup.object({
       Yup.object().shape({
         name: Yup.string().required(),
         capacity: Yup.number()
+          .required()
           .min(10000, "La capacidad mínima es 10000")
           .max(600000, "La capacidad máxima es 600000")
-          .min(0, "La capacidad no puede ser negativa"),
+          .test(
+            "no-negative",
+            "La capacidad no puede ser negativa",
+            (value) => value >= 0
+          ),
         stock: Yup.number().min(0, "Stock no puede ser negativo"),
         selected: Yup.boolean(),
       })
@@ -201,6 +207,11 @@ export default function StationModal({ open, onClose, station, isEditMode }: Sta
   };
 
   const handleCapacityChange = (name: string, capacity: number) => {
+    if (capacity < 10000) {
+      capacity = 10000;
+    } else if (capacity > 600000) {
+      capacity = 600000;
+    }
     formik.setFieldValue(
       "services",
       formik.values.services.map((s) =>
@@ -210,12 +221,71 @@ export default function StationModal({ open, onClose, station, isEditMode }: Sta
   };
 
   const handleTimeChange = (day: string, field: string, value: string) => {
+    const [hours, minutes] = value.split(":").map(Number);
+    if (hours < 5) {
+      value = "05:00";
+    } else if (hours > 23) {
+      value = "23:59";
+    }
     formik.setFieldValue(
       "openingHours",
       formik.values.openingHours.map((h) =>
         h.day === day ? { ...h, [field]: value } : h
       )
     );
+  };
+
+  const handleOpenTimeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    let value = e.target.value;
+    const [hours, minutes] = value.split(":").map(Number);
+    if (hours < 5) {
+      value = "05:00";
+    } else if (hours > 23) {
+      value = "23:59";
+    }
+    formik.setFieldValue("openTime", value);
+  };
+
+  const handleCloseTimeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    let value = e.target.value;
+    const [hours, minutes] = value.split(":").map(Number);
+    if (hours < 5) {
+      value = "05:00";
+    } else if (hours > 23) {
+      value = "23:59";
+    }
+    if (value <= formik.values.openTime) {
+      const [openHours, openMinutes] = formik.values.openTime.split(":").map(Number);
+      value = `${openHours + 1}:${openMinutes.toString().padStart(2, "0")}`;
+    }
+    formik.setFieldValue("closeTime", value);
+  };
+
+  const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    let value = e.target.value.slice(0, 50);
+    if (/^\s+$/.test(value)) {
+      value = "";
+    }
+    if (/^[^a-zA-Z0-9\s]+$/.test(value) || /^\d+$/.test(value)) {
+      value = formik.values.name;
+    }
+    formik.setFieldValue("name", value);
+  };
+
+  const handleAddressChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    let value = e.target.value.slice(0, 60);
+    if (/^\s+$/.test(value)) {
+      value = "";
+    }
+    if (/^[^a-zA-Z0-9\s]+$/.test(value) || /^\d+$/.test(value)) {
+      value = formik.values.address;
+    }
+    formik.setFieldValue("address", value);
+  };
+
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    let value = e.target.value.replace(/[^0-9]/g, "").slice(0, 8);
+    formik.setFieldValue("phone", value);
   };
 
   return (
@@ -227,11 +297,12 @@ export default function StationModal({ open, onClose, station, isEditMode }: Sta
           label="Nombre de la estación"
           name="name"
           value={formik.values.name}
-          onChange={formik.handleChange}
+          onChange={handleNameChange}
           onBlur={formik.handleBlur}
           error={formik.touched.name && Boolean(formik.errors.name)}
           helperText={formik.touched.name && formik.errors.name}
           sx={{ mb: 2 }}
+          inputProps={{ maxLength: 50 }}
         />
         <FormControl fullWidth sx={{ mb: 2 }}>
           <InputLabel>Zona</InputLabel>
@@ -241,6 +312,7 @@ export default function StationModal({ open, onClose, station, isEditMode }: Sta
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             error={formik.touched.zone && Boolean(formik.errors.zone)}
+            required
           >
             {ZONES.map((zone) => (
               <MenuItem key={zone} value={zone}>
@@ -254,22 +326,24 @@ export default function StationModal({ open, onClose, station, isEditMode }: Sta
           label="Dirección"
           name="address"
           value={formik.values.address}
-          onChange={formik.handleChange}
+          onChange={handleAddressChange}
           onBlur={formik.handleBlur}
           error={formik.touched.address && Boolean(formik.errors.address)}
           helperText={formik.touched.address && formik.errors.address}
           sx={{ mb: 2 }}
+          inputProps={{ maxLength: 60 }}
         />
         <TextField
           fullWidth
           label="Teléfono"
           name="phone"
           value={formik.values.phone}
-          onChange={formik.handleChange}
+          onChange={handlePhoneChange}
           onBlur={formik.handleBlur}
           error={formik.touched.phone && Boolean(formik.errors.phone)}
           helperText={formik.touched.phone && formik.errors.phone}
           sx={{ mb: 2 }}
+          inputProps={{ maxLength: 8 }}
         />
 
         <Typography variant="subtitle1">Horario de atención</Typography>
@@ -305,6 +379,7 @@ export default function StationModal({ open, onClose, station, isEditMode }: Sta
                       onChange={(e) => handleTimeChange(day, "open", e.target.value)}
                       fullWidth
                       sx={{ width: 150 }}
+                      inputProps={{ min: "05:00", max: "23:59" }}
                     />
                     <TextField
                       label="Cerrado"
@@ -313,6 +388,7 @@ export default function StationModal({ open, onClose, station, isEditMode }: Sta
                       onChange={(e) => handleTimeChange(day, "close", e.target.value)}
                       fullWidth
                       sx={{ width: 150 }}
+                      inputProps={{ min: formik.values.openingHours.find((h) => h.day === day)?.open || "05:00", max: "23:59" }}
                     />
                   </Box>
                 )}
@@ -331,22 +407,24 @@ export default function StationModal({ open, onClose, station, isEditMode }: Sta
               type="time"
               name="openTime"
               value={formik.values.openTime}
-              onChange={formik.handleChange}
+              onChange={handleOpenTimeChange}
               onBlur={formik.handleBlur}
               error={formik.touched.openTime && Boolean(formik.errors.openTime)}
               helperText={formik.touched.openTime && formik.errors.openTime}
               fullWidth
+              inputProps={{ min: "05:00", max: "23:59" }}
             />
             <TextField
               label="Cerrado"
               type="time"
               name="closeTime"
               value={formik.values.closeTime}
-              onChange={formik.handleChange}
+              onChange={handleCloseTimeChange}
               onBlur={formik.handleBlur}
               error={formik.touched.closeTime && Boolean(formik.errors.closeTime)}
               helperText={formik.touched.closeTime && formik.errors.closeTime}
               fullWidth
+              inputProps={{ min: formik.values.openTime, max: "23:59" }}
             />
           </Box>
         )}
@@ -384,6 +462,7 @@ export default function StationModal({ open, onClose, station, isEditMode }: Sta
                   formik.errors.services[index]?.capacity
                 }
                 sx={{ width: 150 }}
+                inputProps={{ min: 10000, max: 600000 }}
               />
             </Box>
           )
