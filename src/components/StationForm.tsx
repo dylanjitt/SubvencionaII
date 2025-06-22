@@ -8,13 +8,15 @@ import {
   Button,
   TextField,
   FormControl,
-  InputLabel,
-  Select,
-  MenuItem,
   Typography,
   Checkbox,
   FormControlLabel,
   Box,
+  ToggleButton,
+  ToggleButtonGroup,
+  InputLabel,
+  Select,
+  MenuItem,
 } from "@mui/material";
 import { v4 as uuidv4 } from "uuid";
 import { useStationAdmin } from "../hooks/useStationAdmi";
@@ -22,15 +24,6 @@ import { useAuthStore } from "../store/authStore";
 import { useState } from "react";
 import type { GasStation } from "../interface/GasStation";
 
-const DAYS = [
-  "Lunes",
-  "Martes",
-  "Miercoles",
-  "Jueves",
-  "Viernes",
-  "Sabado",
-  "Domingo",
-];
 const ZONES = ["Centro", "Max Paredes", "San Antonio", "Periférica", "Mallasa"];
 const FUEL_TYPES = ["Especial", "Diesel", "GNV"];
 
@@ -62,6 +55,7 @@ interface StationModalProps {
 export default function StationModal({ open, onClose, station, isEditMode }: StationModalProps) {
   const { createStation, updateStation } = useStationAdmin();
   const { user } = useAuthStore();
+  const [scheduleType, setScheduleType] = useState("Todos los dias");
   const [uniformHours, setUniformHours] = useState(true);
 
   const formik = useFormik({
@@ -73,7 +67,7 @@ export default function StationModal({ open, onClose, station, isEditMode }: Sta
       selectedDays: station ? station.openingHours.map((h) => h.day) : [],
       openTime: station?.openingHours[0]?.open || "08:00",
       closeTime: station?.openingHours[0]?.close || "20:00",
-      openingHours: DAYS.map((day) => ({
+      openingHours: ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"].map((day) => ({
         day,
         open: station?.openingHours.find((h) => h.day === day)?.open || "08:00",
         close: station?.openingHours.find((h) => h.day === day)?.close || "20:00",
@@ -87,6 +81,15 @@ export default function StationModal({ open, onClose, station, isEditMode }: Sta
     },
     validationSchema: stationSchema,
     onSubmit: async (values) => {
+      let daysToSubmit;
+      if (scheduleType === "Todos los dias") {
+        daysToSubmit = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"];
+      } else if (scheduleType === "Lunes a Viernes") {
+        daysToSubmit = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes"];
+      } else {
+        daysToSubmit = values.selectedDays;
+      }
+
       const stationData = {
         id: isEditMode ? station?.id : uuidv4(),
         userId: user?.id || "",
@@ -94,7 +97,7 @@ export default function StationModal({ open, onClose, station, isEditMode }: Sta
         zone: values.zone,
         address: values.address,
         phone: values.phone,
-        openingHours: values.selectedDays.map((day) => ({
+        openingHours: daysToSubmit.map((day) => ({
           day,
           open: uniformHours ? values.openTime : values.openingHours.find((h) => h.day === day)?.open || "08:00",
           close: uniformHours ? values.closeTime : values.openingHours.find((h) => h.day === day)?.close || "20:00",
@@ -135,6 +138,15 @@ export default function StationModal({ open, onClose, station, isEditMode }: Sta
       "services",
       formik.values.services.map((s) =>
         s.name === name ? { ...s, capacity } : s
+      )
+    );
+  };
+
+  const handleTimeChange = (day: string, field: string, value: string) => {
+    formik.setFieldValue(
+      "openingHours",
+      formik.values.openingHours.map((h) =>
+        h.day === day ? { ...h, [field]: value } : h
       )
     );
   };
@@ -194,31 +206,53 @@ export default function StationModal({ open, onClose, station, isEditMode }: Sta
         />
 
         <Typography variant="subtitle1">Horario de atención</Typography>
-        <FormControlLabel
-          control={
-            <Checkbox
-              checked={uniformHours}
-              onChange={() => setUniformHours(!uniformHours)}
-            />
-          }
-          label="Todos los días"
+        <ToggleButtonGroup
+          value={scheduleType}
+          exclusive
+          onChange={(e, newValue) => newValue && setScheduleType(newValue)}
           sx={{ mb: 2 }}
-        />
-        <Box sx={{ mb: 2 }}>
-          {DAYS.map((day) => (
-            <FormControlLabel
-              key={day}
-              control={
-                <Checkbox
-                  checked={formik.values.selectedDays.includes(day)}
-                  onChange={() => handleDayChange(day)}
+        >
+          <ToggleButton value="Todos los dias">Todos los dias</ToggleButton>
+          <ToggleButton value="Lunes a Viernes">Lunes a Viernes</ToggleButton>
+          <ToggleButton value="Atención personalizada">Atención personalizada</ToggleButton>
+        </ToggleButtonGroup>
+        {scheduleType === "Atención personalizada" ? (
+          <Box sx={{ mb: 2 }}>
+            {["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"].map((day) => (
+              <Box key={day} sx={{ display: "flex", alignItems: "center", mb: 1 }}>
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      checked={formik.values.selectedDays.includes(day)}
+                      onChange={() => handleDayChange(day)}
+                    />
+                  }
+                  label={day}
                 />
-              }
-              label={day}
-            />
-          ))}
-        </Box>
-        {uniformHours ? (
+                {formik.values.selectedDays.includes(day) && (
+                  <Box sx={{ display: "flex", gap: 2, ml: 2 }}>
+                    <TextField
+                      label="Abierto"
+                      type="time"
+                      value={formik.values.openingHours.find((h) => h.day === day)?.open || "08:00"}
+                      onChange={(e) => handleTimeChange(day, "open", e.target.value)}
+                      fullWidth
+                      sx={{ width: 150 }}
+                    />
+                    <TextField
+                      label="Cerrado"
+                      type="time"
+                      value={formik.values.openingHours.find((h) => h.day === day)?.close || "20:00"}
+                      onChange={(e) => handleTimeChange(day, "close", e.target.value)}
+                      fullWidth
+                      sx={{ width: 150 }}
+                    />
+                  </Box>
+                )}
+              </Box>
+            ))}
+          </Box>
+        ) : (
           <Box sx={{ display: "flex", gap: 2, mb: 2 }}>
             <TextField
               label="Abierto"
@@ -237,48 +271,6 @@ export default function StationModal({ open, onClose, station, isEditMode }: Sta
               fullWidth
             />
           </Box>
-        ) : (
-          formik.values.selectedDays.map((day) => (
-            <Box key={day} sx={{ display: "flex", gap: 2, mb: 2 }}>
-              <Typography sx={{ alignSelf: "center", width: 100 }}>
-                {day}
-              </Typography>
-              <TextField
-                label="Abierto"
-                type="time"
-                value={
-                  formik.values.openingHours.find((h) => h.day === day)?.open ||
-                  "08:00"
-                }
-                onChange={(e) =>
-                  formik.setFieldValue(
-                    "openingHours",
-                    formik.values.openingHours.map((h) =>
-                      h.day === day ? { ...h, open: e.target.value } : h
-                    )
-                  )
-                }
-                fullWidth
-              />
-              <TextField
-                label="Cerrado"
-                type="time"
-                value={
-                  formik.values.openingHours.find((h) => h.day === day)?.close ||
-                  "20:00"
-                }
-                onChange={(e) =>
-                  formik.setFieldValue(
-                    "openingHours",
-                    formik.values.openingHours.map((h) =>
-                      h.day === day ? { ...h, close: e.target.value } : h
-                    )
-                  )
-                }
-                fullWidth
-              />
-            </Box>
-          ))
         )}
         <Typography variant="subtitle1">Servicios</Typography>
         {formik.values.services.map((service) => (
