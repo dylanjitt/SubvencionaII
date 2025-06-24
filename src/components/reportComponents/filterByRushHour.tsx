@@ -1,7 +1,6 @@
 import {
   Card,
   Box,
-  Button,
   FormControl,
   InputLabel,
   Select,
@@ -23,7 +22,22 @@ export const FilterByRushHour= ({ tickets, title }: TicketDataProps) => {
 
 
   return (
-    <Card sx={{ p: 2 }}>
+    <Card sx={{ p: 2,minWidth:'700px',width:'55vw',maxWidth:"1015px",maxHeight:'600px',height:'40vw',minHeight:'500px' }}>
+       <Box sx={{flexDirection:'row-reverse',display:'flex'}} >
+        <CsvExportButton
+          data={filteredticketsExport || []}
+          filename={`turnos_por_Cancelacion_export_${new Date().toISOString().slice(0, 10)}`}
+        />
+        <PdfExportButton
+          chartRef={chartRef}
+          data={exportedData}
+          title={title}
+          detail="Horarios"
+          labels={exportedLabels}
+          filters={getCurrentFilters()}
+        />
+        
+      </Box>
       <div ref={chartRef} style={{ position: 'relative' }}>
       <TimePointChart labels={labels} dataValues={filteredData} title={title}/>
       </div>
@@ -80,20 +94,7 @@ export const FilterByRushHour= ({ tickets, title }: TicketDataProps) => {
         </IconButton>
       </Box>
 
-      <Box mt={3} textAlign="center">
-        <PdfExportButton
-          chartRef={chartRef}
-          data={exportedData}
-          title={title}
-          detail="Horarios"
-          labels={exportedLabels}
-          filters={getCurrentFilters()}
-        />
-        <CsvExportButton
-          data={filteredticketsExport || []}
-          filename={`turnos_por_Cancelacion_export_${new Date().toISOString().slice(0, 10)}`}
-        />
-      </Box>
+     
 
     </Card>
   );

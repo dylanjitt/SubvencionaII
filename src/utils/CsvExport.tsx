@@ -40,15 +40,16 @@ export const CsvExportButton = ({ data, filename }: CsvExportButtonProps) => {
   };
 
   return (
-    <Button 
-      variant="contained" 
-      color="success" 
-      onClick={exportToCsv}
-      sx={{ ml: 2, justifyContent: 'center', width:'200px',margin:1 }}
-    >
-      <TableChartIcon sx={{marginRight:1}}/>
+    // <Button 
+    //   // variant="contained" 
+    //   // color="success" 
+    //   onClick={exportToCsv}
+    //   sx={{padding:0, color:'#666666', justifyContent: 'center', maxWidth:'30px' }}
+    // >
+      <TableChartIcon onClick={exportToCsv}
+      sx={{padding:0, color:'#666666', justifyContent: 'center',width:'30px',marginX:1, ":hover":{color:'green'},":active":{color:'black'}}}/>
 
-      Export to CSV
-    </Button>
+      
+    // </Button>
   );
 };

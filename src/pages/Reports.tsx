@@ -10,7 +10,7 @@ export function ReportsPage() {
   const { tickets } = useReports();
 
   return (
-    <div style={{ margin: "0 auto" }}>
+    <div style={{ margin: "0 auto" ,display:'flex',alignItems:'center',justifyContent:'center',flexDirection:'column'}}>
       <h1>Reporte de Uso</h1>
       <Card
         sx={{
@@ -19,13 +19,17 @@ export function ReportsPage() {
           backgroundColor: '#f4f4f4',
           display:'flex',
           alignItems:'center',
-          justifyContent:'center'
+          justifyContent:'center',
+          maxWidth:"1600px"
         }}
       >
-        <Grid container spacing={2} width={'100%'} display={'flex'} alignItems={'center'} justifyContent={'center'}>
+        <Grid container spacing={2}  width={'100%'} display={'flex'} alignItems={'center'} justifyContent={'center'}>
           {/* First Row - 3 items */}
           <Grid xs={4} sm={4}>
             <FilterByStation tickets={tickets} title="Turnos Por estación" />
+          </Grid>
+          <Grid  xs={8} sm={8}>
+            <FilterByRushHour tickets={tickets} title="Horas de Mayor tráfico de Reservas" />
           </Grid>
           <Grid  xs={4} sm={4}>
             <FilterByCancel tickets={tickets} title="Estados de Tickets" />
@@ -35,12 +39,10 @@ export function ReportsPage() {
           </Grid>
 
           {/* Second Row - 2 items */}
-          <Grid  xs={6} sm={6}>
+          <Grid  xs={4} sm={4}>
             <FilterByTypeLt tickets={tickets} title="Flujo de Combustible (Lt)" />
           </Grid>
-          <Grid  xs={6} sm={6}>
-            <FilterByRushHour tickets={tickets} title="Horas de Mayor tráfico de Reservas" />
-          </Grid>
+          
         </Grid>
       </Card>
     </div>

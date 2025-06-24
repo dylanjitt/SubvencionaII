@@ -1,3 +1,4 @@
+
 import {
   Chart,
   ArcElement,
@@ -51,12 +52,13 @@ const CircleChart = ({tickets,title,labels}:circleDataProps)=>{
         padding: { bottom: 10 }
       },
       legend: {
+        display:true,
         position: "bottom" as const
       }
     }
   };
 return( 
-  <div style={{ position: 'relative', height: '350px', width: '100%', alignItems:'center',justifyContent:'center',display:'flex' }}>
+  <div style={{ position: 'relative', minHeight:'350px', maxHeight: '25em', width: '100%', alignItems:'center',justifyContent:'center',display:'flex' }}>
   <Doughnut data={chartData} options={chartOptions} />
 </div>
 )

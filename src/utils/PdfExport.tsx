@@ -41,7 +41,7 @@ export const PdfExportButton = ({
     pdf.addImage(imgData, "PNG", margin, margin, imgWidth, imgHeight);
     
     
-    const tableTop = margin + imgHeight + (data.length>30?10:2);
+    const tableTop = margin + imgHeight+5 + (data.length>30?10:2);
     
     pdf.setFontSize(12);
     pdf.setTextColor(40);
@@ -134,14 +134,16 @@ export const PdfExportButton = ({
   };
 
   return (
-    <Button 
-      variant="contained" 
-      color="error" 
-      onClick={exportToPDF}
-      sx={{ ml: 2, justifyContent: 'center',width:'200px',margin:1 }}
-    >
-      <PictureAsPdfIcon sx={{ marginRight: 1 }} />
-      Exportar a PDF
-    </Button>
+    // <Button 
+    //   // variant="contained" 
+    //   // color="black" 
+    //   onClick={exportToPDF}
+    //   sx={{padding:0, color:'#666666', justifyContent: 'center',width:'5px'}}
+    // >
+      <PictureAsPdfIcon onClick={exportToPDF}
+      sx={{padding:0, color:'#666666', justifyContent: 'center',width:'30px',marginX:1,":hover":{color:'red'},":active":{color:'black'}}}
+     />
+      
+    // </Button>
   );
 };

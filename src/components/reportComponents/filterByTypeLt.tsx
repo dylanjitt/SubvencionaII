@@ -1,7 +1,6 @@
 import {
   Card,
   Box,
-  Button,
   FormControl,
   InputLabel,
   Select,
@@ -17,11 +16,27 @@ import { useFilterByTypeLt } from "../../hooks/useReportFilters/useFilterByTypeL
 import RestartAltIcon from "@mui/icons-material/RestartAlt";
 
 export const FilterByTypeLt = ({ tickets, title }: TicketDataProps) => {
-  
-  const {chartRef,filteredData,gasType,singleDate,rangeEnd,rangeStart,setSingleDate,setRangeEnd,setRangeStart,stationFilter,setStationFilter,gasStationNames,restoreAll,getCurrentFilters,filteredticketsExport}=useFilterByTypeLt(tickets)
+
+  const { chartRef, filteredData, gasType, singleDate, rangeEnd, rangeStart, setSingleDate, setRangeEnd, setRangeStart, stationFilter, setStationFilter, gasStationNames, restoreAll, getCurrentFilters, filteredticketsExport } = useFilterByTypeLt(tickets)
 
   return (
-    <Card sx={{ p: 2 }}>
+    <Card sx={{ p: 2, minWidth:'350px',width:'27vw',maxWidth:'500px',maxHeight:'600px',height:'40vw',minHeight:'500px' }}>
+
+      <Box sx={{ flexDirection: 'row-reverse', display: 'flex' }} >
+        <PdfExportButton
+          chartRef={chartRef}
+          data={filteredData}
+          title={title}
+          detail="Tipo Combustible"
+          labels={gasType}
+          filters={getCurrentFilters()}
+        />
+        <CsvExportButton
+          data={filteredticketsExport || []}
+          filename={`turnos_por_Cancelacion_export_${new Date().toISOString().slice(0, 10)}`}
+        />
+      </Box>
+
       <div ref={chartRef} style={{ position: 'relative' }}>
         <CircleChart tickets={filteredData} title={title} labels={gasType} />
       </div>
@@ -64,20 +79,7 @@ export const FilterByTypeLt = ({ tickets, title }: TicketDataProps) => {
         </IconButton>
       </Box>
 
-      <Box width={'100%'} display={'flex'} justifyContent={'center'} alignItems={'center'} flexDirection={'column'}  mt={1} textAlign="center">
-        <PdfExportButton
-          chartRef={chartRef}
-          data={filteredData}
-          title={title}
-          detail="Tipo Combustible"
-          labels={gasType}
-          filters={getCurrentFilters()}
-        />
-        <CsvExportButton
-          data={filteredticketsExport || []}
-          filename={`turnos_por_Cancelacion_export_${new Date().toISOString().slice(0, 10)}`}
-        />
-      </Box>
+
 
     </Card>
   );
