@@ -39,6 +39,8 @@ const CircleChart = ({tickets,title,labels}:circleDataProps)=>{
 
 
   let chartOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
     plugins: {
       title: {
         display: true,
@@ -58,7 +60,7 @@ const CircleChart = ({tickets,title,labels}:circleDataProps)=>{
     }
   };
 return( 
-  <div style={{ position: 'relative', minHeight:'350px', maxHeight: '25em', width: '100%', alignItems:'center',justifyContent:'center',display:'flex' }}>
+  <div style={{ position: 'relative', height:'100%', minHeight:'350px', maxHeight: '25em', width: '100%', alignItems:'center',justifyContent:'center',display:'flex' }}>
   <Doughnut data={chartData} options={chartOptions} />
 </div>
 )

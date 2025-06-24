@@ -4,10 +4,10 @@
   padding: 2rem;
   text-align: center;
 }
-canvas {
-  width: 90% !important;
+/* canvas {
+  width: auto !important;
   height: auto !important;
-}
+} */
 /*
 .logo {
   height: 6em;

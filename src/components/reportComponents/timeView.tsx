@@ -72,6 +72,7 @@ export default function TimePointChart({ dataValues, labels, title }: TimePointC
 
   const options: ChartOptions<"line"> = {
     responsive: true,
+    maintainAspectRatio: false,
     plugins: {
       title: {
         display: true,
@@ -112,7 +113,7 @@ export default function TimePointChart({ dataValues, labels, title }: TimePointC
   };
 
   return ( 
-    <div style={{ position: 'relative', minHeight: '350px', height:'20vw', maxHeight:'400px',width:'100%',alignItems:'center',justifyContent:'center',display:'flex' }}>
+    <div style={{ position: 'relative',  minHeight: '350px', height:'100%', maxHeight:'400px',width:'100%',alignItems:'center',justifyContent:'center',display:'flex' }}>
       <Line options={options} data={data} width={undefined} height={undefined}/>
     </div>
   );
