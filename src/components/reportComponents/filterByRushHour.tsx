@@ -24,10 +24,7 @@ export const FilterByRushHour= ({ tickets, title }: TicketDataProps) => {
   return (
     <Card sx={{ p: 2,minWidth:'700px',width:'55vw',maxWidth:"1015px",maxHeight:'600px',height:'40vw',minHeight:'500px' }}>
        <Box sx={{flexDirection:'row-reverse',display:'flex'}} >
-        <CsvExportButton
-          data={filteredticketsExport || []}
-          filename={`turnos_por_Cancelacion_export_${new Date().toISOString().slice(0, 10)}`}
-        />
+        
         <PdfExportButton
           chartRef={chartRef}
           data={exportedData}
@@ -36,7 +33,10 @@ export const FilterByRushHour= ({ tickets, title }: TicketDataProps) => {
           labels={exportedLabels}
           filters={getCurrentFilters()}
         />
-        
+        <CsvExportButton
+          data={filteredticketsExport || []}
+          filename={`turnos_por_Cancelacion_export_${new Date().toISOString().slice(0, 10)}`}
+        />
       </Box>
       <div ref={chartRef} style={{ position: 'relative' }}>
       <TimePointChart labels={labels} dataValues={filteredData} title={title}/>
